@@ -1,0 +1,4142 @@
+███╗   ███╗██╗███╗   ██╗███████╗ ██████╗██████╗  █████╗ ███████╗████████╗
+████╗ ████║██║████╗  ██║██╔════╝██╔════╝██╔══██╗██╔══██╗██╔════╝╚══██╔══╝
+██╔████╔██║██║██╔██╗ ██║█████╗  ██║     ██████╔╝███████║█████╗     ██║   
+██║╚██╔╝██║██║██║╚██╗██║██╔══╝  ██║     ██╔══██╗██╔══██║██╔══╝     ██║   
+██║ ╚═╝ ██║██║██║ ╚████║███████╗╚██████╗██║  ██║██║  ██║██║        ██║   
+╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝        ╚═╝   
+
+Author:糖崽
+
+URL-Navigation
+
+https://meteorclient.com/   ---彗星 1.19/1.19.2
+https://liquidbounce.net/    ---Liquidbounce 1.8.9/1.12.2
+https://www.wurstclient.net/   ---Wurst ~1.19.2
+https://aristois.net/   ---Aristois端 ~1.19.2
+
+Socks Proxy
+https://www.uu-proxy.com/
+
+[MeteorClient彗星.Command]
+.server  ---获取服务器信息
+.nbt get  ---获取手上的物品NBT值
+.nbt copy ---复制手上的物品NBT值
+.nbt set  ---设置NBT值
+.enchant all max  ---将手上的物品获得全附魔
+.enchant all level 32767  ---将手上的物品获得全附魔满级
+.save-map  ---保存手上的地图到本地
+.fov 110   ---调整fov视野
+.binds  ---查看已设置的快捷键
+.spectate Akuw  ---监视对方视角
+.hclip 3   ---往前瞬移
+.vclip 10  ---传送到10格高的位置
+.damage 7  ---扣血
+.drop all  ---丢弃一切物品
+.peek      ---偷看容器里的物品
+.rotation set 0 90  ---面向90度正前方
+.inventory Life_candy ---打开某个玩家的背包
+.loc buried_treasure ---拿着藏宝图输入后获取坐标
+.gamemode creative ---改成创造模式(可使用追溯指针)
+.gamemode spectator ---改成观察者模式
+.swarm 工人系统
+.swarm join        ---加入主机
+.swarm connections ---连接主机
+.swarm disconnect  ---断开主机
+.swarm exec /tpa Life_candy ---远程命令执行和聊天
+.swarm follow Life_candy ---跟随玩家
+.swarm goto x z  ---命令去某个地方
+.swarm infinity-miner minecraft:acacia_log  ---不断挖矿
+.swarm mine minecraft:acacia_button  ---自动挖矿
+.swarm scatter  ---分散距离
+.swarm stop     ---停下！
+.swarm toggle aim-assist off  ---控制模块
+扩展命令
+.velocity 3   ---把自己弹上天
+MeteorClient彗星CN翻译文档{
+	Misc 杂项
+    Announcer	报幕员	让你在聊天栏输出操作的文字(如 打开合成 捡起丢弃物品)
+    Anti Packet Kick	反发包踢	试图阻止您被发送过多数据包断开连接。
+    Auto Reconnect	自动重连	
+    Better Chat	更好的聊天	通过各种方式改善您的聊天体验。
+    Better Tab	更好的TAB列表	
+    Book Bot	书机器人	自动写书(有随机模式和文件模式)
+    Discord Presence		在Discord上为您显示RPC，以显示您正在玩Meteor客户端。
+    Inventory Tweaks	背包微调	可以设置各种关于背包的控制(如 自动丢弃物品等)
+    Message Aura	信息光环	向任何进入渲染距离的玩家发送指定的消息。
+    Middle Click Friend	中键选中好友	通过单击鼠标中键添加或移除玩家作为朋友的角色。
+    Notebot	自动音符盒	
+    Notifier	通知员	通知您不同的事件。
+    Offhand Crash	副手崩溃	一个漏洞，可以通过在你的主手和副手之间来回交换而使其他玩家崩溃。(未测试)
+    Packet Canceller		允许你取消接收某些数据包
+    Sound Blocker	声音屏蔽	屏蔽选中的声音
+    Spam		在聊天中发送指定的垃圾信息(可以设置延迟 刷屏)。
+    Swarm		允许您从一个中心主机控制Meteor的多个端。
+    Tps Sync		将客户端TPS与服务器的TPS同步。
+    Vanilla Spoof		当连接到服务器时，它会欺骗客户端名为“原版”。
+    World 世界		
+    Ambience	调整环境渲染颜色	
+    Anti Cactus	反仙人掌	
+    Auto Breed	自动喂食	
+    Auto BreWer	自动酿药	
+    Auto Mount	自动骑乘	
+    Auto Nametag	自动命名牌	
+    Auto Shearer	自动剪羊毛	
+    Auto Sing	自动告示牌	
+    Auto Smelter	自动烧东西	
+    Auto Steal	自动拿容器东西	
+    Build Height	建筑高度	允许你在限高的位置与方块等交互
+    Echest Farmer	末影箱农场	这个是用来回收黑曜石的
+    Enderman Look	看/避免看末影人	
+    Flamethrower	自动打火石	手动火焰附加烤肉
+    Infinity Miner	无限挖矿
+    自动挖矿（右键此项打开更多的选择菜单	这个在打开的时候默认打开一堆功能，如果不需要请右键点击后取消勾选smart module toggle一项
+    Liquid Fillter	填充附近的液体	
+    Mount Bypass	允许你越过非法堆叠插件？	
+    Nuker	打破周围方块	
+    Packet Mine	发包挖掘	通过发包的方式挖掘，自己端无挖方块动画和声音
+    Stash Finder	寻找隐藏的容器之类的	记录存储物品方块的位置（游戏内通知并且生成表格和JSON文件）
+    Timer	加速	
+    Vein Miner	连续挖矿	
+    Render 渲染		
+    Better Tooltips	更好的提示框	
+    Block Selection	自定义方块选择	
+    Blur	背景模糊	
+    Boss Stack	boss血条堆叠	
+    BreadCrumbs	面包屑	渲染你走过的路径
+    Break Indicators	自定义挖掘方块效果	只能改颜色(
+    Camera Tweaks	相机微调	可以让F5不受限制
+    可以调整相机远近
+    Chams	透视	透视所有实体(需选择
+    City Esp		渲染其他玩家选择的方块以定位城市？
+    Custome Fov	自定义视野范围	
+    Entity Owner	实体的主人	
+    Esp	透视	渲染实体
+    Free Rotate	自由旋转	用上下左右键控制视角
+    Freecam	灵魂出窍	
+    Fullbright	让世界变的明亮	
+    HUD	抬头显示	
+    Hand View	渲染手中物品	可以自定义手中物品的旋转角度等
+    Hole Esp	透视坑	
+    Item Heiglight	高亮物品	
+    Item Physics	物品物理掉落	
+    Light Overlay	显示刷怪区域	
+    Logout Spots	记录其他玩家下线的坐标	
+    Nametags	对名字标签微调	
+    No Render	不渲染一些效果	这个比别的端强太多了，可以不渲染实体下落方块告示牌文字受伤效果很多东西
+    Particle Blocker	不渲染粒子效果	也是可以选择的
+    Search	寻找方块	指定的任意方块
+    Storage Esp	容器透视	
+    Time Changer	改变时间	(仅客户端显示
+    Tracers		渲染一根线连向实体(玩家等
+    Trail		粒子效果小尾巴
+    Trajectories	显示抛物线	珍珠，雪球，鸡蛋和弓等物品
+    Unfocused Cpu		打开后，游戏在后台时让CPU摸鱼
+    Void Esp	虚空透视	
+    Wall Hack	方块半透明	选择一些方块让他们拥有透明度
+    Waypoints	显示路径点	
+    Xray	透	
+    Zoom	缩放	
+    Movement 移动		
+    Air Jump	在空中跳	
+    Anchor	锚	防止你掉进一个洞里
+    Anti Levitation	反漂浮	
+    Auto Jump	自动跳	
+    Auto Walk	自动走	
+    Blink	?眨眼	允许您本质上传送?同时暂停运动更新。
+    Boat Fly	用 船 飞	
+    Click Tp	右键传送	
+    Elytra Boost		
+    Elytra Fly	鞘翅平飞	不需要烟花起飞(请关闭nofall
+    Entity Control	实体控制	骑马不要鞍 等
+    Entity Speed	实体速度微调	
+    Fast Climb	爬	
+    Flight	飞	
+    Gui Move	开着背包等界面也能走路	
+    High Jump	高跳	
+    Jesus	水上漂	
+    No Fall	无掉落伤害	有一点点bug
+    No Slow	没有减速	
+    Parkour	自动跑酷	
+    Reverse Step	快速落地	
+    Safe walk	安全走路	自动shift
+    Scaffold	脚手架	自动搭路
+    Slippy	溜冰	旱冰
+    Speed	加速	
+    Spider	像蜘蛛一样爬 墙	
+    Sprint	自动疾跑	
+    Step	自动上一格方块	
+    Velocity	抗水流	
+    Player 玩家		
+    Air Place	在空中放方块	
+    Anti Afk	防挂机踢	away from keyboard
+    Anti Hunger	防饥饿	
+    Auto Clicker	自动点击	
+    Auto Drop	自动丢	
+    Auto Eat	自动吃	
+    Auto Fish	自动钓鱼	
+    Auto Gap	自动金苹果	
+    Auto Mend	自动经验修复	
+    Auto Replenish	自动装填快捷栏物品	
+    Auto Respawn	自动重生	
+    Auto Tool	自动工具	
+    Chest Swap	胸甲鞘翅切换	
+    Death Position	死亡记录点	
+    Exp Thrower	自动丢附魔之瓶	
+    Fake Player	生成一个假玩家	
+    Fast Use	快速使用	快速右键
+    Ghost Hand	鬼手	穿透方块和功能性方块交互，隔墙开箱子等
+    Liquid Interact	与液体互动？	
+    Middle Click Extra	额外中键	当你快捷栏有可以用的东西时，中键可以快捷使用
+    Name Protect	保护名字	
+    No Break Delay	没有破坏延迟	
+    No Interact	无功能性方块	不与箱子熔炉工作台等交互
+    No Mining Trace	挖掘穿过实体	
+    No Rotate	不大陀螺	
+    Protals	在传送门中可以打开GUI	
+    Potion Saver	节省药水时间	?这都能省
+    Potion Spoof	药水欺骗	给你渲染一些假药水效果
+    Reach	手 长	
+    Rotation	固定视角	
+    Speed Mine	快速挖掘	
+    XCarry		合成栏多放4格物品
+    Combat 战斗		
+    Aim Assit	自动瞄准	
+    Anchor Aura	重生锚光环	自动重生锚爆炸
+    Anti Anchor	反重生锚	放置方块减少爆炸伤害
+    Anti Anvil	反铁砧	
+    Anti Bed	反床	
+    Arrow Dodge	躲箭	
+    Auto 32K	自动32K	
+    Auto Anvil	自动铁砧	
+    Auto Arnor	自动护甲	
+    Auto City	自动城市	通过挖掘目标旁边最近的黑曜石，自动对目标进行定位。
+    Auto Log	自动下线	当你血量低于设定值时下线
+    Auto Totem	自动不死图腾	
+    Auto Trap	自动黑曜石	
+    Auto Weapon	自动武器	
+    Auto Web	自动蜘蛛网	
+    Bed Aura	床光环	自动放置床 自动爆炸
+    Bow Aimbot	弓自瞄	
+    Bow Spam	弓自动发射	
+    Burrow		
+    Criticals	刀刀暴击	
+    Crystal Aura	水晶光环	自动放末影水晶自动右键
+    Hitboxes	碰撞箱微调	理论可以调所有实体的碰撞箱
+    Hole Fillter	自动填坑	
+    Kill Aura	杀戮光环	
+    Offhand Extra	自动额外副手	
+    Quiver	向自己射箭	
+    Self Anvil		自动放置一个铁砧在你身上?以防止其他玩家进入你的地洞。
+    Self Trap	自己黑曜石	在你自己头上放个黑曜石
+    Self Web	自己蛛网	
+    Surround	自动包围自己
+}
+
+[info]
+种子透视:.seed 1308167943135497 1.19 输入后开启Ore Sim
+自定义村民:语言必须调成英文,准备讲台和斧子,在VillagerRoller的Enchantments选择好附魔书Mending(经验修补)和Cost最高价位然后启用模块,左键讲台之后右键村民.
+经验修补村民最低价10绿宝石
+Hitboxes + Auto Trap/Auto Web 把别人围住隔墙打
+Air Place + .vclip 4 可向上搭方块并爬升
+Fast Use + Scaffold 快速脚下搭路
+Hitboxes + Kill Aura 放大碰撞箱后再利用杀戮
+利用两个燧石和四个木板合成制箭台后,找到村民利用木棍换绿宝石
+召集村民/移动村民：挖掉村庄所有床，在钟的旁边放一张床，然后敲响钟
+
+[SeedcrackerX反推] - The seeds of all Spaces are the same
+种子多物种小地图 https://www.chunkbase.com/apps/seed-map#3085358394159334829
+种子指定查询 - https://www.chunkbase.com/apps/biome-finder#2063708333177633993
+IP:mc.snly.cc:20211 - Sakura的服务器
+2063708333177633993
+IP:218.89.171.145:65258 - 小楚的服务器
+6851702759501838259
+IP:mchai.top:21001 - 心海 海之韵 服务器 大型严格反作弊服务器
+9167182545767792685
+IP:nutmc.cn - 低反作弊 无地皮
+6837164887862627082
+IP:mc.ryoukyuu.xyz - Rivals
+6419760204598985305
+
+[MC-Bots机器人] - https://github.com/crpmax/mc-bots
+usage: mcbots [-c <arg>] [-d <arg>] [-g] [-j <arg>] [-l <arg>] [-m] [-n]
+[--nicks <arg>] [-p <arg>] [--password <arg>] [-r] -s <arg> [-t <arg>] [--token <arg>] [--username <arg>] [-x]
+-c,--count <arg>        机器人数量
+-d,--delay <arg>        连接延迟（ms）<min> <max>
+-g,--gravity            ?尝试通过摔倒来模拟重力
+-j,--join-msg <arg>     加入信息/命令
+-l,--proxy-list <arg>   代理列表文件的路径或URL，每行包含proxy:port
+-m,--minimal            无任何侦听器的最小运行
+-n,--nocolor            不为传入的聊天消息着色并设置格式
+--nicks <arg>           每行都有缺口的缺口文件路径
+-p,--prefix <arg>       名字前缀
+--username <arg>        正版登录的用户名
+--password <arg>        正版登录的密码
+-r,--real               生成真实的昵称
+-s,--server <arg>       指定的服务器 IP:port
+-t,--proxy-type <arg>   代理类型：SOCKS4或SOCKS5
+--token <arg>           在线会话授权令牌
+-x,--most-minimal       只连接,在没有任何控制的情况下运行最少
+
+[方块信息获取]
+F3+I 获得当前指向方块的信息（设置方块在此位置）
+当指向方块时输入/fill 后接tab可补充指向的方块坐标
+当summon召唤实体时，指向的位置为精准位置12.34
+结构方块structure_block
+
+[mv多世界服务器插件]
+/mv create zyworld normal  ---世界创建
+/mv create 世界名 normal -t flat ---超平坦
+/mv import 世界名 normal   ---加载导入的世界（保持开启）
+/mvcreate 世界名 normal -s -1820780390    ---用种子创建
+/mv coord   ---查看当前世界
+
+[ch称号服务器插件]
+/ch give YaoTang &b&l[糖糖] 0        ---称号
+/ch give Yao_Tang &c&k[@]&c&l[腐竹]&k[@]&f 0      ---称号（乱码 腐竹 乱码）红
+/ch give Yao_Tang &c[&6S&eu&ag&3a&1r&8-&5S&ce&6r&ev&ae&br&1]&f 0   ---称号彩色Sugar-Server
+
+/effect give Yao_Tang minecraft:strength 99999 255 true       ---无气泡永久力量效果255
+/tellraw @a {"text":"<Bibibishop050> 我是呆瓜"}        ---代替说话
+/tellraw @a {"text":"<Bibibishop050> 我是呆瓜","color":"yellow"} ---有颜色的说话
+/tellraw @a [{"text":"Bibibishop050取得了进度"},{"text":"[呆呆瓜瓜]","color":"dark_purple"}]     ---假成就
+/tellraw @a [{"text":"Yao_Tang取得了进度"},{"text":"[谁在切胡萝卜？]","color":"yellow"}]  ---假成就
+
+/summon minecraft:experience_bottle 1077 -22 185                   ---生成经验瓶修装备
+/summon item ~ ~ ~ {Item:{id:"minecraft:diamond",Count:64b}}       ---生成掉落物64颗钻石
+/give @s firework_rocket{Fireworks:{Explosions:[{Type:0,Trail:1,Colors:[I;15790320],FadeColors:[I;15790320]}],Flight:120}}   ---飞行时间120s的烟花
+
+/give Yao_Tang minecraft:item_frame{EntityTag:{Invisible:1b}}      ---隐形的展示框
+.nbt set {EntityTag:{Invisible:1b}}
+
+[Copy]
+/clone ~ ~1 ~ ~ ~1 ~ ~-1 ~1 ~ replace move    ---方块复制
+/clone 8 -62 -8 8 -62 -8 8 -60 -8            ---方块复制(复制 A点坐标 B点坐标 到此坐标) 箱子内物品也会随之复制
+
+[小木斧创世神插件]
+//copy      ---复制选区
+//paste     ---粘贴
+//paste -a  ---去除空气粘贴
+//undo      ---撤销
+//set ID    ---填充方块
+//set 30%1,70%2  ---填充30%石头70%草方块混合
+//replace    ---替换方块（创世神）
+//regen      ---从种子恢复
+//schematic list   ---跨存档复制粘贴列表（创世神）
+//rotate          ---旋转(90,-90)
+//stack 10        ---延伸
+//stack 20 -a     ---去除空气延伸
+//copy //br copy /mask stone_bricks    ---蒙版笔刷
+
+[CoreProtect回档插件]
+/co inspect  ---开启/关闭查询
+/co near    ---查看半径五格内的方块记录
+/co rollback t:回档的时间 r:回档的半径   ----区域回档
+/co rollback u:Notch t:1h r:#global      ---撤销玩家操作（co插件） 
+/co lookup u:unusuallman a:command t:99d   ---玩家指令记录 登录记录
+/co lookup u:Litch_77 a:chat t:99d       ---玩家聊天记录
+
+[Ledger回档插件]
+/ledger rollback range:回档的半径 after:5m   ---区域回档
+
+[MATRIX Learning-robot 反作弊插件]
+检测项 {
+	Combat:
+	KillAura/LegitAura/AimBot/MultiAura (KillAura/HitBox)
+	Reach (HitBox)
+	HitBox (HitBox)
+	Autoclicker (KillAura)
+	Criticals (KillAura)
+	FastBow (FastBow)
+	Regen (FastHeal/BadPackets)
+	FastUse/FastEat (FastUse/BadPackets)
+	SuperKnockback (KillAura)
+	WallHit (Interact/HitBox)
+	AntiKnockBack (Velocity)
+	AutoPot (KillAura)
+	FightBot (KillAura/HitBox)
+	TPHit (HitBox/Speed/KillAura)
+	Movement:
+	Fly (Fly/Speed/BadPackets)
+	Speed/BunnyHop/Y-Port/etc (Speed/Fly/BadPackets)
+	Jesus/LiquidWalk (Jesus/Fly/Speed)
+	AirJump (Fly/Speed)
+	HighJump (Fly)
+	LongJump (Speed/Fly)
+	Timer (BadPackets)
+	FastWeb (Speed)
+	FastLadder/FastClimb (Speed/Fly)
+	WallClimb/Spider (Fly/Phase)
+	Step (Speed/Fly)
+	ReserveStep (Fly)
+	NoSlow (Speed)
+	ElytraFly/Elytra+ (Elytra)
+	VehicleFly/BoatFly/EntitySpeed (Vehicle)
+	Sprin (Speed)
+	Strafe (Speed)
+	NoFall (Fly)
+	Chat:
+	Spam (Chat)
+	World:
+	FastBreak (Block)
+	FastPlace (Block)
+	Liquid (Interact)
+	AbortBreak (Block)
+	BedFucker (Interact)
+	Scaffold (Scaffold)
+	Tower (Scaffold)
+	AutoFish (AutoFish)
+	Nuker (Block)
+	XRay (Xray)
+	Net:
+	BookFlood Crash (BadPackets)
+	SkinDerp (BadPackets)
+	Teleport (BadPackets/Speed/Fly)
+	Inventory:
+	InventoryMove (Inventory)
+	ChestStealer (Inventory)
+	Bot:Baritone (AutoBot)
+}
+
+[baritone]
+.baritone come ---前往灵魂出窍的位置
+.baritone follow player Tu_tuzi ---找玩家/跟随玩家
+.baritone goto x y z ---去某个地方
+.baritone sel 1
+.baritone sel 2
+.baritone sel cleararea	 ---挖空选好的区域
+.baritone sel clear 	 ---删除1和2选区
+.baritone mine ancient_debris        ---挖残骸
+.baritone mine deepslate_diamond_ore ---挖深层钻石矿
+.baritone mine mangrove_roots        ---挖红树根
+.baritone mine sculk_shrieker        ---挖幽匿尖啸体
+.baritone goto end_portal_frame  ---找末地传送门
+.baritone follow entity fox     ---找狐狸
+.baritone follow entity wither_skeleton  ---找凋灵骷髅
+.baritone follow entity piglin  ---找猪灵(金锭交易)
+.baritone stop ---停下！
+.baritone top ---垂直往上回到地面
+.baritone farm 10 ---在半径10格内自动收获、种植作物、自动骨粉催熟
+.baritone goal ---将当前位置设定为goal目标地点
+.baritone goal clear ---清除goal目标地点
+.baritone path ---回到goal目标地点
+baritone文档{
+	[thisway 1000]设置一个往你面对的方向走一千格距离的目标。
+
+	[path]行动。设定目标后需要这个指令才能动起来。
+
+	[invert]远离目标，会使你离目标越来越远。
+
+	[goal]将当前位置设定为目标地点（比如你离开之后就可以用[path]准确回来了）
+
+	[goal x y z]或[goal x z]或[goal y]设置目标为一个给定的坐标
+
+	[goal clear]清除之前设置的目标地点
+
+	[goto x y z]或[goto x z]或[goto y]立即前往给定的坐标。这个指令相当于[goal]和[path]二合一了
+
+	[cancel]或[stop]终止当前行动
+
+	[pause]暂停当前行动（和终止不同，暂停还能继续，终止就完全结束了）
+
+	[resume]继续之前暂停的行动
+
+	[goto 方块]前往最近的给定的方块。比如[goto portal]，是前往最近的传送门。[goto ender_chest]，是寻找最近的末影箱。注意参数必须是方块类型，比如你去找小麦种子或者钻石剑，他就会报错
+
+	[mine 方块]重点功能！采集给定的方块。我之前的文章中mine翻译成采矿，但其实只要是属于方块类型都可以开采，不仅仅包含矿物。例如，你可以[mine diamond_ore]，自动挖钻石矿；也可以[mine bubble_ore]，自动采集珊瑚。如果对采集数量有要求，就在方块前面加上数字，[mine 数量 方块]，比如采集64个钻石矿，就是[mine 64 diamond_ore]。在服务器里使用这功能一般都是作弊的，但咱又不想自己动手，怎么办呢？这时候打开采集限制功能，[legitMine true]，这时候你只能挖眼前能看到的东西，挖出来的矿道形状就像你在随机挖掘，就掩盖作弊嫌疑了**。
+
+	[click]赋予鼠标指令功能。这时候左键单击方块，你就会站进方块里面；右键单击方块，就会站到方块上面，相当于不用wasd控制人物，而是鼠标点哪里就可以去哪里。鼠标左键按住并拖拽相当于[sel]功能，选出一定的范围。
+
+	[sel]系列功能。重要功能！用于选定区域和对选定区域的处理。配合灵魂出窍比较好用，[sel 1][sel 2]可以通过选定两顶点框定一个长方体区域，其中选定一点时该点为玩家本人所在的位置。也可以指定坐标，如[sel 1 x y z]。[sel clear]取消选区。[sel set/fill 指定方块]将选区内填充满指定方块，如果选区内原来有非指定方块占位的话会挖掉再放指定方块。[sel replace 被替换方块 指定方块]，将区域内被替换方块替换成指定方块。[sel cleararea]清空这片选区，就是把这片区域挖空。此外还有好多功能，大家可以在游戏里查看。
+
+	[follow player 玩家姓名]跟随指定玩家。[follow players]跟随指定范围内的任意玩家（一般和杀戮光环功能配合使用=-=效果你懂得）。[follow entity 生物种类]，跟随指定种类的生物。[follow entities]跟随任意生物。
+
+	[wp]路径点功能。[wp s/save 名称]建立名为指定名称的路径点，[wp goto 名称]前往给定名称的路径点。感觉这个功能挺实用的，还可以分类贴标签等等，更多功能可以用[help wp]在游戏里看。
+
+	[build]系列功能，重点功能！根据工程文件自动建筑。首先你要有一个工程文件（文件后缀为.schematic），并且该文件放在schematic文件夹中，才能让Baritone机器人自动帮你建筑。工程文件可以用一些软件导出，我记得的好像有mcedit、创世神。[build 文件名]就可以开始建造了，建造的建筑以你所处位置为基点。你也可以[build 文件名x y z]手动设置基点。关于自动建筑有很多地方需要自己配置，比如建筑从上往下还是从下往上等等，具体配置可以看我的另一篇文章baritone的进阶配置。
+
+	[schematica]建造已经打开的工程文件
+
+	[tunnel]挖掘隧道，默认一个宽两个高（刚好容一个steve通过）。[tunnel 高度 宽度 长度]可以挖掘自定义长宽高的隧道（其实就是个长方体了）。注意某些必要情况下挖掘的隧道可能会偏移直线，比如为了避开岩浆。
+
+	[farm]自动收获、种植作物，或者用骨粉催熟作物。[farm 范围半径]收货指定范围内的农作物。
+
+	[explore x z]从给定坐标处向最近的没去过的区块探图，没给坐标就默认从玩家当前位置开始探。
+
+	[come]一般配合灵魂出窍使用，让机器人前往你当前灵魂出窍所在位置
+
+	[blacklist]在行动时使用，排除最近的目标。比如现在一个传送门离你100格远，一个传送门离你500格远，你用[goto portal]前往传送门。则使用[blacklist]会把离你最近的100格的传人门排除掉，而是前往500格远的那个。
+
+	[find]寻找方块。（简单但实用的功能）
+
+	[surface]或[top]前往表面，一般在洞穴里回地表的时候很实用
+}
+baritone设置文档{
+	AllowBreak	允许破坏
+    AllowSprint	允许疾跑
+    AllowPlace	允许放置
+    AllowInventory	允许背包
+    AssumeExternalautotool	假设自动工具
+    DisableAutotool	禁用自动工具
+    AllowWaterbucketfall	允许落地水桶
+    AssumeWalkonwater	假设水上行走
+    AssumeWalkonlava	假设岩浆行走
+    AssumeStep	假设台阶 
+    AssumeSafewalk	假设安全行走
+    AllowJumpat256	允许在256格时跳跃
+    AllowParkourascend	允许跑酷登高
+    AllowDiagonaldescend	允许对角线下降
+    AllowDiagonalascend	允许对角线上升
+    Allowdownward	允许直接挖脚下方块
+    BuildIgnoreExisting	建造忽视存在
+    Avoidupdatingfallingblocks	避免更新掉落方块
+    Allowvines	允许藤蔓
+    AllowwalkBottomslab	允许走台阶
+    Allowparkour	允许跑酷
+    Allowparkourplace	允许跑酷放置
+    Considerpotioneffects	考虑药水效果
+    Sprintascends	疾跑跳跃
+    Overshoottraverse	?超过
+    Pauseminingforfallingblocks	暂停挖 等待掉落方块
+    Avoidance	避免暴力
+    RightclickContaineronarrival	到达时右键容器
+    Enterportal	进入传送门
+    minimumImprovementRepropagation	?最小改进复制
+    Cutoffatloadboundary	在区块边界截断(路径
+    Allowovershootdiagonaldescend	允许穿过对角线下降
+    simplifyUnloadedYCoord	简单的不加载Y坐标
+    Repackonanyblockchange	当区块更新时重新打包
+    Slowpath	慢路径
+    ChunkCaching	区块缓存
+    PruneregionsfromRAM	保存时删除内存中的一些区块
+    Containermemory	记住容器
+    Backfill	填充背后
+    Logastoast	显示日志
+    Chatdebug	聊天栏调试
+    Chatcontrol	聊天栏控制
+    Chatcontrolanyway	聊天栏控制
+    Renderpath	渲染路径
+    Renderpathasline	渲染路径为线
+    Rendergoal	渲染目标
+    RenderselectionBoxes	渲染选择框
+    RenderGoalIgnoreDepth	渲染忽略深度
+    RenderGoalXZBeacon	渲染XZ坐标为信标效果
+    RenderSelectionBoxesIgnoreDepth	渲染选择框时忽略深度
+    RenderPathIgnoreDepth	渲染路径时忽略深度
+    Fadepath	路径逐渐消失
+    Freelook	自由视角
+    AnticheatCompatibility	和谐反作弊
+    PathThroughcachedonly	路径只通过缓存绘制
+    Sprintinwater	水中疾跑
+    BlacklistclosestonFailure	将最近失败的区块加入黑名单
+    Rendercachedchunks	渲染缓存的区块
+    PrefixControl	前缀控制
+    Shortbaritoneprefix	短B前缀
+    Echocommand	回显命令
+    Censorcoordinates	坐标传感器
+    Censorrancommands	检查运行命令(的参数
+    Prefersilktouch	优先使用精准采集
+    WalkWhileBreaking	破坏时也走路
+    Splicepath	拼接路径
+    Allowonlyexposedores	只允许挖裸露的矿石
+    Exploreforblocks	允许探索设定的方块
+    Replantcrops	重新种植作物
+    Replantnetherwart	重新种植地狱疣
+    Extendcacheonthreshold	扩展缓存保留
+    BuildInLayers	建筑分层
+    Layerorder	建筑层顺序
+    SkipfailedLayers	跳过失败层
+    Breakfromabove	在建筑时允许破坏脚下方块
+    Goalbreakfromabove	从上方破坏目标
+    Mapartmode	艺术地图模式
+    OkIfWater	不走水
+    Schematicorientationx	示意图取X
+    Schematicorientationy	示意图取Y
+    Schematicorientationz	示意图取Z
+    Minescandroppeditems	挖矿时考虑丢掉方块
+    Distancetrim	修剪远距离
+    CancelOnGoalInvalidation	更改目标后取消当前路径
+    Disconnectonarrival	旅途结束后断开服务器连接
+    Legitmine	合法(noxray)挖矿石
+    LegitMineIncludeDiagonals	合法挖包括对角线
+    Forceinternalmining	强制内部挖掘
+    Internalminingairexception	内部挖掘空气例外
+    DisableCompletioncheck	禁用完成检查
+    Verbosecommandexceptions	详细命令例外
+    RenderSelection	渲染选择
+    RenderSelectionIgnoreDepth	渲染选择忽视深度
+    RenderSelectionCorners	渲染选择角
+    Desktopnotifications	桌面通知
+    NotificationonpathComplete	桌面通知路径完成
+    Notificationonfarmfail	桌面通知种地失败
+    Notificationonbuildfinished	桌面通知建筑完成
+    Notificationonexplorefinished	桌面通知探索完成
+    Notificationonminefail	桌面通知挖矿失败
+    Numbers栏
+    Blockplacementpenalty	方块放置惩罚
+    Blockbreakadditionalpenalty	方块挖掘额外惩罚
+    Jumppenalty	跳跃惩罚
+    Walkonwateronepenalty	水中行走惩罚
+    Randomlooking113 随机寻找
+    BlocReachdistance	区块触及距离
+    BacktrackCostfavoringCoefficient	反向追踪偏好系数
+    MobspawneravoidanceCoefficient	回避刷怪笼系数
+    Mobavoidancecoefficient	回避怪物系数
+    MaxCostincrease	最大系数
+    PathCutofffactor	静态截止系数
+    Pathingmaploadfactor	路径映射负载系数
+    PathRenderlinewidthpixels	路径渲染的像素宽度
+    Goalrenderlinewidthpixels	目标渲染的像素宽度
+    Cachedchunksopacity	缓存区块数量
+    Breakcorrectblockpenaltymultiplier	破坏正确方块惩罚系数
+    Followoffsetdistance	跟随路径距离
+    Followoffsetdirection	跟随路径方向
+    Ylevelboxsize	目标Y值选框大小
+    Selectionopacity	选择的线宽透明度
+    Selectionlinewidth	选择的目标线宽
+    以下设置为整体数值 	
+    Rightclickspeed	右键速度
+    PathingmaxchunkBorderfetch	路径最大边界获取
+    Mobspawneravoidanceradius	刷怪笼回避半径
+    MobavoidanceRadius	怪物回避半径
+    Costverificationlookahead	成本验证预测
+    PathCutoffminimumlength	路径截止最小长度
+    PlanningtickLookahead	计划下一路径延迟
+    Pathingmapdefaultsize	路径映射错误大小
+    Maxfallheightnowater	最大摔落无水高度
+    MaxfallheightBucket	最大落地水桶高度
+    Movementtimeoutticks	移动超时延迟
+    PrimaryTimeouts	主要超时
+    FailureTimeoutms	故障超时
+    PlanaheadprimaryTimeoutms	提前计划超时
+    PlanaheadFailureTimeoutms	提前计划失败超时
+    Slowpathtimedelayms	慢路径时间延迟/毫秒
+    Slowpathtimeoutms	慢路径超时延迟/毫秒
+    Toasttime	消息提示框时间
+    Maxpathhistorylength	最大历史路径长度
+    Pathhistorycutoffamount	切断历史路径数量
+    Minegoalupdatelnterval	挖掘目标更新间隔
+    Maxcachedworldscancount	最大扫描世界缓存数
+    Min Y Levelwhilemining	挖掘Y坐标的最小值
+    Allowonlyexposedoresdistance	仅允许暴露矿石 的距离
+    WorldexploringChunkoffset	世界探索区块偏移
+    ExploreChunksetminimumsize	探索区块最小大小
+    Exploremaintainy	探索维护
+    Startatlayer	从(值)层开始
+    Buildrepeatcount	重复建造次数
+    Incorrectsize	正确尺寸
+    BuildertickscanRadius	建筑每tick扫描半径
+    Minedroploiterdurationms	挖掘矿石后延迟(值)毫秒
+    Axisheight	轴线高度
+    LegitmineyLevel	合法挖矿层数
+    Followradius	跟随半径
+    Cachedchunksexpiryseconds	缓存区块并删除
+    以下设置为颜色	
+    Colorcurrentpath	循环路径颜色
+    Colornextpath	下一个路径颜色
+    Colorblockstobreak	要打破的方块的颜色
+    Colorblockstoplace	要放置的方块的颜色
+    Colorblockstowalkinto	要走近的方块的颜色
+    ColorbestpathSofar	目前最佳路径的颜色
+    Colormostrecentconside	考虑最近节点路径的颜色
+    Colorgoalbox	目标方块的颜色
+    Colorinvertedgoalbox	目标方块颠倒颜色
+    Colorselection	选框颜色
+    Colorselectionpos1	选点1颜色
+    Colorselectionpos2	选点2颜色
+}
+
+/give @s minecraft:player_head{SkullOwner:"玩家ID"}     ---获得玩家头
+https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
+
+/summon minecraft:lightning_bolt        ---生成闪电
+/title Yao_Tang title "awa"       ---弹幕白字awa
+/spreadplayers 172 90 4000 8000 false @p    ---命令方块 随机传送
+点击告示牌 随机传送{
+	/give @p minecraft:oak_sign{BlockEntityTag:{Text1:"[{\"text\":\"[冒险]\",\"color\":\"aqua\",\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]",Text2:"[{\"text\":\"点我随机传送\",\"color\":\"aqua\",\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/spreadplayers 115 -842 10000 10000 false @s\"}}]",Text3:"[{\"text\":\"\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]",Text4:"[{\"text\":\"\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]"}} 1
+}
+
+[Worldguard区域保护插件]
+/region define 区域名 所有者   ---创建受保护的区域
+/rg addowner 区域名 ID  ---worldguard区域 添加区域内白名单
+
+/give @p minecraft:elytra{Unbreakable:1b} 1      ---无法破坏的翅膀
+/give @p minecraft:diamond_pickaxe{Unbreakable:1b} 1      ---无法破坏的钻石镐
+/give @p minecraft:netherite_shovel{Unbreakable:1b} 1      ---无法破坏的合金铲
+/give @p minecraft:splash_potion{CustomPotionEffects:[{Id:1,Amplifier:100,Duration:1000000}]} 1     ---给予速度2020%无限时间喷溅药水
+
+粒子效果ID:https://minecraft.fandom.com/zh/wiki/%E7%B2%92%E5%AD%90
+/execute as Yao_Tang at @s run particle glow ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a            ---绿灰星星的Yao_Tang
+/execute as Yao_Tang at @s run particle electric_spark ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a    ---白色星星的Yao_Tang
+/execute as Yao_Tang at @s run particle cloud ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a               ---冒爆炸烟的Yao_Tang
+/execute as Yao_Tang at @s run particle campfire_cosy_smoke ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a    ---冒烟的Yao_Tang
+/execute as Yao_Tang at @s run particle item snow ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a    ---脚下有雪的粒子特效
+/particle minecraft:flame ~ ~ ~ 20 0.1 20 0.0001 300 force @a    ---火焰散布粒子效果
+/particle minecraft:heart ~ ~ ~ 10 10 10 200 100000      ---爱心爆炸
+/particle minecraft:flame ~ ~3 ~ .125 .125 .125 1 1000 force      ---火焰球形散布
+/particle minecraft:dripping_water 685 153.3 -75 0 0 0 1 100 force    ---滴水水龙头（淋浴）
+/particle minecraft:flame ~ ~1 ~ 3 0 0 .2 0    ---粒子运动 以0.2的速度向x坐标运动
+/particle minecraft:flame ~ ~1 ~ 3 0 3 .2 5    ---粒子运动 随机方向以0.2的速度运动
+/particle minecraft:end_rod ~ ~10 ~ 10 0 10 0 100     ---星星天花板
+/particle minecraft:note ~ ~3 ~ 2 2 2 0 2      ---音符
+
+/title Yao_Tang title ["",{"text":"qwqqwqwqwqwq","color":"red","bold":"true"},{"text":"qwqwqwqwq","color":"yellow","italic":"true"}]
+---彩字屏幕
+/title Yao_Tang title ["",{"text":"wwwww","color":"red","bold":"true"},{"text":" rua~❤","color":"yellow","italic":"true","bold":"true"}]
+---红黄字幕
+
+[ServerNBT插件]
+{Count:1b,id:"minecraft:name_tag",tag:{display:{Name:'{"text":"牧师","color":"dark_aqua","bold":"true"}'}}}   ---命名牌粗体颜色字{NBT}
+{Count:1b,id:"minecraft:name_tag",tag:{display:{Name:'{"text":"awdvawr","obfuscated":true}'}}}    ---命名牌乱码(使用前请先给命名牌命名)
+
+[音乐音效]
+/execute at @a run playsound minecraft:ambient.basalt_deltas.loop voice @a ~ ~ ~ 100   ---频噪
+/execute at @a run playsound minecraft:ambient.cave voice @a ~ ~ ~ 100    ---车站 墓地
+/execute at @a run playsound minecraft:ambient.underwater.loop.additions.rare voice @a ~ ~ ~ 1000    ---下水道
+/execute at @a run playsound minecraft:ambient.warped_forest.additions voice @a ~ ~ ~ 100    ---鬼魂 鬼群 灵堂
+/execute at @a run playsound minecraft:music_disc.5 voice @a ~ ~ ~ 100    ---音乐disc.5
+
+[Execute]
+/execute as @e[type=snowball] at @s run summon lightning_bolt ~ ~ ~               ---雷电雪球（雪球抛物线持续生成闪电）
+/execute as @e[type=cow] at @s run summon lightning_bolt ~ ~ ~                   ---雷击全图牛
+/execute as @e[type=minecraft:zombie] at @s run summon lightning_bolt ~ ~ ~     ---雷击全图僵尸
+/execute as zhx201933 at @s run summon lightning_bolt ~ ~ ~                    ---电人
+/execute at Life_candy run summon minecraft:lightning_bolt                    ---电人
+/execute as Yao_Tang at @s run summon experience_bottle ~ ~ ~                ---生成跟踪Yao_Tang的经验瓶
+/execute as @e[type=snowball] at @s unless block ~ ~-1 ~ air run summon tnt ~ ~ ~     ---该实体直接爆炸
+/execute as KennethLiu at @s run particle cloud ~ ~ ~ 1 1 1 0 999999999 normal @a         ---崩CPU
+
+/advancement grant @a everything    ---获得全进度
+/advancement revoke @a everything   ---删除全进度
+
+NBT格式化颜色:[{"color":"yellow"},{"常用为技术性名称"}] 参考：https://minecraft.fandom.com/zh/wiki/%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BB%A3%E7%A0%81
+
+[Team团队-称号]
+/team add MidnightField "MidnightField"
+/team modify MidnightField prefix {"text":"[午夜の领域] ","color":"gold","bold":"true"}  给予MidnightField队伍前面标签显示
+/team modify MidnightField suffix {"text":" [队伍]","color":"dark_red","bold":"true"}   给予MidnightField队伍后面标签显示
+/team join MidnightField ID       ---让ID加入MidnightField队伍
+/team leave ID         ---踢出ID
+/team modify MidnightField color red      ---将MidnightField队伍的玩家名字颜色设置为红
+/team modify MidnightField friendlyFire false       ---关闭队伍的PVP
+
+[Scoreboard记分板]
+/scoreboard objectives add hp health ["hp"]  ---新建生命值 hp 记分板
+/scoreboard objectives setdisplay list hp    ---显示在TAB
+
+/scoreboard objectives add dgb deathCount ["呆瓜榜"]  ---新建阵亡次数 dgb 记分板
+/scoreboard objectives setdisplay sidebar dgb        ---显示在屏幕右侧
+
+[Debug]
+F3+A：重新加载所有区块。
+F3+B：打开或关闭显示实体的碰撞箱。同时显示实体的朝向。
+F3+C：以execute in ''维度'' run tp的形式复制玩家当前的坐标及旋转角度。
+按住F3+C10秒会导致调试性的游戏崩溃，并生成Minecraft崩溃报告。
+按住key|Ctrl+F3+C10秒会强制Java虚拟机崩溃，生成虚拟机崩溃报告，而不是常规的Minecraft崩溃报告。然而，对于某些键盘，它只能使用右侧Ctrl触发，而使用左侧只会产生普通的崩溃。
+一些键盘可能不允许同时按下F3+C（可能是因为它们在同一竖列中）
+F3+D：清除聊天记录（包括之前输入的信息和命令）（Java版1.11后，玩家仍可通过上下方向键查看输入过的命令和信息）。
+F3+G：打开或关闭显示玩家周边区块的边界。
+F3+H：打开或关闭显示物品栏中物品的ID、工具的耐久度、盔甲的颜色值和地图的放大尺寸。
+F3+I：将玩家注视的方块/实体的数据复制到粘贴板。
+F3+L：生成、保存性能分析数据。
+F3+N：在上一个游戏模式与旁观模式间切换。（在1.15及以下的版本中，则是在创造模式与旁观模式间切换。）
+F3+P：开启或关闭Minecraft失去窗口焦点时的自动暂停功能。
+F3+Q：显示所有F3 + 按键的组合键。
+F3+T：重新加载纹理、模型、声音及所有其他资源包内容。
+F3+F4：打开游戏模式切换器。按住F3并多次按F4，玩家选定的游戏模式可以在四种游戏模式间循环。松开F3即载入选定的游戏模式。
+shift+F3：打开含有性能评测图表的调试屏幕。
+Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Alt+F3同时打开两个图表）
+
+[item]
+箱子的第一格为container.0
+命令/replaceitem在1.17后更改为/item 语法被更改
+/item replace entity @s weapon.offhand with minecraft:shield{BlockEntityTag:{Base:15}} 1  ---在自己的左手生成一个黑色的盾牌
+/item replace entity Bibibishop050 armor.head with minecraft:allium    ---在玩家头上放一朵绒球葱
+/item replace entity Life_candy armor.head with minecraft:axolotl_bucket  ---在玩家头上放一个美西螈桶
+/item replace entity Tu_tuzi armor.head with minecraft:lantern      ---在玩家头上放一盏灯笼
+/item replace entity Bibibishop050 hotbar.8 with minecraft:cooked_beef 64   ---在玩家物品栏最后一格放牛排64个
+
+/item replace block ~ ~2 ~ container.26 with minecraft:spruce_sapling 4  ---将上方2格处的一个箱子右下角槽位内的物品替换成4棵云杉树苗
+/item replace entity @p hotbar.8 with minecraft:spruce_sapling 4  ---将最近玩家的快捷栏最右槽位内的物品替换成4棵云杉树苗
+/item replace block ~ ~1 ~ container.4 with minecraft:coal_block 64  ---将上方漏斗最后一格替换并放入64个煤炭块
+/item replace block ~ ~1 ~ container.4 with minecraft:blaze_powder 64 ---将上方酿造台燃料格替换并放入64个烈焰粉
+/item replace block ~ ~2 ~ container.1 with minecraft:coal_block 64  ---将上2格的烟熏炉燃料格替换并放入64个煤炭块
+/item replace block -67 116 89 container.0 with minecraft:coal_block 64  ---将指定坐标的发射器第一格替换并放入64个煤炭块
+
+游戏规则设置 - Game Rule {
+	announceAdvancements	是否在聊天框中公告玩家进度的达成.
+    blockExplosionDropDecay	由方块源（除TNT）爆炸炸毁的方块是否会有概率不掉落.
+    commandBlockOutput	命令方块执行命令时是否在聊天框中向管理员显示.
+    commandBlocksEnabled	命令方块在游戏中是否被启用.
+    disableElytraMovementCheck	是否让服务器停止检查使用鞘翅玩家的移动速度.
+    disableRaids	是否禁用袭击.
+    doDaylightCycle	是否进行昼夜更替和月相变化.
+    doEntityDrops	非生物实体是否掉落物品.
+    doFireTick	火是否蔓延及自然熄灭.
+    doImmediateRespawn	玩家死亡时是否不显示死亡界面直接重生.
+    doInsomnia	幻翼是否在夜晚生成.
+    doLimitedCrafting	玩家的合成配方是否需要解锁才能使用.
+    doMobLoot	生物在死亡时是否掉落物品.
+    doMobSpawning	生物是否自然生成.不影响刷怪笼.
+    doPatrolSpawning	控制灾厄巡逻队的生成.
+    doTileDrops	方块被破坏时是否掉落物品.
+    doTraderSpawning	控制流浪商人的生成.
+    doWardenSpawning	监守者是否生成.
+    doWeatherCycle	天气是否变化.
+    drowningDamage	玩家是否承受窒息伤害.
+    fallDamage	玩家是否承受跌落伤害.
+    fireDamage	玩家是否承受火焰伤害.
+    forgiveDeadPlayers	当被激怒的条件敌对生物的目标玩家死亡时，该生物是否恢复未激怒状态.
+    freezeDamage	玩家是否承受冰冻伤害.
+    functionCommandLimit	通过/function命令执行命令的最大数量.
+    globalSoundEvents	玩家是否能听到可无视距离播放给全部玩家的特定游戏事件音效.
+    keepInventory	玩家死亡后是否保留物品栏物品.
+    lavaSourceConversion	流动的熔岩是否可产生熔岩源.
+    logAdminCommands	是否在服务器日志中记录管理员使用过的命令.
+    maxCommandChainLength	决定了连锁型命令方块能连锁执行的总数量.
+    maxEntityCramming	玩家或生物能同时推动其他可推动实体的数量，超过此数量时将承受每半秒3（♥♥）的窒息伤害.设置成0可以停用这个规则.
+    mobExplosionDropDecay	由生物源爆炸炸毁的方块是否会有概率不掉落.
+    mobGriefing	生物是否能够进行破坏性行为及修改行为.
+    naturalRegeneration	玩家是否能在饥饿值足够时自然恢复生命值.
+    playersSleepingPercentage	设置跳过夜晚所需的入睡玩家所占百分比.设置为0时，1个玩家入睡即可跳过夜晚.设置为大于100的值会使玩家无法通过入睡跳过夜晚.
+    pvp	玩家之间能否造成伤害.
+    randomTickSpeed	每游戏刻每区段中随机的方块刻发生的频率（例如植物生长，树叶腐烂等）.为0时禁用随机刻，较高的数字将增大随机刻频率.
+    reducedDebugInfo	调试屏幕是否简化而非显示详细信息；同时影响实体碰撞箱（通过F3+B查看）和区块边界（通过F3+G查看）效果的显示.
+    respawnblocksexplode	玩家在非主世界维度使用床或在非下界维度使用重生锚时是否会爆炸.
+    sendCommandFeedback	玩家执行命令的返回信息是否在聊天框中显示.同时影响命令方块是否保存命令输出文本.
+    showBorderEffect	边界是否发出红色粒子.
+    showCoordinates	是否在聊天框区域持续实时显示玩家坐标.
+    showDeathMessages	是否在聊天框中显示玩家的死亡信息.同样影响是否在宠物（狼、猫和鹦鹉）死亡时通知它的主人.
+    showTags	是否展示物品的物品组件.
+    snowAccumulationHeight	下雪时可在一格方块空间内堆积的雪的最高层数.
+    spawnRadius	首次进入服务器的玩家和没有重生点的死亡玩家在重生时与世界重生点坐标的距离.
+    spectatorsGenerateChunks	是否允许旁观模式的玩家生成区块.
+    tntExplodes	TNT是否会爆炸.
+    tntExplosionDropDecay	由TNT爆炸炸毁的方块是否会有概率不掉落.
+    universalAnger	被激怒的条件敌对生物是否攻击附近任何玩家（而非只攻击激怒它们的玩家）.当forgiveDeadPlayers关闭时会有更好的效果.
+    waterSourceConversion	流动的水是否可产生水源.
+}
+
+自定义村民 单页买卖 NBT 修复了名字显示 NoAI{
+	/summon minecraft:villager ~ ~1 ~ {NoAI:1b,Brain:{memories:{job_site:{pos:[I;0,0,0],dimension:"minecraft:overworld"}}},Offers:{Recipes:[{maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:emerald",Count:55b},sell:{id:"techreborn:electronic_circuit",Count:1b}}]}}
+}
+自定义村民 多项买卖 NBT 腐肉商店{
+	/summon minecraft:villager ~ ~1 ~ {NoAI:1b,Brain:{memories:{job_site:{pos:[I;0,0,0],dimension:"minecraft:overworld"}}},Offers:{Recipes:[{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:rotten_flesh",Count:3b},sell:{id:"minecraft:leather",Count:5b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:leather",Count:2b},sell:{id:"minecraft:iron_ingot",Count:3b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:iron_ingot",Count:4b},sell:{id:"minecraft:gold_ingot",Count:2b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:gold_ingot",Count:10b},sell:{id:"minecraft:diamond",Count:2b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:diamond",Count:10b},sell:{id:"minecraft:enchanted_golden_apple",Count:1b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:diamond",Count:5b},sell:{id:"minecraft:emerald",Count:5b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:emerald",Count:10b},sell:{id:"minecraft:totem_of_undying",Count:1b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:stick",Count:10b},sell:{id:"minecraft:oak_log",Count:18b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:oak_planks",Count:10b},sell:{id:"minecraft:birch_planks",Count:10b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:stick",Count:1b},sell:{id:"minecraft:debug_stick",Count:1b}},{rewardExp:true,maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:emerald",Count:10b},sell:{id:"minecraft:slime_ball",Count:5b}}]}}
+}
+自定义村民 多项买卖 NBT 生存组合{
+	/summon minecraft:villager ~ ~ ~ {Profession:5,NoAI:1b,CustomName:"Trader",CustomNameVisible:1b,Offers:{Recipes:[{maxUses:9999999,buy:{id:dirt,Count:1},sell:{id:emerald,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:dirt,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:oak_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:mangrove_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:golden_carrot,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:dark_oak_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:spruce_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:iron_ingot,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:diamond,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:glass,Count:64}}]},Attributes:[{Name:"generic.maxHealth",Base:1000f}],Health:1000f}
+}
+自定义村民 多项买卖 NBT 沙漠建材 全Emer{
+	/summon minecraft:villager ~ ~ ~ {Profession:5,NoAI:1b,CustomName:"Trader",CustomNameVisible:1b,Offers:{Recipes:[{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:stone,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:grass_block,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:cut_sandstone,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:sandstone_wall,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:birch_fence_gate,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:sandstone_stairs,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:sandstone_slab,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:sandstone,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:warped_planks,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:gray_wool,Count:64}}]},Attributes:[{Name:"generic.maxHealth",Base:1000f}],Health:1000f}
+}
+自定义村民 多项买卖 NBT 18项全Emer{
+    /summon minecraft:villager ~ ~ ~ {Profession:5,NoAI:1b,CustomName:"Trader",CustomNameVisible:1b,Offers:{Recipes:[{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:grass_block,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:cobblestone,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:lapis_ore,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:oak_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:spruce_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:birch_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:dark_oak_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:mangrove_log,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:bookshelf,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:golden_carrot,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:coal_block,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:iron_ingot,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:emerald,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:firework_rocket,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:tinted_glass,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:ender_chest,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:lantern,Count:64}},{maxUses:9999999,buy:{id:emerald,Count:1},sell:{id:sugar_cane,Count:64}}]},Attributes:[{Name:"generic.maxHealth",Base:1000f}],Health:1000f}
+}
+
+属性剑 {
+	/give @p minecraft:diamond_sword{AttributeModifiers:[{Operation:0,UUIDLeast:1,UUIDMost:1,Amount:9000000000.0,AttributeName:generic.attackDamage,Name:Attack},{Operation:0,UUIDLeast:2,UUIDMost:2,Amount:9000000000.0,AttributeName:generic.knockbackResistance,Name:Knockback},{Operation:0,UUIDLeast:3,UUIDMost:3,Amount:1000.0,AttributeName:generic.followRange,Name:Follow},{Operation:0,UUIDLeast:4,UUIDMost:4,Amount:1000.0,AttributeName:generic.maxHealth,Name:Health},{Operation:0,UUIDLeast:5,UUIDMost:5,Amount:0.1,AttributeName:generic.movementSpeed,Name:Speed}]}
+}
+属性钻石鞋子{
+	/nbt Yao_Tang {Count:1b,id:"minecraft:diamond_boots",tag:{AttributeModifiers:[{Amount:9.0E9d,AttributeName:"minecraft:generic.attack_damage",Name:"Attack",Operation:0,UUID:[I;0,1,0,1]},{Amount:9.0E9d,AttributeName:"minecraft:generic.knockback_resistance",Name:"Knockback",Operation:0,UUID:[I;0,2,0,2]},{Amount:10.0d,AttributeName:"minecraft:generic.follow_range",Name:"Follow",Operation:0,UUID:[I;0,3,0,3]},{Amount:10.0d,AttributeName:"minecraft:generic.max_health",Name:"Health",Operation:0,UUID:[I;0,4,0,4]},{Amount:0.0d,AttributeName:"minecraft:generic.movement_speed",Name:"Speed",Operation:0,UUID:[I;0,5,0,5]}],Damage:0}}
+}
+
+雷电雪球execute解析 {
+	1.13+指令：/execute as @e[type=snowball] at @s run summon lightning_bolt ~ ~ ~
+	循环性命令方块，最好由拉杆控制开关
+	解析：
+	“as @e[type=snowball”：作为雪球来执行命令
+	“at @s”：执行命令的位置为雪球自己所在位置
+	“run”：执行
+	“summon lightning_bolt ~ ~ ~”
+	其中as、at和run就是子命令。@e[type=snowball]，@s和summon lightning_bolt ~ ~ ~是对象。
+	常见子命令：
+	as：作为
+	at：位于
+	facing：面向
+	in：位于哪个维度（world world_nether world_the_end）
+	run：运行
+	常见条件子命令：
+	if：如果
+	unless：除非
+}
+烈焰弓execute解析{
+	指令：/execute as @e[type=arrow] at @s run particle flame ~ ~ ~ 0.3 0.3 0.3 0 1 normal @a
+	循环性命令方块，最好由拉杆控制开关
+	particle指令解析：
+	1、“~ ~ ~”：粒子出现位置
+	2、“0.3 0.3 0.3”：粒子扩散范围
+	3、“0 1”：0是粒子飞行速度，1是粒子数量
+	4、“normal”：普通模式
+	5、“@a”：可以看到粒子的对象
+	6、“flame”：粒子类型，可以改为其他粒子，末影弓就是通过改变粒子类型为末影粒子实现的
+	注：如果没有看到粒子，可能是因为粒子效果被设置为了“最少”，在设置中更改为“全部”即可
+}
+搭桥雪球execute解析{
+	搭桥雪球
+	指令：/execute as @e[type=snowball] at @s run setblock ~ ~1 ~ stone
+	循环性命令方块，最好由拉杆控制开关
+	指令解析：
+	1、“~ ~1 ~”：方块放置位置（这里为雪球上方一格）
+	2、“stone”：方块种类，可以修改为其他方块（比如黑曜石obsidian）
+}
+熔岩行者execute解析{
+	『熔岩行者』踏上岩浆时会生成黑曜石！
+	熔岩行者I：/execute as @p at @s if block ~ ~-1 ~ lava run setblock ~ ~-1 ~ obsidian
+	熔岩行者II：/execute as @p at @s if block ~ ~-1 ~ lava run fill ~1 ~-1 ~1 ~-1 ~-1 ~-1 obsidian
+	循环性命令方块，最好由拉杆控制开关
+	指令解析：
+	1、“if block ~ ~-1 ~ lava”：如果下方的方块是岩浆
+	2、“fill”：在一个区域内填充方块
+}
+雷爆雪球execute解析{
+	『雷爆雪球』
+	原计划要做挖矿雪球，但制作过程中突然想做一个更炫酷的雪球，于是就有了雷爆雪球。
+	拖尾粒子指令：/execute as @e[type=snowball] at @s run particle item snow ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a
+	爆炸效果指令：/execute as @e[type=snowball] at @s unless block ~ ~-1 ~ air run summon tnt ~ ~ ~
+	雷电效果指令：/execute as @e[type=snowball] at @s unless block ~ ~-1 ~ air run summon lightning_bolt ~ ~ ~
+	循环性命令方块，最好由拉杆控制开关
+	“unless”：除非
+}
+
+巨型僵尸 发光 钻石甲 双剑 抗性+力量NBT组{
+    /summon minecraft:giant ~ ~1 ~ {Glowing:1b,ActiveEffects:[{Id:5,Amplifier:254,Duration:1999980},{Id:11,Amplifier:254,Duration:1999980}],HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Enchantments:[{id:"minecraft:sharpness",lvl:5s}]}},{id:"minecraft:diamond_sword",Count:1b,tag:{Enchantments:[{id:"minecraft:sharpness",lvl:5s}]}}],ArmorItems:[{id:"minecraft:diamond_boots",Count:1b},{id:"minecraft:diamond_leggings",Count:1b},{id:"minecraft:diamond_chestplate",Count:1b},{id:"minecraft:diamond_helmet",Count:1b}],HandDropChances:[0.2f,0.2f],ArmorDropChances:[0.2f,0.2f,0.2f,0.2f]}
+}
+竞技场僵尸 发光 剑盾 钻石甲 荆棘{
+    /summon minecraft:zombie ~ ~1 ~ {Glowing:1b,ActiveEffects:[{Id:5,Amplifier:254,Duration:1999980},{Id:11,Amplifier:254,Duration:1999980}],HandItems:[{id:"minecraft:golden_sword",Count:1b,tag:{Unbreakable:1b,Enchantments:[{id:"minecraft:sharpness",lvl:6s}]}},{id:"minecraft:shield",Count:1b,tag:{Unbreakable:1b,BlockEntityTag:{Base:15}}}],ArmorItems:[{id:"minecraft:diamond_boots",Count:1b},{id:"minecraft:diamond_leggings",Count:1b},{id:"minecraft:diamond_chestplate",Count:1b,tag:{Enchantments:[{id:"minecraft:thorns",lvl:5s}]}},{id:"minecraft:diamond_helmet",Count:1b}],HandDropChances:[0.2f,0.2f],ArmorDropChances:[0.2f,0.2f,0.2f,0.2f]}
+}
+
+自定义告示牌 金色[岛屿]粉色Little_H_A\Jiang_Ye\Yao_Tang{
+    give @p minecraft:crimson_sign{BlockEntityTag:{Text1:"[{\"text\":\"[岛屿]\",\"color\":\"gold\"}]",Text2:"[{\"text\":\"Little_H_A\",\"color\":\"dark_purple\"}]",Text3:"[{\"text\":\"Jiang_Ye\",\"color\":\"dark_purple\"}]",Text4:"[{\"text\":\"Yao_Tang\",\"color\":\"dark_purple\"}]"}} 1
+}
+自定义告示牌 粗体 金色Jiang_Ye\紫色Jiang_Ye{
+    give @p minecraft:oak_sign{BlockEntityTag:{Text1:"[{\"text\":\"Jiang_Ye\",\"color\":\"gold\",\"bold\":\"true\"}]",Text2:"[{\"text\":\"Jiang_Ye\",\"color\":\"dark_purple\",\"bold\":\"true\"}]"}} 1
+}
+自定义告示牌 四行黑色Jiang_Ye{
+    give @p minecraft:oak_sign{BlockEntityTag:{Text1:"[{\"text\":\"Jiang_Ye\"}]",Text2:"[{\"text\":\"Jiang_Ye\"}]",Text3:"[{\"text\":\"Jiang_Ye\"}]",Text4:"[{\"text\":\"Jiang_Ye\"}]"}} 1
+}
+
+将文字发到公屏 点击后运行/kill{
+    /tellraw @a [{"text":" 打开聊天栏点我可以获得创造","color":"gold","bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"clickEvent":{"action":"run_command","value":"/kill"}}]
+}
+将文字发到公屏 点击后获得橡木{
+    /tellraw @a [{"text":"打开聊天栏点我可以获得木头","color":"gold","bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"clickEvent":{"action":"run_command","value":"/give @s oak_log"}}]
+}
+将文字发到公屏 点击后获得夜视{
+    /tellraw @a [{"text":"打开聊天栏点我获得夜视","color":"gold","bold":false,"italic":false,"underlined":false,"strikethrough":false,"obfuscated":false,"clickEvent":{"action":"run_command","value":"/effect give @s minecraft:night_vision 60 255"}}]
+}
+将文字发到公屏 随机选择玩家 在公屏说你今天真好看{
+    /tellraw @a [{"selector":"@r","color":"gold","bold":true,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false},{"text":" 你今天真好看！","color":"aqua","bold":true,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"hoverEvent":{"action":"show_text","value":"来自喵酱"}}]
+}
+
+生成折跃门到达坐标 传送门 折跃{
+    /setblock ~ ~ ~ minecraft:end_gateway{Age:200,ExitPortal:{X:462,Y:71,Z:2165},ExactTeleport:1b} replace
+}
+
+一个锁住的箱子 需要拿特定命名的物品才能打开{
+    /give @p minecraft:chest{BlockEntityTag:{CustomName:"{\"text\":\"江野的箱子\"}",Lock:"1234"}} 1
+}
+
+极速 加速 盾牌{
+    /give @p minecraft:shield{AttributeModifiers:[{Operation:0,Amount:0.5,UUIDLeast:-1434659542878949836L,UUIDMost:2211351245752727643L,AttributeName:"generic.movementSpeed",Name:"generic.movementSpeed"},{Operation:0,Amount:999,UUIDLeast:-1166482647341553411L,UUIDMost:2747689813565272941L,AttributeName:"generic.knockbackResistance",Name:"generic.knockbackResistance"},{Operation:0,Amount:999,UUIDLeast:-1374989287557617652L,UUIDMost:2169693966411489215L,AttributeName:"generic.armor",Name:"generic.armor"},{Operation:0,Amount:5,UUIDLeast:-1268241961146356781L,UUIDMost:2743757257867122832L,AttributeName:"generic.reachDistance",Name:"generic.reachDistance"}],display:{Name:"[{\"text\":\"冲击盾\",\"color\":\"red\",\"bold\":true,\"italic\":true,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]",Lore:["{\"text\":\"装甲板\",\"color\":\"red\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}"]},BlockEntityTag:{Base:1}} 1
+}
+满燃料的熔炉{
+    /give @p minecraft:furnace{BlockEntityTag:{BurnTime:1000000,CookTimeTotal:1,Items:[{id:"minecraft:air",Count:1b,Slot:1b}]}} 1
+}
+生成 经验球{
+    /summon minecraft:experience_orb ~ ~1 ~ {Value:500}
+}
+狂跑的 盔甲架{
+    /summon minecraft:armor_stand ~ ~1 ~ {ShowArms:1,Rotation:[0f],Pose:{Head:[0f,0f,0f],Body:[0f,0f,0f],LeftArm:[-149f,0f,0f],RightArm:[114f,0f,0f],LeftLeg:[46f,0f,0f],RightLeg:[-80f,0f,0f]}}
+}
+无法破坏的 钻石镐 MOJANG签名 加最大生命{
+    /give @p minecraft:diamond_pickaxe{Unbreakable:1b,display:{Name:"[\"无法破坏的镐子\"]",Lore:["[\"MOJANG\"]"]},AttributeModifiers:[{AttributeName:"generic.max_health",Name:"noName",Amount:0.01d,Operation:0,UUID:[I;8934,4865,8994,9328],Slot:mainhand}]} 1
+}
+物品的 主标签 和 副标签{
+    /give @p minecraft:wooden_axe{display:{Name:"[\"小木斧\"]",Lore:["[\"世界由你来改变\"]"]}} 1
+}
+无法破坏的 白色足力健 加速度{
+    /give @p minecraft:leather_boots{Unbreakable:1b,display:{Name:"[\"足力健\"]",color:15660533},AttributeModifiers:[{AttributeName:"generic.movement_speed",Name:"noName",Amount:0.05d,Operation:0,UUID:[I;8262,6277,5898,1237],Slot:feet}]} 1
+}
+
+生成一只 100% 掉落钻石的羊{
+    /summon minecraft:sheep ~ ~1 ~ {HandItems:[{id:"minecraft:diamond",Count:64b},{}],HandDropChances:[1f,0.0f],Color:0}
+}
+生成一只 50% 掉落钻石的羊{
+    /summon minecraft:sheep ~ ~1 ~ {HandItems:[{id:"minecraft:diamond",Count:64b},{}],HandDropChances:[0.5f,0.0f],Color:0}
+}
+生成一只 25% 掉落绿宝石的羊{
+    /summon minecraft:sheep ~ ~1 ~ {HandItems:[{id:"minecraft:emerald",Count:64b},{}],HandDropChances:[0.25f,0.0f],Color:0}
+}
+
+普通装备箱{
+    /give @r minecraft:chest{display:{Name:"[{\"text\":\"初始装备-近战\",\"color\":\"gold\",\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]"},BlockEntityTag:{CustomName:"{\"text\":\"初始装备\"}",Items:[{id:"minecraft:diamond_helmet",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:4s}]},Slot:0b},{id:"minecraft:diamond_chestplate",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:4s}]},Slot:1b},{id:"minecraft:diamond_leggings",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:4s}]},Slot:2b},{id:"minecraft:diamond_boots",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:4s}]},Slot:3b},{id:"minecraft:diamond_sword",Count:1b,tag:{Unbreakable:1b},Slot:4b},{id:"minecraft:diamond_pickaxe",Count:1b,tag:{Unbreakable:1b},Slot:5b},{id:"minecraft:diamond_axe",Count:1b,tag:{Unbreakable:1b},Slot:6b},{id:"minecraft:golden_apple",Count:64b,Slot:7b},{id:"minecraft:golden_apple",Count:64b,Slot:8b},{id:"minecraft:end_crystal",Count:64b,Slot:9b},{id:"minecraft:end_crystal",Count:64b,Slot:10b},{id:"minecraft:end_crystal",Count:64b,Slot:11b},{id:"minecraft:end_crystal",Count:64b,Slot:12b},{id:"minecraft:end_crystal",Count:64b,Slot:13b},{id:"minecraft:end_crystal",Count:64b,Slot:14b},{id:"minecraft:end_crystal",Count:64b,Slot:15b},{id:"minecraft:end_crystal",Count:64b,Slot:16b},{id:"minecraft:end_crystal",Count:64b,Slot:17b},{id:"minecraft:obsidian",Count:64b,Slot:18b},{id:"minecraft:obsidian",Count:64b,Slot:19b},{id:"minecraft:obsidian",Count:64b,Slot:20b},{id:"minecraft:obsidian",Count:64b,Slot:21b},{id:"minecraft:obsidian",Count:64b,Slot:22b},{id:"minecraft:obsidian",Count:64b,Slot:23b},{id:"minecraft:obsidian",Count:64b,Slot:24b},{id:"minecraft:obsidian",Count:64b,Slot:25b},{id:"minecraft:obsidian",Count:64b,Slot:26b}]}} 1
+}
+32k{
+    /give @p minecraft:diamond_axe{Unbreakable:1b,display:{Name:"[\"32k\"]",Lore:["[\"MOJANG17\"]"]},Enchantments:[{id:"minecraft:sharpness",lvl:32767s},{id:"minecraft:smite",lvl:32767s},{id:"minecraft:bane_of_arthropods",lvl:32767s},{id:"minecraft:knockback",lvl:32767s},{id:"minecraft:fire_aspect",lvl:32767s},{id:"minecraft:looting",lvl:10s},{id:"minecraft:sweeping",lvl:32767s},{id:"minecraft:efficiency",lvl:32767s},{id:"minecraft:silk_touch",lvl:32767s},{id:"minecraft:fortune",lvl:32767s},{id:"minecraft:power",lvl:32767s},{id:"minecraft:punch",lvl:32767s},{id:"minecraft:loyalty",lvl:32767s},{id:"minecraft:impaling",lvl:32767s},{id:"minecraft:piercing",lvl:32767s}],AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"TK",Amount:99999d,Operation:0,UUID:[I;7722,5216,6728,8541],Slot:mainhand},{AttributeName:"generic.attack_speed",Name:"TKSEP",Amount:2d,Operation:0,UUID:[I;3258,3541,8943,7555],Slot:mainhand},{AttributeName:"generic.max_health",Name:"HP",Amount:0.5d,Operation:0,UUID:[I;2131,3198,7386,8893],Slot:mainhand},{AttributeName:"generic.knockback_resistance",Name:"NK",Amount:9999d,Operation:0,UUID:[I;7698,7573,7534,6759],Slot:mainhand},{AttributeName:"generic.follow_range",Name:"DIF",Amount:5d,Operation:0,UUID:[I;4361,8257,7938,7848],Slot:mainhand},{AttributeName:"generic.armor",Name:"AC",Amount:9999d,Operation:0,UUID:[I;6257,1394,5366,4896],Slot:mainhand},{AttributeName:"generic.armor_toughness",Name:"ACE",Amount:9999d,Operation:0,UUID:[I;3445,8698,3823,2963],Slot:mainhand}],CanDestroy:["obsidian","bedrock","end_crystal","dragon_head","player_head","water_bucket","grass_block"]} 1
+}
+
+拿32k武器的僵尸{
+    /summon minecraft:zombie ~ ~1 ~ {HandItems:[{id:"minecraft:diamond_axe",Count:1b,tag:{Enchantments:[{id:"minecraft:sharpness",lvl:32767s},{id:"minecraft:smite",lvl:32767s},{id:"minecraft:bane_of_arthropods",lvl:32767s},{id:"minecraft:knockback",lvl:32767s},{id:"minecraft:fire_aspect",lvl:32767s},{id:"minecraft:looting",lvl:10s},{id:"minecraft:sweeping",lvl:32767s},{id:"minecraft:efficiency",lvl:32767s},{id:"minecraft:silk_touch",lvl:32767s},{id:"minecraft:fortune",lvl:32767s},{id:"minecraft:power",lvl:32767s},{id:"minecraft:punch",lvl:32767s},{id:"minecraft:loyalty",lvl:32767s},{id:"minecraft:impaling",lvl:32767s},{id:"minecraft:piercing",lvl:32767s}],AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"TK",Amount:99999d,Operation:0,UUID:[I;7722,5216,6728,8541],Slot:mainhand},{AttributeName:"generic.attack_speed",Name:"TKSEP",Amount:2d,Operation:0,UUID:[I;3258,3541,8943,7555],Slot:mainhand},{AttributeName:"generic.max_health",Name:"HP",Amount:9999999d,Operation:0,UUID:[I;2131,3198,7386,8893],Slot:mainhand},{AttributeName:"generic.knockback_resistance",Name:"NK",Amount:9999d,Operation:0,UUID:[I;7698,7573,7534,6759],Slot:mainhand},{AttributeName:"generic.follow_range",Name:"DIF",Amount:5d,Operation:0,UUID:[I;4361,8257,7938,7848],Slot:mainhand},{AttributeName:"generic.attack_speed",Name:"noName",Amount:99999d,Operation:0,UUID:[I;4743,4527,1374,2692],Slot:mainhand},{AttributeName:"generic.armor",Name:"AC",Amount:9999d,Operation:0,UUID:[I;6257,1394,5366,4896],Slot:mainhand},{AttributeName:"generic.armor_toughness",Name:"ACE",Amount:9999d,Operation:0,UUID:[I;3445,8698,3823,2963],Slot:mainhand}],CanDestroy:["obsidian","bedrock","end_crystal","dragon_head","player_head","water_bucket","grass_block"]}}]}
+}
+骑着僵尸的小白 附魔弓 四连发{
+    /summon minecraft:zombie ~ ~1 ~ {Passengers:[{ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:8,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:10,Amplifier:19,Duration:1999980},{Id:11,Amplifier:19,Duration:1999980},{Id:22,Amplifier:19,Duration:1999980}],HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}},{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}}],id:"minecraft:skeleton"},{ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:8,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:10,Amplifier:19,Duration:1999980},{Id:11,Amplifier:19,Duration:1999980},{Id:22,Amplifier:19,Duration:1999980}],HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}},{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}}],id:"minecraft:skeleton"},{ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:8,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:10,Amplifier:19,Duration:1999980},{Id:11,Amplifier:19,Duration:1999980},{Id:22,Amplifier:19,Duration:1999980}],HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}},{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}}],id:"minecraft:skeleton"},{ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:8,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:10,Amplifier:19,Duration:1999980},{Id:11,Amplifier:19,Duration:1999980},{Id:22,Amplifier:19,Duration:1999980}],HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}},{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}}],id:"minecraft:skeleton"},{ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:8,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:10,Amplifier:19,Duration:1999980},{Id:11,Amplifier:19,Duration:1999980},{Id:22,Amplifier:19,Duration:1999980}],HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}},{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}}],id:"minecraft:skeleton"}],ActiveEffects:[{Id:11,Amplifier:254,Duration:1999980},{Id:10,Amplifier:254,Duration:1999980},{Id:21,Amplifier:254,Duration:1999980}]}
+}
+骑着小僵尸的小白 附魔弓 四连发 守卫者{
+    /summon minecraft:zombie ~ ~1 ~ {Passengers:[{Passengers:[{id:"minecraft:elder_guardian"}],ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:8,Amplifier:2,Duration:1999980},{Id:10,Amplifier:254,Duration:1999980},{Id:11,Amplifier:254,Duration:1999980},{Id:12,Amplifier:254,Duration:1999980},{Id:22,Amplifier:254,Duration:1999980}],HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:flame",lvl:255s},{id:"minecraft:knockback",lvl:50s},{id:"minecraft:power",lvl:50s},{id:"minecraft:punch",lvl:100s}]}},{}],id:"minecraft:skeleton"},{Passengers:[{id:"minecraft:elder_guardian"}],ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:8,Amplifier:2,Duration:1999980},{Id:10,Amplifier:254,Duration:1999980},{Id:11,Amplifier:254,Duration:1999980},{Id:12,Amplifier:254,Duration:1999980},{Id:22,Amplifier:254,Duration:1999980}],HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:flame",lvl:255s},{id:"minecraft:knockback",lvl:50s},{id:"minecraft:power",lvl:50s},{id:"minecraft:punch",lvl:100s}]}},{}],id:"minecraft:skeleton"},{ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:8,Amplifier:2,Duration:1999980},{Id:10,Amplifier:254,Duration:1999980},{Id:11,Amplifier:254,Duration:1999980},{Id:12,Amplifier:254,Duration:1999980},{Id:22,Amplifier:254,Duration:1999980}],HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:flame",lvl:255s},{id:"minecraft:knockback",lvl:50s},{id:"minecraft:power",lvl:50s},{id:"minecraft:punch",lvl:100s}]}},{}],id:"minecraft:skeleton"}],ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:8,Amplifier:2,Duration:1999980},{Id:10,Amplifier:254,Duration:1999980},{Id:11,Amplifier:254,Duration:1999980},{Id:12,Amplifier:254,Duration:1999980},{Id:22,Amplifier:254,Duration:1999980}],HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Enchantments:[{id:"minecraft:knockback",lvl:10s}]}},{id:"minecraft:diamond_sword",Count:1b,tag:{Enchantments:[{id:"minecraft:knockback",lvl:10s}]}}],ArmorItems:[{id:"minecraft:diamond_boots",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:10s}]}},{id:"minecraft:diamond_leggings",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:10s}]}},{id:"minecraft:diamond_chestplate",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:10s}]}},{id:"minecraft:diamond_helmet",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:10s}]}}],IsBaby:1b}
+}
+召唤一只蝙蝠 骑着小白拿着木棍{
+    summon minecraft:bat ~ ~ ~ {Passengers:[{id:"minecraft:skeleton",ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",Count:1b}],HandItems:[{id:"minecraft:stick",Count:1b}]}]}
+}
+拿着基岩的末影人{
+    /summon minecraft:enderman ~ ~1 ~ {carriedBlockState:{Name:"minecraft:bedrock"}}
+}
+水晶蝙蝠 蝙蝠背着水晶{
+    /summon minecraft:bat ~ ~1 ~ {Passengers:[{id:"minecraft:end_crystal"}]}
+}
+超大 史莱姆{
+	/summon minecraft:slime ~ ~1 ~ {Size:20}
+}
+
+生成无法捡起的 掉落物{
+    summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:diamond",Count:1b},PickupDelay:32767s}
+}
+生成无法爆炸的 TNT{
+	/summon minecraft:tnt ~ ~1 ~ {Fuse:32766}
+}
+
+放置一个亮着的 红石灯{
+    /setblock ~ ~1 ~ minecraft:redstone_lamp[lit=true]
+}
+破坏脚下的方块 有掉落物{
+    /setblock ~ ~-1 ~ air destroy
+}
+生成掉落的基岩 掉落的方块{
+    /summon falling_block ~ ~8 ~ {BlockState:{Name:"minecraft:bedrock"}}
+}
+
+点击告示牌 运行/kill 玩家可用{
+    /give @p minecraft:oak_sign{BlockEntityTag:{Text1:'{"text":"别点我","color":"gold","clickEvent":{"action":"run_command","value":"/kill"}}'}} 1
+}
+点击告示牌 获得泥土 玩家可用{
+    /give @p minecraft:oak_sign{BlockEntityTag:{Text1:'{"text":"[关窗]","color":"gold","italic":false,"clickEvent":{"action":"run_command","value":"/give @s dirt"}}'}} 1
+}
+点击告示牌 获得苹果 玩家可用{
+    /give @p minecraft:oak_sign{BlockEntityTag:{Text1:'{"text":"请你吃苹果","color":"white","clickEvent":{"action":"run_command","value":"/give @s apple"}}'}} 1
+}
+点击告示牌 传送到箭 传送 玩家可用{
+    /give @p minecraft:oak_sign{BlockEntityTag:{Text1:'{"text":"传送到箭","color":"white","clickEvent":{"action":"run_command","value":"/execute as @e[type=arrow] at @s run tp @p @s"}}'}} 1
+}
+点击告示牌 附魔手上的武器 锋利III 玩家可用{
+    /give @p minecraft:oak_sign{BlockEntityTag:{Text1:'{"text":"点我附魔","color":"gold","clickEvent":{"action":"run_command","value":"/enchant @s sharpness 3"}}'}} 1
+}
+点击告示牌 清理服务器掉落物{
+	/give @p minecraft:oak_sign{BlockEntityTag:{Text1:"[{\"text\":\"[服务器]\",\"color\":\"aqua\",\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]",Text2:"[{\"text\":\"点击清理掉落物\",\"color\":\"aqua\",\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/kill @e[type=item]\"}}]",Text3:"[{\"text\":\"\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]",Text4:"[{\"text\":\"\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]"}} 1
+}
+
+肉盾护符 RPG 属性 副手{
+    /give @p minecraft:lime_dye{AttributeModifiers:[{Operation:0,Amount:-0.6,UUIDLeast:-1632335326356849934L,UUIDMost:2756962623542531964L,Slot:offhand,AttributeName:"generic.attackSpeed",Name:"generic.attackSpeed"},{Operation:0,Amount:6,UUIDLeast:-1652695656729968165L,UUIDMost:2255892337239859838L,Slot:offhand,AttributeName:"generic.maxHealth",Name:"generic.maxHealth"},{Operation:0,Amount:2,UUIDLeast:-1275657156897761534L,UUIDMost:2216385347253555548L,Slot:offhand,AttributeName:"generic.armor",Name:"generic.armor"}],display:{Name:"[{\"text\":\"翠绿\",\"color\":\"yellow\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false},{\"text\":\"护符\",\"color\":\"dark_green\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]",Lore:["{\"text\":\"====================\",\"color\":\"dark_purple\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"滋生IV:(+)增加6点生命上限\",\"color\":\"dark_green\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"坚韧II:(+)增加2点护甲值\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"束缚II:(-)降低0.6攻击速度\",\"color\":\"dark_red\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"====================\",\"color\":\"dark_purple\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"护符类型:肉盾宝具\",\"color\":\"white\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"获取方式:大厅兑换\",\"color\":\"white\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}"]}} 1
+}
+攻击护符 RPG 属性 副手{
+    /give @p minecraft:red_dye{AttributeModifiers:[{Operation:0,Amount:3,UUIDLeast:-1914834695248574125L,UUIDMost:2664786548863434728L,Slot:offhand,AttributeName:"generic.attackDamage",Name:"generic.attackDamage"},{Operation:0,Amount:-0.02,UUIDLeast:-1685726959158558463L,UUIDMost:2678622346427116564L,Slot:offhand,AttributeName:"generic.movementSpeed",Name:"generic.movementSpeed"},{Operation:0,Amount:4,UUIDLeast:-1339927977576738293L,UUIDMost:2345285639815187327L,Slot:offhand,AttributeName:"generic.armor",Name:"generic.armor"}],display:{Name:"[{\"text\":\"战争\",\"color\":\"dark_red\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false},{\"text\":\"护符\",\"color\":\"dark_gray\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]",Lore:["{\"text\":\"====================\",\"color\":\"dark_purple\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"强化IV:(+)增加3点伤害\",\"color\":\"red\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"坚韧IV:(+)增加4点护甲值\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"束缚II:(-)降低0.02移动速度\",\"color\":\"dark_red\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"====================\",\"color\":\"dark_purple\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"护符类型:战斗\",\"color\":\"white\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}"]}} 1
+}
+
+让最近的猪 给予一股力量 推出去{
+	/data merge entity @e[type=pig,sort=nearest,limit=1] {Motion:[0d,10d,5d]}
+}
+让最近的猪 弹起来 并且有无敌效果不会摔死{
+	/data merge entity @e[type=minecraft:pig,sort=nearest,limit=1] {Motion:[0d,1d,0d],Invulnerable:1}
+}
+让最近的猪 血量设置为1{
+	/data modify entity @e[type=pig,limit=1,sort=nearest] Health set value 1
+}
+
+生成一只狼 主人是Tu_tuzi{
+	/summon minecraft:wolf ~ ~1 ~ {Owner:"Tu_tuzi",CatType:0}
+}
+
+在命令方块中循环 持续获得玩家的y坐标并显示在yLevel的计分板中{
+	execute as @a store result score @s yLevel run data get entity @s Pos[1]
+}
+
+告示牌点击关窗fill{
+	/give @p minecraft:oak_sign{BlockEntityTag:{Text1:'{"text":"[关窗]","color":"aqua","bold":"true","italic":false,"clickEvent":{"action":"run_command","value":"/fill 124 69 -843 128 68 -843 white_concrete"}}'}} 1
+}
+告示牌点击开窗fill{
+	/give @p minecraft:oak_sign{BlockEntityTag:{Text1:'{"text":"[开窗]","color":"aqua","bold":"true","italic":false,"clickEvent":{"action":"run_command","value":"/fill 124 69 -843 128 68 -843 glass"}}'}} 1
+}
+
+//NBT基础语法
+{
+    整型Int
+    短整型Short
+    字节型Byte
+    长整型Long
+    单精度浮点型Float
+    双精度浮点型Double
+    字符串String
+    复合标签CompoundF
+    列表List
+    整型数组Int Array
+    字节型数组Byte Array
+    长整型数组Long Array
+    Enchantments
+    display
+    AttributeModifiers
+    CanPlaceOn
+    CanDestroy
+    BlockEntityTag
+    BlockStateTag
+    Unbreakable
+    SkullOwner
+    HideFlags
+    generation
+    Damage
+    id
+    lvl
+    Name
+    Lore
+    color
+    Operation
+    Amount
+    AttributeName
+    Name
+    Slot
+    UUID
+    id
+    Count
+    Slot
+    tag
+    CustomPotionEffects
+    Id
+    Duration
+    Amplifier
+    Ambient
+    ShowParticles
+    ShowIcon
+    CustomPotionColor
+    Potion
+    TileEntityData
+    BlockState
+    ActiveEffects
+    Passengers
+    Attributes
+    SaddleItem
+    Saddle
+    HandItems
+    ArmorItems
+    Motion
+    power
+    NoAI
+    NoGravity
+    Invulnerable
+    PersistenceRequired
+    Silent
+    Fire
+    HasVisualFire
+    Health
+    Variant
+    Size
+    Time
+    DropItem
+    Fuse
+    ExplosionPower
+    ExplosionRadius
+    powered
+    HandDropChances
+    ArmorDropChances
+    Age
+    Modifiers
+    Item
+    PickupDelay
+    Offers
+    VillagerData
+    Gossips
+    Xp
+    LastRestock
+    Recipes
+    buy
+    buyB
+    sell
+    rewardExp
+    uses
+    maxUses
+    xp
+    priceMultiplier
+    demand
+    specialPrice
+    level
+    profession
+    type
+    Type
+    Value
+    Target
+    ShowArms
+    NoBasePlate
+    Small
+    Marker
+    Pose
+    Invisible
+    DisabledSlots
+    TimeInOverworld
+    IsImmuneToZombification
+    CannotHunt
+    CannotBeHunted
+    HomePosX
+    HomePosY
+    HomePosZ
+    HasEgg
+    Age
+    Color
+    Duration
+    ReapplicationDelay
+    WaitTime
+    DurationOnUse
+    Owner
+    Radius
+    RadiusOnUse
+    RadiusPerTick
+    Particle
+    Potion
+    Effects
+    Life
+    LifeTime
+    ShotAtAngle
+    FireworksItem
+    id
+    Count
+    tag
+    Fireworks
+    Flight
+    Explosions
+    Flicker
+    Trail
+    Type
+    Colors
+    FadeColors
+    Command
+    auto
+    CustomName
+    CustomName
+    Lock
+    Items
+    LootTable
+    LootTableSeed
+    Primary
+    Secondary
+    SpawnCount
+    SpawnRange
+    RequiredPlayerRange
+    MaxNearbyEntities
+    MinSpawnDelay
+    MaxSpawnDelay
+    Delay
+    SpawnData
+    SpawnPotentials
+    Entity
+    Weight
+    id
+}
+
+//VSC
+{
+    C+S+P打开控制台 unfold展开 fold折叠 C+[]多行推进
+}
+
+//Minecraft1.19 基础项目
+{
+    'acacia_button', 'acacia_door', 'acacia_fence', 'acacia_fence_gate', 'acacia_leaves', 'acacia_log', 'acacia_planks', 'acacia_pressure_plate', 'acacia_sapling', 'acacia_sign', 'acacia_slab', 'acacia_stairs', 'acacia_trapdoor', 'acacia_wall_sign', 'acacia_wood', 'activator_rail', 'air', 'allium', 'amethyst_block', 'amethyst_cluster', 'ancient_debris', 'andesite', 'andesite_slab', 'andesite_stairs', 'andesite_wall', 'anvil', 'attached_melon_stem', 'attached_pumpkin_stem', 'azalea', 'azalea_leaves', 'azure_bluet', 'bamboo', 'bamboo_sapling', 'barrel', 'barrier', 'basalt', 'beacon', 'bedrock', 'beehive', 'beetroots', 'bee_nest', 'bell', 'big_dripleaf', 'big_dripleaf_stem', 'birch_button', 'birch_door', 'birch_fence', 'birch_fence_gate', 'birch_leaves', 'birch_log', 'birch_planks', 'birch_pressure_plate', 'birch_sapling', 'birch_sign', 'birch_slab', 'birch_stairs', 'birch_trapdoor', 'birch_wall_sign', 'birch_wood', 'blackstone', 'blackstone_slab', 'blackstone_stairs', 'blackstone_wall', 'black_banner', 'black_bed', 'black_candle', 'black_candle_cake', 'black_carpet', 'black_concrete', 'black_concrete_powder', 'black_glazed_terracotta', 'black_shulker_box', 'black_stained_glass', 'black_stained_glass_pane', 'black_terracotta', 'black_wall_banner', 'black_wool', 'blast_furnace', 'blue_banner', 'blue_bed', 'blue_candle', 'blue_candle_cake', 'blue_carpet', 'blue_concrete', 'blue_concrete_powder', 'blue_glazed_terracotta', 'blue_ice', 'blue_orchid', 'blue_shulker_box', 'blue_stained_glass', 'blue_stained_glass_pane', 'blue_terracotta', 'blue_wall_banner', 'blue_wool', 'bone_block', 'bookshelf', 'brain_coral', 'brain_coral_block', 'brain_coral_fan', 'brain_coral_wall_fan', 'brewing_stand', 'bricks', 'brick_slab', 'brick_stairs', 'brick_wall', 'brown_banner', 'brown_bed', 'brown_candle', 'brown_candle_cake', 'brown_carpet', 'brown_concrete', 'brown_concrete_powder', 'brown_glazed_terracotta', 'brown_mushroom', 'brown_mushroom_block', 'brown_shulker_box', 'brown_stained_glass', 'brown_stained_glass_pane', 'brown_terracotta', 'brown_wall_banner', 'brown_wool', 'bubble_column', 'bubble_coral', 'bubble_coral_block', 'bubble_coral_fan', 'bubble_coral_wall_fan', 'budding_amethyst', 'cactus', 'cake', 'calcite', 'campfire', 'candle', 'candle_cake', 'carrots', 'cartography_table', 'carved_pumpkin', 'cauldron', 'cave_air', 'cave_vines', 'cave_vines_plant', 'chain', 'chain_command_block', 'chest', 'chipped_anvil', 'chiseled_deepslate', 'chiseled_nether_bricks', 'chiseled_polished_blackstone', 'chiseled_quartz_block', 'chiseled_red_sandstone', 'chiseled_sandstone', 'chiseled_stone_bricks', 'chorus_flower', 'chorus_plant', 'clay', 'coal_block', 'coal_ore', 'coarse_dirt', 'cobbled_deepslate', 'cobbled_deepslate_slab', 'cobbled_deepslate_stairs', 'cobbled_deepslate_wall', 'cobblestone', 'cobblestone_slab', 'cobblestone_stairs', 'cobblestone_wall', 'cobweb', 'cocoa', 'command_block', 'comparator', 'composter', 'conduit', 'copper_block', 'copper_ore', 'cornflower', 'cracked_deepslate_bricks', 'cracked_deepslate_tiles', 'cracked_nether_bricks', 'cracked_polished_blackstone_bricks', 'cracked_stone_bricks', 'crafting_table', 'creeper_head', 'creeper_wall_head', 'crimson_button', 'crimson_door', 'crimson_fence', 'crimson_fence_gate', 'crimson_fungus', 'crimson_hyphae', 'crimson_nylium', 'crimson_planks', 'crimson_pressure_plate', 'crimson_roots', 'crimson_sign', 'crimson_slab', 'crimson_stairs', 'crimson_stem', 'crimson_trapdoor', 'crimson_wall_sign', 'crying_obsidian', 'cut_copper', 'cut_copper_slab', 'cut_copper_stairs', 'cut_red_sandstone', 'cut_red_sandstone_slab', 'cut_sandstone', 'cut_sandstone_slab', 'cyan_banner', 'cyan_bed', 'cyan_candle', 'cyan_candle_cake', 'cyan_carpet', 'cyan_concrete', 'cyan_concrete_powder', 'cyan_glazed_terracotta', 'cyan_shulker_box', 'cyan_stained_glass', 'cyan_stained_glass_pane', 'cyan_terracotta', 'cyan_wall_banner', 'cyan_wool', 'damaged_anvil', 'dandelion', 'dark_oak_button', 'dark_oak_door', 'dark_oak_fence', 'dark_oak_fence_gate', 'dark_oak_leaves', 'dark_oak_log', 'dark_oak_planks', 'dark_oak_pressure_plate', 'dark_oak_sapling', 'dark_oak_sign', 'dark_oak_slab', 'dark_oak_stairs', 'dark_oak_trapdoor', 'dark_oak_wall_sign', 'dark_oak_wood', 'dark_prismarine', 'dark_prismarine_slab', 'dark_prismarine_stairs', 'daylight_detector', 'dead_brain_coral', 'dead_brain_coral_block', 'dead_brain_coral_fan', 'dead_brain_coral_wall_fan', 'dead_bubble_coral', 'dead_bubble_coral_block', 'dead_bubble_coral_fan', 'dead_bubble_coral_wall_fan', 'dead_bush', 'dead_fire_coral', 'dead_fire_coral_block', 'dead_fire_coral_fan', 'dead_fire_coral_wall_fan', 'dead_horn_coral', 'dead_horn_coral_block', 'dead_horn_coral_fan', 'dead_horn_coral_wall_fan', 'dead_tube_coral', 'dead_tube_coral_block', 'dead_tube_coral_fan', 'dead_tube_coral_wall_fan', 'deepslate', 'deepslate_bricks', 'deepslate_brick_slab', 'deepslate_brick_stairs', 'deepslate_brick_wall', 'deepslate_coal_ore', 'deepslate_copper_ore', 'deepslate_diamond_ore', 'deepslate_emerald_ore', 'deepslate_gold_ore', 'deepslate_iron_ore', 'deepslate_lapis_ore', 'deepslate_redstone_ore', 'deepslate_tiles', 'deepslate_tile_slab', 'deepslate_tile_stairs', 'deepslate_tile_wall', 'detector_rail', 'diamond_block', 'diamond_ore', 'diorite', 'diorite_slab', 'diorite_stairs', 'diorite_wall', 'dirt', 'dirt_path', 'dispenser', 'dragon_egg', 'dragon_head', 'dragon_wall_head', 'dried_kelp_block', 'dripstone_block', 'dropper', 'emerald_block', 'emerald_ore', 'enchanting_table', 'ender_chest', 'end_gateway', 'end_portal', 'end_portal_frame', 'end_rod', 'end_stone', 'end_stone_bricks', 'end_stone_brick_slab', 'end_stone_brick_stairs', 'end_stone_brick_wall', 'exposed_copper', 'exposed_cut_copper', 'exposed_cut_copper_slab', 'exposed_cut_copper_stairs', 'farmland', 'fern', 'fire', 'fire_coral', 'fire_coral_block', 'fire_coral_fan', 'fire_coral_wall_fan', 'fletching_table', 'flowering_azalea', 'flowering_azalea_leaves', 'flower_pot', 'frogspawn', 'frosted_ice', 'furnace', 'gilded_blackstone', 'glass', 'glass_pane', 'glowstone', 'glow_item_frame', 'glow_lichen', 'gold_block', 'gold_ore', 'granite', 'granite_slab', 'granite_stairs', 'granite_wall', 'grass', 'grass_block', 'gravel', 'gray_banner', 'gray_bed', 'gray_candle', 'gray_candle_cake', 'gray_carpet', 'gray_concrete', 'gray_concrete_powder', 'gray_glazed_terracotta', 'gray_shulker_box', 'gray_stained_glass', 'gray_stained_glass_pane', 'gray_terracotta', 'gray_wall_banner', 'gray_wool', 'green_banner', 'green_bed', 'green_candle', 'green_candle_cake', 'green_carpet', 'green_concrete', 'green_concrete_powder', 'green_glazed_terracotta', 'green_shulker_box', 'green_stained_glass', 'green_stained_glass_pane', 'green_terracotta', 'green_wall_banner', 'green_wool', 'grindstone', 'hanging_roots', 'hay_block', 'heavy_weighted_pressure_plate', 'honeycomb_block', 'honey_block', 'hopper', 'horn_coral', 'horn_coral_block', 'horn_coral_fan', 'horn_coral_wall_fan', 'ice', 'infested_chiseled_stone_bricks', 'infested_cobblestone', 'infested_cracked_stone_bricks', 'infested_deepslate', 'infested_mossy_stone_bricks', 'infested_stone', 'infested_stone_bricks', 'iron_bars', 'iron_block', 'iron_door', 'iron_ore', 'iron_trapdoor', 'item_frame', 'jack_o_lantern', 'jigsaw', 'jukebox', 'jungle_button', 'jungle_door', 'jungle_fence', 'jungle_fence_gate', 'jungle_leaves', 'jungle_log', 'jungle_planks', 'jungle_pressure_plate', 'jungle_sapling', 'jungle_sign', 'jungle_slab', 'jungle_stairs', 'jungle_trapdoor', 'jungle_wall_sign', 'jungle_wood', 'kelp', 'kelp_plant', 'ladder', 'lantern', 'lapis_block', 'lapis_ore', 'large_amethyst_bud', 'large_fern', 'lava', 'lava_cauldron', 'lectern', 'lever', 'light', 'lightning_rod', 'light_blue_banner', 'light_blue_bed', 'light_blue_candle', 'light_blue_candle_cake', 'light_blue_carpet', 'light_blue_concrete', 'light_blue_concrete_powder', 'light_blue_glazed_terracotta', 'light_blue_shulker_box', 'light_blue_stained_glass', 'light_blue_stained_glass_pane', 'light_blue_terracotta', 'light_blue_wall_banner', 'light_blue_wool', 'light_gray_banner', 'light_gray_bed', 'light_gray_candle', 'light_gray_candle_cake', 'light_gray_carpet', 'light_gray_concrete', 'light_gray_concrete_powder', 'light_gray_glazed_terracotta', 'light_gray_shulker_box', 'light_gray_stained_glass', 'light_gray_stained_glass_pane', 'light_gray_terracotta', 'light_gray_wall_banner', 'light_gray_wool', 'light_weighted_pressure_plate', 'lilac', 'lily_of_the_valley', 'lily_pad', 'lime_banner', 'lime_bed', 'lime_candle', 'lime_candle_cake', 'lime_carpet', 'lime_concrete', 'lime_concrete_powder', 'lime_glazed_terracotta', 'lime_shulker_box', 'lime_stained_glass', 'lime_stained_glass_pane', 'lime_terracotta', 'lime_wall_banner', 'lime_wool', 'lodestone', 'loom', 'magenta_banner', 'magenta_bed', 'magenta_candle', 'magenta_candle_cake', 'magenta_carpet', 'magenta_concrete', 'magenta_concrete_powder', 'magenta_glazed_terracotta', 'magenta_shulker_box', 'magenta_stained_glass', 'magenta_stained_glass_pane', 'magenta_terracotta', 'magenta_wall_banner', 'magenta_wool', 'magma_block', 'mangrove_button', 'mangrove_door', 'mangrove_fence', 'mangrove_fence_gate', 'mangrove_leaves', 'mangrove_log', 'mangrove_planks', 'mangrove_pressure_plate', 'mangrove_propagule', 'mangrove_roots', 'mangrove_sign', 'mangrove_slab', 'mangrove_stairs', 'mangrove_trapdoor', 'mangrove_wall_sign', 'mangrove_wood', 'medium_amethyst_bud', 'melon', 'melon_stem', 'mossy_cobblestone', 'mossy_cobblestone_slab', 'mossy_cobblestone_stairs', 'mossy_cobblestone_wall', 'mossy_stone_bricks', 'mossy_stone_brick_slab', 'mossy_stone_brick_stairs', 'mossy_stone_brick_wall', 'moss_block', 'moss_carpet', 'moving_piston', 'mud', 'muddy_mangrove_roots', 'mud_bricks', 'mud_brick_slab', 'mud_brick_stairs', 'mud_brick_wall', 'mushroom_stem', 'mycelium', 'netherite_block', 'netherrack', 'nether_bricks', 'nether_brick_fence', 'nether_brick_slab', 'nether_brick_stairs', 'nether_brick_wall', 'nether_gold_ore', 'nether_portal', 'nether_quartz_ore', 'nether_sprouts', 'nether_wart', 'nether_wart_block', 'note_block', 'oak_button', 'oak_door', 'oak_fence', 'oak_fence_gate', 'oak_leaves', 'oak_log', 'oak_planks', 'oak_pressure_plate', 'oak_sapling', 'oak_sign', 'oak_slab', 'oak_stairs', 'oak_trapdoor', 'oak_wall_sign', 'oak_wood', 'observer', 'obsidian', 'ochre_froglight', 'orange_banner', 'orange_bed', 'orange_candle', 'orange_candle_cake', 'orange_carpet', 'orange_concrete', 'orange_concrete_powder', 'orange_glazed_terracotta', 'orange_shulker_box', 'orange_stained_glass', 'orange_stained_glass_pane', 'orange_terracotta', 'orange_tulip', 'orange_wall_banner', 'orange_wool', 'oxeye_daisy', 'oxidized_copper', 'oxidized_cut_copper', 'oxidized_cut_copper_slab', 'oxidized_cut_copper_stairs', 'packed_ice', 'packed_mud', 'pearlescent_froglight', 'peony', 'petrified_oak_slab', 'pink_banner', 'pink_bed', 'pink_candle', 'pink_candle_cake', 'pink_carpet', 'pink_concrete', 'pink_concrete_powder', 'pink_glazed_terracotta', 'pink_shulker_box', 'pink_stained_glass', 'pink_stained_glass_pane', 'pink_terracotta', 'pink_tulip', 'pink_wall_banner', 'pink_wool', 'piston', 'piston_head', 'player_head', 'player_wall_head', 'podzol', 'pointed_dripstone', 'polished_andesite', 'polished_andesite_slab', 'polished_andesite_stairs', 'polished_basalt', 'polished_blackstone', 'polished_blackstone_bricks', 'polished_blackstone_brick_slab', 'polished_blackstone_brick_stairs', 'polished_blackstone_brick_wall', 'polished_blackstone_button', 'polished_blackstone_pressure_plate', 'polished_blackstone_slab', 'polished_blackstone_stairs', 'polished_blackstone_wall', 'polished_deepslate', 'polished_deepslate_slab', 'polished_deepslate_stairs', 'polished_deepslate_wall', 'polished_diorite', 'polished_diorite_slab', 'polished_diorite_stairs', 'polished_granite', 'polished_granite_slab', 'polished_granite_stairs', 'poppy', 'potatoes', 'potted_acacia_sapling', 'potted_allium', 'potted_azalea_bush', 'potted_azure_bluet', 'potted_bamboo', 'potted_birch_sapling', 'potted_blue_orchid', 'potted_brown_mushroom', 'potted_cactus', 'potted_cornflower', 'potted_crimson_fungus', 'potted_crimson_roots', 'potted_dandelion', 'potted_dark_oak_sapling', 'potted_dead_bush', 'potted_fern', 'potted_flowering_azalea_bush', 'potted_jungle_sapling', 'potted_lily_of_the_valley', 'potted_mangrove_propagule', 'potted_oak_sapling', 'potted_orange_tulip', 'potted_oxeye_daisy', 'potted_pink_tulip', 'potted_poppy', 'potted_red_mushroom', 'potted_red_tulip', 'potted_spruce_sapling', 'potted_warped_fungus', 'potted_warped_roots', 'potted_white_tulip', 'potted_wither_rose', 'powder_snow', 'powder_snow_cauldron', 'powered_rail', 'prismarine', 'prismarine_bricks', 'prismarine_brick_slab', 'prismarine_brick_stairs', 'prismarine_slab', 'prismarine_stairs', 'prismarine_wall', 'pumpkin', 'pumpkin_stem', 'purple_banner', 'purple_bed', 'purple_candle', 'purple_candle_cake', 'purple_carpet', 'purple_concrete', 'purple_concrete_powder', 'purple_glazed_terracotta', 'purple_shulker_box', 'purple_stained_glass', 'purple_stained_glass_pane', 'purple_terracotta', 'purple_wall_banner', 'purple_wool', 'purpur_block', 'purpur_pillar', 'purpur_slab', 'purpur_stairs', 'quartz_block', 'quartz_bricks', 'quartz_pillar', 'quartz_slab', 'quartz_stairs', 'rail', 'raw_copper_block', 'raw_gold_block', 'raw_iron_block', 'redstone_block', 'redstone_lamp', 'redstone_ore', 'redstone_torch', 'redstone_wall_torch', 'redstone_wire', 'red_banner', 'red_bed', 'red_candle', 'red_candle_cake', 'red_carpet', 'red_concrete', 'red_concrete_powder', 'red_glazed_terracotta', 'red_mushroom', 'red_mushroom_block', 'red_nether_bricks', 'red_nether_brick_slab', 'red_nether_brick_stairs', 'red_nether_brick_wall', 'red_sand', 'red_sandstone', 'red_sandstone_slab', 'red_sandstone_stairs', 'red_sandstone_wall', 'red_shulker_box', 'red_stained_glass', 'red_stained_glass_pane', 'red_terracotta', 'red_tulip', 'red_wall_banner', 'red_wool', 'reinforced_deepslate', 'repeater', 'repeating_command_block', 'respawn_anchor', 'rooted_dirt', 'rose_bush', 'sand', 'sandstone', 'sandstone_slab', 'sandstone_stairs', 'sandstone_wall', 'scaffolding', 'sculk', 'sculk_catalyst', 'sculk_sensor', 'sculk_shrieker', 'sculk_vein', 'seagrass', 'sea_lantern', 'sea_pickle', 'shroomlight', 'shulker_box', 'skeleton_skull', 'skeleton_wall_skull', 'slime_block', 'small_amethyst_bud', 'small_dripleaf', 'smithing_table', 'smoker', 'smooth_basalt', 'smooth_quartz', 'smooth_quartz_slab', 'smooth_quartz_stairs', 'smooth_red_sandstone', 'smooth_red_sandstone_slab', 'smooth_red_sandstone_stairs', 'smooth_sandstone', 'smooth_sandstone_slab', 'smooth_sandstone_stairs', 'smooth_stone', 'smooth_stone_slab', 'snow', 'snow_block', 'soul_campfire', 'soul_fire', 'soul_lantern', 'soul_sand', 'soul_soil', 'soul_torch', 'soul_wall_torch', 'spawner', 'sponge', 'spore_blossom', 'spruce_button', 'spruce_door', 'spruce_fence', 'spruce_fence_gate', 'spruce_leaves', 'spruce_log', 'spruce_planks', 'spruce_pressure_plate', 'spruce_sapling', 'spruce_sign', 'spruce_slab', 'spruce_stairs', 'spruce_trapdoor', 'spruce_wall_sign', 'spruce_wood', 'sticky_piston', 'stone', 'stonecutter', 'stone_bricks', 'stone_brick_slab', 'stone_brick_stairs', 'stone_brick_wall', 'stone_button', 'stone_pressure_plate', 'stone_slab', 'stone_stairs', 'stripped_acacia_log', 'stripped_acacia_wood', 'stripped_birch_log', 'stripped_birch_wood', 'stripped_crimson_hyphae', 'stripped_crimson_stem', 'stripped_dark_oak_log', 'stripped_dark_oak_wood', 'stripped_jungle_log', 'stripped_jungle_wood', 'stripped_mangrove_log', 'stripped_mangrove_wood', 'stripped_oak_log', 'stripped_oak_wood', 'stripped_spruce_log', 'stripped_spruce_wood', 'stripped_warped_hyphae', 'stripped_warped_stem', 'structure_block', 'structure_void', 'sugar_cane', 'sunflower', 'sweet_berry_bush', 'tall_grass', 'tall_seagrass', 'target', 'terracotta', 'tinted_glass', 'tnt', 'torch', 'trapped_chest', 'tripwire', 'tripwire_hook', 'tube_coral', 'tube_coral_block', 'tube_coral_fan', 'tube_coral_wall_fan', 'tuff', 'turtle_egg', 'twisting_vines', 'twisting_vines_plant', 'verdant_froglight', 'vine', 'void_air', 'wall_torch', 'warped_button', 'warped_door', 'warped_fence', 'warped_fence_gate', 'warped_fungus', 'warped_hyphae', 'warped_nylium', 'warped_planks', 'warped_pressure_plate', 'warped_roots', 'warped_sign', 'warped_slab', 'warped_stairs', 'warped_stem', 'warped_trapdoor', 'warped_wall_sign', 'warped_wart_block', 'water', 'water_cauldron', 'waxed_copper_block', 'waxed_cut_copper', 'waxed_cut_copper_slab', 'waxed_cut_copper_stairs', 'waxed_exposed_copper', 'waxed_exposed_cut_copper', 'waxed_exposed_cut_copper_slab', 'waxed_exposed_cut_copper_stairs', 'waxed_oxidized_copper', 'waxed_oxidized_cut_copper', 'waxed_oxidized_cut_copper_slab', 'waxed_oxidized_cut_copper_stairs', 'waxed_weathered_copper', 'waxed_weathered_cut_copper', 'waxed_weathered_cut_copper_slab', 'waxed_weathered_cut_copper_stairs', 'weathered_copper', 'weathered_cut_copper', 'weathered_cut_copper_slab', 'weathered_cut_copper_stairs', 'weeping_vines', 'weeping_vines_plant', 'wet_sponge', 'wheat', 'white_banner', 'white_bed', 'white_candle', 'white_candle_cake', 'white_carpet', 'white_concrete', 'white_concrete_powder', 'white_glazed_terracotta', 'white_shulker_box', 'white_stained_glass', 'white_stained_glass_pane', 'white_terracotta', 'white_tulip', 'white_wall_banner', 'white_wool', 'wither_rose', 'wither_skeleton_skull', 'wither_skeleton_wall_skull', 'yellow_banner', 'yellow_bed', 'yellow_candle', 'yellow_candle_cake', 'yellow_carpet', 'yellow_concrete', 'yellow_concrete_powder', 'yellow_glazed_terracotta', 'yellow_shulker_box', 'yellow_stained_glass', 'yellow_stained_glass_pane', 'yellow_terracotta', 'yellow_wall_banner', 'yellow_wool', 'zombie_head', 'zombie_wall_head'
+}
+
+//Minecraft1.18.2 基础项目
+{
+    ['acacia_button', 'acacia_door', 'acacia_fence', 'acacia_fence_gate', 'acacia_leaves', 'acacia_log', 'acacia_planks', 'acacia_pressure_plate', 'acacia_sapling', 'acacia_sign', 'acacia_slab', 'acacia_stairs', 'acacia_trapdoor', 'acacia_wall_sign', 'acacia_wood', 'activator_rail', 'air', 'allium', 'amethyst_block', 'amethyst_cluster', 'ancient_debris', 'andesite', 'andesite_slab', 'andesite_stairs', 'andesite_wall', 'anvil', 'attached_melon_stem', 'attached_pumpkin_stem', 'azalea', 'azalea_leaves', 'azure_bluet', 'bamboo', 'bamboo_sapling', 'barrel', 'barrier', 'basalt', 'beacon', 'bedrock', 'beehive', 'beetroots', 'bee_nest', 'bell', 'big_dripleaf', 'big_dripleaf_stem', 'birch_button', 'birch_door', 'birch_fence', 'birch_fence_gate', 'birch_leaves', 'birch_log', 'birch_planks', 'birch_pressure_plate', 'birch_sapling', 'birch_sign', 'birch_slab', 'birch_stairs', 'birch_trapdoor', 'birch_wall_sign', 'birch_wood', 'blackstone', 'blackstone_slab', 'blackstone_stairs', 'blackstone_wall', 'black_banner', 'black_bed', 'black_candle', 'black_candle_cake', 'black_carpet', 'black_concrete', 'black_concrete_powder', 'black_glazed_terracotta', 'black_shulker_box', 'black_stained_glass', 'black_stained_glass_pane', 'black_terracotta', 'black_wall_banner', 'black_wool', 'blast_furnace', 'blue_banner', 'blue_bed', 'blue_candle', 'blue_candle_cake', 'blue_carpet', 'blue_concrete', 'blue_concrete_powder', 'blue_glazed_terracotta', 'blue_ice', 'blue_orchid', 'blue_shulker_box', 'blue_stained_glass', 'blue_stained_glass_pane', 'blue_terracotta', 'blue_wall_banner', 'blue_wool', 'bone_block', 'bookshelf', 'brain_coral', 'brain_coral_block', 'brain_coral_fan', 'brain_coral_wall_fan', 'brewing_stand', 'bricks', 'brick_slab', 'brick_stairs', 'brick_wall', 'brown_banner', 'brown_bed', 'brown_candle', 'brown_candle_cake', 'brown_carpet', 'brown_concrete', 'brown_concrete_powder', 'brown_glazed_terracotta', 'brown_mushroom', 'brown_mushroom_block', 'brown_shulker_box', 'brown_stained_glass', 'brown_stained_glass_pane', 'brown_terracotta', 'brown_wall_banner', 'brown_wool', 'bubble_column', 'bubble_coral', 'bubble_coral_block', 'bubble_coral_fan', 'bubble_coral_wall_fan', 'budding_amethyst', 'cactus', 'cake', 'calcite', 'campfire', 'candle', 'candle_cake', 'carrots', 'cartography_table', 'carved_pumpkin', 'cauldron', 'cave_air', 'cave_vines', 'cave_vines_plant', 'chain', 'chain_command_block', 'chest', 'chipped_anvil', 'chiseled_deepslate', 'chiseled_nether_bricks', 'chiseled_polished_blackstone', 'chiseled_quartz_block', 'chiseled_red_sandstone', 'chiseled_sandstone', 'chiseled_stone_bricks', 'chorus_flower', 'chorus_plant', 'clay', 'coal_block', 'coal_ore', 'coarse_dirt', 'cobbled_deepslate', 'cobbled_deepslate_slab', 'cobbled_deepslate_stairs', 'cobbled_deepslate_wall', 'cobblestone', 'cobblestone_slab', 'cobblestone_stairs', 'cobblestone_wall', 'cobweb', 'cocoa', 'command_block', 'comparator', 'composter', 'conduit', 'copper_block', 'copper_ore', 'cornflower', 'cracked_deepslate_bricks', 'cracked_deepslate_tiles', 'cracked_nether_bricks', 'cracked_polished_blackstone_bricks', 'cracked_stone_bricks', 'crafting_table', 'creeper_head', 'creeper_wall_head', 'crimson_button', 'crimson_door', 'crimson_fence', 'crimson_fence_gate', 'crimson_fungus', 'crimson_hyphae', 'crimson_nylium', 'crimson_planks', 'crimson_pressure_plate', 'crimson_roots', 'crimson_sign', 'crimson_slab', 'crimson_stairs', 'crimson_stem', 'crimson_trapdoor', 'crimson_wall_sign', 'crying_obsidian', 'cut_copper', 'cut_copper_slab', 'cut_copper_stairs', 'cut_red_sandstone', 'cut_red_sandstone_slab', 'cut_sandstone', 'cut_sandstone_slab', 'cyan_banner', 'cyan_bed', 'cyan_candle', 'cyan_candle_cake', 'cyan_carpet', 'cyan_concrete', 'cyan_concrete_powder', 'cyan_glazed_terracotta', 'cyan_shulker_box', 'cyan_stained_glass', 'cyan_stained_glass_pane', 'cyan_terracotta', 'cyan_wall_banner', 'cyan_wool', 'damaged_anvil', 'dandelion', 'dark_oak_button', 'dark_oak_door', 'dark_oak_fence', 'dark_oak_fence_gate', 'dark_oak_leaves', 'dark_oak_log', 'dark_oak_planks', 'dark_oak_pressure_plate', 'dark_oak_sapling', 'dark_oak_sign', 'dark_oak_slab', 'dark_oak_stairs', 'dark_oak_trapdoor', 'dark_oak_wall_sign', 'dark_oak_wood', 'dark_prismarine', 'dark_prismarine_slab', 'dark_prismarine_stairs', 'daylight_detector', 'dead_brain_coral', 'dead_brain_coral_block', 'dead_brain_coral_fan', 'dead_brain_coral_wall_fan', 'dead_bubble_coral', 'dead_bubble_coral_block', 'dead_bubble_coral_fan', 'dead_bubble_coral_wall_fan', 'dead_bush', 'dead_fire_coral', 'dead_fire_coral_block', 'dead_fire_coral_fan', 'dead_fire_coral_wall_fan', 'dead_horn_coral', 'dead_horn_coral_block', 'dead_horn_coral_fan', 'dead_horn_coral_wall_fan', 'dead_tube_coral', 'dead_tube_coral_block', 'dead_tube_coral_fan', 'dead_tube_coral_wall_fan', 'deepslate', 'deepslate_bricks', 'deepslate_brick_slab', 'deepslate_brick_stairs', 'deepslate_brick_wall', 'deepslate_coal_ore', 'deepslate_copper_ore', 'deepslate_diamond_ore', 'deepslate_emerald_ore', 'deepslate_gold_ore', 'deepslate_iron_ore', 'deepslate_lapis_ore', 'deepslate_redstone_ore', 'deepslate_tiles', 'deepslate_tile_slab', 'deepslate_tile_stairs', 'deepslate_tile_wall', 'detector_rail', 'diamond_block', 'diamond_ore', 'diorite', 'diorite_slab', 'diorite_stairs', 'diorite_wall', 'dirt', 'dirt_path', 'dispenser', 'dragon_egg', 'dragon_head', 'dragon_wall_head', 'dried_kelp_block', 'dripstone_block', 'dropper', 'emerald_block', 'emerald_ore', 'enchanting_table', 'ender_chest', 'end_gateway', 'end_portal', 'end_portal_frame', 'end_rod', 'end_stone', 'end_stone_bricks', 'end_stone_brick_slab', 'end_stone_brick_stairs', 'end_stone_brick_wall', 'exposed_copper', 'exposed_cut_copper', 'exposed_cut_copper_slab', 'exposed_cut_copper_stairs', 'farmland', 'fern', 'fire', 'fire_coral', 'fire_coral_block', 'fire_coral_fan', 'fire_coral_wall_fan', 'fletching_table', 'flowering_azalea', 'flowering_azalea_leaves', 'flower_pot', 'frosted_ice', 'furnace', 'gilded_blackstone', 'glass', 'glass_pane', 'glowstone', 'glow_item_frame', 'glow_lichen', 'gold_block', 'gold_ore', 'granite', 'granite_slab', 'granite_stairs', 'granite_wall', 'grass', 'grass_block', 'gravel', 'gray_banner', 'gray_bed', 'gray_candle', 'gray_candle_cake', 'gray_carpet', 'gray_concrete', 'gray_concrete_powder', 'gray_glazed_terracotta', 'gray_shulker_box', 'gray_stained_glass', 'gray_stained_glass_pane', 'gray_terracotta', 'gray_wall_banner', 'gray_wool', 'green_banner', 'green_bed', 'green_candle', 'green_candle_cake', 'green_carpet', 'green_concrete', 'green_concrete_powder', 'green_glazed_terracotta', 'green_shulker_box', 'green_stained_glass', 'green_stained_glass_pane', 'green_terracotta', 'green_wall_banner', 'green_wool', 'grindstone', 'hanging_roots', 'hay_block', 'heavy_weighted_pressure_plate', 'honeycomb_block', 'honey_block', 'hopper', 'horn_coral', 'horn_coral_block', 'horn_coral_fan', 'horn_coral_wall_fan', 'ice', 'infested_chiseled_stone_bricks', 'infested_cobblestone', 'infested_cracked_stone_bricks', 'infested_deepslate', 'infested_mossy_stone_bricks', 'infested_stone', 'infested_stone_bricks', 'iron_bars', 'iron_block', 'iron_door', 'iron_ore', 'iron_trapdoor', 'item_frame', 'jack_o_lantern', 'jigsaw', 'jukebox', 'jungle_button', 'jungle_door', 'jungle_fence', 'jungle_fence_gate', 'jungle_leaves', 'jungle_log', 'jungle_planks', 'jungle_pressure_plate', 'jungle_sapling', 'jungle_sign', 'jungle_slab', 'jungle_stairs', 'jungle_trapdoor', 'jungle_wall_sign', 'jungle_wood', 'kelp', 'kelp_plant', 'ladder', 'lantern', 'lapis_block', 'lapis_ore', 'large_amethyst_bud', 'large_fern', 'lava', 'lava_cauldron', 'lectern', 'lever', 'light', 'lightning_rod', 'light_blue_banner', 'light_blue_bed', 'light_blue_candle', 'light_blue_candle_cake', 'light_blue_carpet', 'light_blue_concrete', 'light_blue_concrete_powder', 'light_blue_glazed_terracotta', 'light_blue_shulker_box', 'light_blue_stained_glass', 'light_blue_stained_glass_pane', 'light_blue_terracotta', 'light_blue_wall_banner', 'light_blue_wool', 'light_gray_banner', 'light_gray_bed', 'light_gray_candle', 'light_gray_candle_cake', 'light_gray_carpet', 'light_gray_concrete', 'light_gray_concrete_powder', 'light_gray_glazed_terracotta', 'light_gray_shulker_box', 'light_gray_stained_glass', 'light_gray_stained_glass_pane', 'light_gray_terracotta', 'light_gray_wall_banner', 'light_gray_wool', 'light_weighted_pressure_plate', 'lilac', 'lily_of_the_valley', 'lily_pad', 'lime_banner', 'lime_bed', 'lime_candle', 'lime_candle_cake', 'lime_carpet', 'lime_concrete', 'lime_concrete_powder', 'lime_glazed_terracotta', 'lime_shulker_box', 'lime_stained_glass', 'lime_stained_glass_pane', 'lime_terracotta', 'lime_wall_banner', 'lime_wool', 'lodestone', 'loom', 'magenta_banner', 'magenta_bed', 'magenta_candle', 'magenta_candle_cake', 'magenta_carpet', 'magenta_concrete', 'magenta_concrete_powder', 'magenta_glazed_terracotta', 'magenta_shulker_box', 'magenta_stained_glass', 'magenta_stained_glass_pane', 'magenta_terracotta', 'magenta_wall_banner', 'magenta_wool', 'magma_block', 'medium_amethyst_bud', 'melon', 'melon_stem', 'mossy_cobblestone', 'mossy_cobblestone_slab', 'mossy_cobblestone_stairs', 'mossy_cobblestone_wall', 'mossy_stone_bricks', 'mossy_stone_brick_slab', 'mossy_stone_brick_stairs', 'mossy_stone_brick_wall', 'moss_block', 'moss_carpet', 'moving_piston', 'mushroom_stem', 'mycelium', 'netherite_block', 'netherrack', 'nether_bricks', 'nether_brick_fence', 'nether_brick_slab', 'nether_brick_stairs', 'nether_brick_wall', 'nether_gold_ore', 'nether_portal', 'nether_quartz_ore', 'nether_sprouts', 'nether_wart', 'nether_wart_block', 'note_block', 'oak_button', 'oak_door', 'oak_fence', 'oak_fence_gate', 'oak_leaves', 'oak_log', 'oak_planks', 'oak_pressure_plate', 'oak_sapling', 'oak_sign', 'oak_slab', 'oak_stairs', 'oak_trapdoor', 'oak_wall_sign', 'oak_wood', 'observer', 'obsidian', 'orange_banner', 'orange_bed', 'orange_candle', 'orange_candle_cake', 'orange_carpet', 'orange_concrete', 'orange_concrete_powder', 'orange_glazed_terracotta', 'orange_shulker_box', 'orange_stained_glass', 'orange_stained_glass_pane', 'orange_terracotta', 'orange_tulip', 'orange_wall_banner', 'orange_wool', 'oxeye_daisy', 'oxidized_copper', 'oxidized_cut_copper', 'oxidized_cut_copper_slab', 'oxidized_cut_copper_stairs', 'packed_ice', 'peony', 'petrified_oak_slab', 'pink_banner', 'pink_bed', 'pink_candle', 'pink_candle_cake', 'pink_carpet', 'pink_concrete', 'pink_concrete_powder', 'pink_glazed_terracotta', 'pink_shulker_box', 'pink_stained_glass', 'pink_stained_glass_pane', 'pink_terracotta', 'pink_tulip', 'pink_wall_banner', 'pink_wool', 'piston', 'piston_head', 'player_head', 'player_wall_head', 'podzol', 'pointed_dripstone', 'polished_andesite', 'polished_andesite_slab', 'polished_andesite_stairs', 'polished_basalt', 'polished_blackstone', 'polished_blackstone_bricks', 'polished_blackstone_brick_slab', 'polished_blackstone_brick_stairs', 'polished_blackstone_brick_wall', 'polished_blackstone_button', 'polished_blackstone_pressure_plate', 'polished_blackstone_slab', 'polished_blackstone_stairs', 'polished_blackstone_wall', 'polished_deepslate', 'polished_deepslate_slab', 'polished_deepslate_stairs', 'polished_deepslate_wall', 'polished_diorite', 'polished_diorite_slab', 'polished_diorite_stairs', 'polished_granite', 'polished_granite_slab', 'polished_granite_stairs', 'poppy', 'potatoes', 'potted_acacia_sapling', 'potted_allium', 'potted_azalea_bush', 'potted_azure_bluet', 'potted_bamboo', 'potted_birch_sapling', 'potted_blue_orchid', 'potted_brown_mushroom', 'potted_cactus', 'potted_cornflower', 'potted_crimson_fungus', 'potted_crimson_roots', 'potted_dandelion', 'potted_dark_oak_sapling', 'potted_dead_bush', 'potted_fern', 'potted_flowering_azalea_bush', 'potted_jungle_sapling', 'potted_lily_of_the_valley', 'potted_oak_sapling', 'potted_orange_tulip', 'potted_oxeye_daisy', 'potted_pink_tulip', 'potted_poppy', 'potted_red_mushroom', 'potted_red_tulip', 'potted_spruce_sapling', 'potted_warped_fungus', 'potted_warped_roots', 'potted_white_tulip', 'potted_wither_rose', 'powder_snow', 'powder_snow_cauldron', 'powered_rail', 'prismarine', 'prismarine_bricks', 'prismarine_brick_slab', 'prismarine_brick_stairs', 'prismarine_slab', 'prismarine_stairs', 'prismarine_wall', 'pumpkin', 'pumpkin_stem', 'purple_banner', 'purple_bed', 'purple_candle', 'purple_candle_cake', 'purple_carpet', 'purple_concrete', 'purple_concrete_powder', 'purple_glazed_terracotta', 'purple_shulker_box', 'purple_stained_glass', 'purple_stained_glass_pane', 'purple_terracotta', 'purple_wall_banner', 'purple_wool', 'purpur_block', 'purpur_pillar', 'purpur_slab', 'purpur_stairs', 'quartz_block', 'quartz_bricks', 'quartz_pillar', 'quartz_slab', 'quartz_stairs', 'rail', 'raw_copper_block', 'raw_gold_block', 'raw_iron_block', 'redstone_block', 'redstone_lamp', 'redstone_ore', 'redstone_torch', 'redstone_wall_torch', 'redstone_wire', 'red_banner', 'red_bed', 'red_candle', 'red_candle_cake', 'red_carpet', 'red_concrete', 'red_concrete_powder', 'red_glazed_terracotta', 'red_mushroom', 'red_mushroom_block', 'red_nether_bricks', 'red_nether_brick_slab', 'red_nether_brick_stairs', 'red_nether_brick_wall', 'red_sand', 'red_sandstone', 'red_sandstone_slab', 'red_sandstone_stairs', 'red_sandstone_wall', 'red_shulker_box', 'red_stained_glass', 'red_stained_glass_pane', 'red_terracotta', 'red_tulip', 'red_wall_banner', 'red_wool', 'repeater', 'repeating_command_block', 'respawn_anchor', 'rooted_dirt', 'rose_bush', 'sand', 'sandstone', 'sandstone_slab', 'sandstone_stairs', 'sandstone_wall', 'scaffolding', 'sculk_sensor', 'seagrass', 'sea_lantern', 'sea_pickle', 'shroomlight', 'shulker_box', 'skeleton_skull', 'skeleton_wall_skull', 'slime_block', 'small_amethyst_bud', 'small_dripleaf', 'smithing_table', 'smoker', 'smooth_basalt', 'smooth_quartz', 'smooth_quartz_slab', 'smooth_quartz_stairs', 'smooth_red_sandstone', 'smooth_red_sandstone_slab', 'smooth_red_sandstone_stairs', 'smooth_sandstone', 'smooth_sandstone_slab', 'smooth_sandstone_stairs', 'smooth_stone', 'smooth_stone_slab', 'snow', 'snow_block', 'soul_campfire', 'soul_fire', 'soul_lantern', 'soul_sand', 'soul_soil', 'soul_torch', 'soul_wall_torch', 'spawner', 'sponge', 'spore_blossom', 'spruce_button', 'spruce_door', 'spruce_fence', 'spruce_fence_gate', 'spruce_leaves', 'spruce_log', 'spruce_planks', 'spruce_pressure_plate', 'spruce_sapling', 'spruce_sign', 'spruce_slab', 'spruce_stairs', 'spruce_trapdoor', 'spruce_wall_sign', 'spruce_wood', 'sticky_piston', 'stone', 'stonecutter', 'stone_bricks', 'stone_brick_slab', 'stone_brick_stairs', 'stone_brick_wall', 'stone_button', 'stone_pressure_plate', 'stone_slab', 'stone_stairs', 'stripped_acacia_log', 'stripped_acacia_wood', 'stripped_birch_log', 'stripped_birch_wood', 'stripped_crimson_hyphae', 'stripped_crimson_stem', 'stripped_dark_oak_log', 'stripped_dark_oak_wood', 'stripped_jungle_log', 'stripped_jungle_wood', 'stripped_oak_log', 'stripped_oak_wood', 'stripped_spruce_log', 'stripped_spruce_wood', 'stripped_warped_hyphae', 'stripped_warped_stem', 'structure_block', 'structure_void', 'sugar_cane', 'sunflower', 'sweet_berry_bush', 'tall_grass', 'tall_seagrass', 'target', 'terracotta', 'tinted_glass', 'tnt', 'torch', 'trapped_chest', 'tripwire', 'tripwire_hook', 'tube_coral', 'tube_coral_block', 'tube_coral_fan', 'tube_coral_wall_fan', 'tuff', 'turtle_egg', 'twisting_vines', 'twisting_vines_plant', 'vine', 'void_air', 'wall_torch', 'warped_button', 'warped_door', 'warped_fence', 'warped_fence_gate', 'warped_fungus', 'warped_hyphae', 'warped_nylium', 'warped_planks', 'warped_pressure_plate', 'warped_roots', 'warped_sign', 'warped_slab', 'warped_stairs', 'warped_stem', 'warped_trapdoor', 'warped_wall_sign', 'warped_wart_block', 'water', 'water_cauldron', 'waxed_copper_block', 'waxed_cut_copper', 'waxed_cut_copper_slab', 'waxed_cut_copper_stairs', 'waxed_exposed_copper', 'waxed_exposed_cut_copper', 'waxed_exposed_cut_copper_slab', 'waxed_exposed_cut_copper_stairs', 'waxed_oxidized_copper', 'waxed_oxidized_cut_copper', 'waxed_oxidized_cut_copper_slab', 'waxed_oxidized_cut_copper_stairs', 'waxed_weathered_copper', 'waxed_weathered_cut_copper', 'waxed_weathered_cut_copper_slab', 'waxed_weathered_cut_copper_stairs', 'weathered_copper', 'weathered_cut_copper', 'weathered_cut_copper_slab', 'weathered_cut_copper_stairs', 'weeping_vines', 'weeping_vines_plant', 'wet_sponge', 'wheat', 'white_banner', 'white_bed', 'white_candle', 'white_candle_cake', 'white_carpet', 'white_concrete', 'white_concrete_powder', 'white_glazed_terracotta', 'white_shulker_box', 'white_stained_glass', 'white_stained_glass_pane', 'white_terracotta', 'white_tulip', 'white_wall_banner', 'white_wool', 'wither_rose', 'wither_skeleton_skull', 'wither_skeleton_wall_skull', 'yellow_banner', 'yellow_bed', 'yellow_candle', 'yellow_candle_cake', 'yellow_carpet', 'yellow_concrete', 'yellow_concrete_powder', 'yellow_glazed_terracotta', 'yellow_shulker_box', 'yellow_stained_glass', 'yellow_stained_glass_pane', 'yellow_terracotta', 'yellow_wall_banner', 'yellow_wool', 'zombie_head', 'zombie_wall_head']
+}
+
+//Minecraft1.18.2 掉落项目
+{
+    ['acacia_boat', 'acacia_button', 'acacia_door', 'acacia_fence', 'acacia_fence_gate', 'acacia_leaves', 'acacia_log', 'acacia_planks', 'acacia_pressure_plate', 'acacia_sapling', 'acacia_sign', 'acacia_slab', 'acacia_stairs', 'acacia_trapdoor', 'acacia_wood', 'activator_rail', 'air', 'allium', 'amethyst_block', 'amethyst_bud', 'amethyst_cluster', 'amethyst_shard', 'ancient_debris', 'andesite', 'andesite_slab', 'andesite_stairs', 'andesite_wall', 'anvil', 'apple', 'armor_stand', 'arrow', 'axolotl_bucket', 'axolotl_spawn_egg', 'azalea', 'azalea_leaves', 'azure_bluet', 'baked_potato', 'bamboo', 'barrel', 'barrier', 'basalt', 'bat_spawn_egg', 'beacon', 'bedrock', 'beef', 'beehive', 'beetroot', 'beetroot_seeds', 'beetroot_soup', 'bee_nest', 'bee_spawn_egg', 'bell', 'big_dripleaf', 'birch_boat', 'birch_button', 'birch_door', 'birch_fence', 'birch_fence_gate', 'birch_leaves', 'birch_log', 'birch_planks', 'birch_pressure_plate', 'birch_sapling', 'birch_sign', 'birch_slab', 'birch_stairs', 'birch_trapdoor', 'birch_wood', 'blackstone', 'blackstone_slab', 'blackstone_stairs', 'blackstone_wall', 'black_banner', 'black_bed', 'black_candle', 'black_carpet', 'black_concrete', 'black_concrete_powder', 'black_dye', 'black_glazed_terracotta', 'black_shulker_box', 'black_stained_glass', 'black_stained_glass_pane', 'black_terracotta', 'black_wool', 'blast_furnace', 'blaze_powder', 'blaze_rod', 'blaze_spawn_egg', 'blue_banner', 'blue_bed', 'blue_candle', 'blue_carpet', 'blue_concrete', 'blue_concrete_powder', 'blue_dye', 'blue_glazed_terracotta', 'blue_ice', 'blue_orchid', 'blue_shulker_box', 'blue_stained_glass', 'blue_stained_glass_pane', 'blue_terracotta', 'blue_wool', 'bone', 'bone_block', 'bone_meal', 'book', 'bookshelf', 'bow', 'bowl', 'bow_pulling_0', 'brain_coral', 'brain_coral_block', 'brain_coral_fan', 'bread', 'brewing_stand', 'brick', 'bricks', 'brick_slab', 'brick_stairs', 'brick_wall', 'broken_elytra', 'brown_banner', 'brown_bed', 'brown_candle', 'brown_carpet', 'brown_concrete', 'brown_concrete_powder', 'brown_dye', 'brown_glazed_terracotta', 'brown_mushroom', 'brown_mushroom_block', 'brown_shulker_box', 'brown_stained_glass', 'brown_stained_glass_pane', 'brown_terracotta', 'brown_wool', 'bubble_coral', 'bubble_coral_block', 'bubble_coral_fan', 'bucket', 'budding_amethyst', 'bundle', 'bundle_filled', 'cactus', 'cake', 'calcite', 'campfire', 'candle', 'carrot', 'carrot_on_a_stick', 'cartography_table', 'carved_pumpkin', 'cat_spawn_egg', 'cauldron', 'cave_spider_spawn_egg', 'chain', 'chainmail_boots', 'chainmail_chestplate', 'chainmail_helmet', 'chainmail_leggings', 'chain_command_block', 'charcoal', 'chest', 'chest_minecart', 'chicken', 'chicken_spawn_egg', 'chipped_anvil', 'chiseled_deepslate', 'chiseled_nether_bricks', 'chiseled_polished_blackstone', 'chiseled_quartz_block', 'chiseled_red_sandstone', 'chiseled_sandstone', 'chiseled_stone_bricks', 'chorus_flower', 'chorus_fruit', 'chorus_plant', 'clay', 'clay_ball', 'clock', 'coal', 'coal_block', 'coal_ore', 'coarse_dirt', 'cobbled_deepslate', 'cobbled_deepslate_slab', 'cobbled_deepslate_stairs', 'cobbled_deepslate_wall', 'cobblestone', 'cobblestone_slab', 'cobblestone_stairs', 'cobblestone_wall', 'cobweb', 'cocoa_beans', 'cod', 'cod_bucket', 'cod_spawn_egg', 'command_block', 'command_block_minecart', 'comparator', 'compass', 'composter', 'conduit', 'cooked_beef', 'cooked_chicken', 'cooked_cod', 'cooked_mutton', 'cooked_porkchop', 'cooked_rabbit', 'cooked_salmon', 'cookie', 'copper_block', 'copper_ingot', 'copper_ore', 'cornflower', 'cow_spawn_egg', 'cracked_deepslate_bricks', 'cracked_deepslate_tiles', 'cracked_nether_bricks', 'cracked_polished_blackstone_bricks', 'cracked_stone_bricks', 'crafting_table', 'creeper_banner_pattern', 'creeper_head', 'creeper_spawn_egg', 'crimson_button', 'crimson_door', 'crimson_fence', 'crimson_fence_gate', 'crimson_fungus', 'crimson_hyphae', 'crimson_nylium', 'crimson_planks', 'crimson_pressure_plate', 'crimson_roots', 'crimson_sign', 'crimson_slab', 'crimson_stairs', 'crimson_stem', 'crimson_trapdoor', 'crossbow', 'crying_obsidian', 'cut_copper', 'cut_copper_slab', 'cut_copper_stairs', 'cut_red_sandstone', 'cut_red_sandstone_slab', 'cut_sandstone', 'cut_sandstone_slab', 'cyan_banner', 'cyan_bed', 'cyan_candle', 'cyan_carpet', 'cyan_concrete', 'cyan_concrete_powder', 'cyan_dye', 'cyan_glazed_terracotta', 'cyan_shulker_box', 'cyan_stained_glass', 'cyan_stained_glass_pane', 'cyan_terracotta', 'cyan_wool', 'damaged_anvil', 'dandelion', 'dark_oak_boat', 'dark_oak_button', 'dark_oak_door', 'dark_oak_fence', 'dark_oak_fence_gate', 'dark_oak_leaves', 'dark_oak_log', 'dark_oak_planks', 'dark_oak_pressure_plate', 'dark_oak_sapling', 'dark_oak_sign', 'dark_oak_slab', 'dark_oak_stairs', 'dark_oak_trapdoor', 'dark_oak_wood', 'dark_prismarine', 'dark_prismarine_slab', 'dark_prismarine_stairs', 'daylight_detector', 'dead_brain_coral', 'dead_brain_coral_block', 'dead_brain_coral_fan', 'dead_bubble_coral', 'dead_bubble_coral_block', 'dead_bubble_coral_fan', 'dead_bush', 'dead_fire_coral', 'dead_fire_coral_block', 'dead_fire_coral_fan', 'dead_horn_coral', 'dead_horn_coral_block', 'dead_horn_coral_fan', 'dead_tube_coral', 'dead_tube_coral_block', 'dead_tube_coral_fan', 'debug_stick', 'deepslate', 'deepslate_bricks', 'deepslate_brick_slab', 'deepslate_brick_stairs', 'deepslate_brick_wall', 'deepslate_coal_ore', 'deepslate_copper_ore', 'deepslate_diamond_ore', 'deepslate_emerald_ore', 'deepslate_gold_ore', 'deepslate_iron_ore', 'deepslate_lapis_ore', 'deepslate_redstone_ore', 'deepslate_tiles', 'deepslate_tile_slab', 'deepslate_tile_stairs', 'deepslate_tile_wall', 'detector_rail', 'diamond', 'diamond_axe', 'diamond_block', 'diamond_boots', 'diamond_chestplate', 'diamond_helmet', 'diamond_hoe', 'diamond_horse_armor', 'diamond_leggings', 'diamond_ore', 'diamond_pickaxe', 'diamond_shovel', 'diamond_sword', 'diorite', 'diorite_slab', 'diorite_stairs', 'diorite_wall', 'dirt', 'dirt_path', 'dispenser', 'dolphin_spawn_egg', 'donkey_spawn_egg', 'dragon_breath', 'dragon_egg', 'dragon_head', 'dried_kelp', 'dried_kelp_block', 'dripstone_block', 'dropper', 'drowned_spawn_egg', 'egg', 'elder_guardian_spawn_egg', 'elytra', 'emerald', 'emerald_block', 'emerald_ore', 'enchanted_book', 'enchanted_golden_apple', 'enchanting_table', 'enderman_spawn_egg', 'endermite_spawn_egg', 'ender_chest', 'ender_eye', 'ender_pearl', 'end_crystal', 'end_portal_frame', 'end_rod', 'end_stone', 'end_stone_bricks', 'end_stone_brick_slab', 'end_stone_brick_stairs', 'end_stone_brick_wall', 'evoker_spawn_egg', 'experience_bottle', 'exposed_copper', 'exposed_cut_copper', 'exposed_cut_copper_slab', 'exposed_cut_copper_stairs', 'farmland', 'feather', 'fermented_spider_eye', 'fern', 'filled_map', 'firework_rocket', 'firework_star', 'fire_charge', 'fire_coral', 'fire_coral_block', 'fire_coral_fan', 'fishing_rod', 'fishing_rod_cast', 'fletching_table', 'flint', 'flint_and_steel', 'flowering_azalea', 'flowering_azalea_leaves', 'flower_banner_pattern', 'flower_pot', 'fox_spawn_egg', 'furnace', 'furnace_minecart', 'generated', 'ghast_spawn_egg', 'ghast_tear', 'gilded_blackstone', 'glass', 'glass_bottle', 'glass_pane', 'glistering_melon_slice', 'globe_banner_pattern', 'glowstone', 'glowstone_dust', 'glow_berries', 'glow_ink_sac', 'glow_item_frame', 'glow_lichen', 'glow_squid_spawn_egg', 'goat_spawn_egg', 'golden_apple', 'golden_axe', 'golden_boots', 'golden_carrot', 'golden_chestplate', 'golden_helmet', 'golden_hoe', 'golden_horse_armor', 'golden_leggings', 'golden_pickaxe', 'golden_shovel', 'golden_sword', 'gold_block', 'gold_ingot', 'gold_nugget', 'gold_ore', 'granite', 'granite_slab', 'granite_stairs', 'granite_wall', 'grass', 'grass_block', 'gravel', 'gray_banner', 'gray_bed', 'gray_candle', 'gray_carpet', 'gray_concrete', 'gray_concrete_powder', 'gray_dye', 'gray_glazed_terracotta', 'gray_shulker_box', 'gray_stained_glass', 'gray_stained_glass_pane', 'gray_terracotta', 'gray_wool', 'green_banner', 'green_bed', 'green_candle', 'green_carpet', 'green_concrete', 'green_concrete_powder', 'green_dye', 'green_glazed_terracotta', 'green_shulker_box', 'green_stained_glass', 'green_stained_glass_pane', 'green_terracotta', 'green_wool', 'grindstone', 'guardian_spawn_egg', 'gunpowder', 'handheld', 'handheld_rod', 'hanging_roots', 'hay_block', 'heart_of_the_sea', 'heavy_weighted_pressure_plate', 'hoglin_spawn_egg', 'honeycomb', 'honeycomb_block', 'honey_block', 'honey_bottle', 'hopper', 'hopper_minecart', 'horn_coral', 'horn_coral_block', 'horn_coral_fan', 'horse_spawn_egg', 'husk_spawn_egg', 'ice', 'infested_chiseled_stone_bricks', 'infested_cobblestone', 'infested_cracked_stone_bricks', 'infested_deepslate', 'infested_mossy_stone_bricks', 'infested_stone', 'infested_stone_bricks', 'ink_sac', 'iron_axe', 'iron_bars', 'iron_block', 'iron_boots', 'iron_chestplate', 'iron_door', 'iron_helmet', 'iron_hoe', 'iron_horse_armor', 'iron_ingot', 'iron_leggings', 'iron_nugget', 'iron_ore', 'iron_pickaxe', 'iron_shovel', 'iron_sword', 'iron_trapdoor', 'item_frame', 'jack_o_lantern', 'jigsaw', 'jukebox', 'jungle_boat', 'jungle_button', 'jungle_door', 'jungle_fence', 'jungle_fence_gate', 'jungle_leaves', 'jungle_log', 'jungle_planks', 'jungle_pressure_plate', 'jungle_sapling', 'jungle_sign', 'jungle_slab', 'jungle_stairs', 'jungle_trapdoor', 'jungle_wood', 'kelp', 'knowledge_book', 'ladder', 'lantern', 'lapis_block', 'lapis_lazuli', 'lapis_ore', 'large_amethyst_bud', 'large_fern', 'lava_bucket', 'lead', 'leather', 'leather_boots', 'leather_chestplate', 'leather_helmet', 'leather_horse_armor', 'leather_leggings', 'lectern', 'lever', 'light', 'lightning_rod', 'light_blue_banner', 'light_blue_bed', 'light_blue_candle', 'light_blue_carpet', 'light_blue_concrete', 'light_blue_concrete_powder', 'light_blue_dye', 'light_blue_glazed_terracotta', 'light_blue_shulker_box', 'light_blue_stained_glass', 'light_blue_stained_glass_pane', 'light_blue_terracotta', 'light_blue_wool', 'light_gray_banner', 'light_gray_bed', 'light_gray_candle', 'light_gray_carpet', 'light_gray_concrete', 'light_gray_concrete_powder', 'light_gray_dye', 'light_gray_glazed_terracotta', 'light_gray_shulker_box', 'light_gray_stained_glass', 'light_gray_stained_glass_pane', 'light_gray_terracotta', 'light_gray_wool', 'light_weighted_pressure_plate', 'lilac', 'lily_of_the_valley', 'lily_pad', 'lime_banner', 'lime_bed', 'lime_candle', 'lime_carpet', 'lime_concrete', 'lime_concrete_powder', 'lime_dye', 'lime_glazed_terracotta', 'lime_shulker_box', 'lime_stained_glass', 'lime_stained_glass_pane', 'lime_terracotta', 'lime_wool', 'lingering_potion', 'llama_spawn_egg', 'lodestone', 'loom', 'magenta_banner', 'magenta_bed', 'magenta_candle', 'magenta_carpet', 'magenta_concrete', 'magenta_concrete_powder', 'magenta_dye', 'magenta_glazed_terracotta', 'magenta_shulker_box', 'magenta_stained_glass', 'magenta_stained_glass_pane', 'magenta_terracotta', 'magenta_wool', 'magma_block', 'magma_cream', 'magma_cube_spawn_egg', 'map', 'medium_amethyst_bud', 'melon', 'melon_seeds', 'melon_slice', 'milk_bucket', 'minecart', 'mojang_banner_pattern', 'mooshroom_spawn_egg', 'mossy_cobblestone', 'mossy_cobblestone_slab', 'mossy_cobblestone_stairs', 'mossy_cobblestone_wall', 'mossy_stone_bricks', 'mossy_stone_brick_slab', 'mossy_stone_brick_stairs', 'mossy_stone_brick_wall', 'moss_block', 'moss_carpet', 'mule_spawn_egg', 'mushroom_stem', 'mushroom_stew', 'music_disc_11', 'music_disc_13', 'music_disc_blocks', 'music_disc_cat', 'music_disc_chirp', 'music_disc_far', 'music_disc_mall', 'music_disc_mellohi', 'music_disc_otherside', 'music_disc_pigstep', 'music_disc_stal', 'music_disc_strad', 'music_disc_wait', 'music_disc_ward', 'mutton', 'mycelium', 'name_tag', 'nautilus_shell', 'netherite_axe', 'netherite_block', 'netherite_boots', 'netherite_chestplate', 'netherite_helmet', 'netherite_hoe', 'netherite_ingot', 'netherite_leggings', 'netherite_pickaxe', 'netherite_scrap', 'netherite_shovel', 'netherite_sword', 'netherrack', 'nether_brick', 'nether_bricks', 'nether_brick_fence', 'nether_brick_slab', 'nether_brick_stairs', 'nether_brick_wall', 'nether_gold_ore', 'nether_quartz_ore', 'nether_sprouts', 'nether_star', 'nether_wart', 'nether_wart_block', 'note_block', 'oak_boat', 'oak_button', 'oak_door', 'oak_fence', 'oak_fence_gate', 'oak_leaves', 'oak_log', 'oak_planks', 'oak_pressure_plate', 'oak_sapling', 'oak_sign', 'oak_slab', 'oak_stairs', 'oak_trapdoor', 'oak_wood', 'observer', 'obsidian', 'ocelot_spawn_egg', 'orange_banner', 'orange_bed', 'orange_candle', 'orange_carpet', 'orange_concrete', 'orange_concrete_powder', 'orange_dye', 'orange_glazed_terracotta', 'orange_shulker_box', 'orange_stained_glass', 'orange_stained_glass_pane', 'orange_terracotta', 'orange_tulip', 'orange_wool', 'oxeye_daisy', 'oxidized_copper', 'oxidized_cut_copper', 'oxidized_cut_copper_slab', 'oxidized_cut_copper_stairs', 'packed_ice', 'painting', 'panda_spawn_egg', 'paper', 'parrot_spawn_egg', 'peony', 'petrified_oak_slab', 'phantom_membrane', 'phantom_spawn_egg', 'piglin_banner_pattern', 'piglin_brute_spawn_egg', 'piglin_spawn_egg', 'pig_spawn_egg', 'pillager_spawn_egg', 'pink_banner', 'pink_bed', 'pink_candle', 'pink_carpet', 'pink_concrete', 'pink_concrete_powder', 'pink_dye', 'pink_glazed_terracotta', 'pink_shulker_box', 'pink_stained_glass', 'pink_stained_glass_pane', 'pink_terracotta', 'pink_tulip', 'pink_wool', 'piston', 'player_head', 'podzol', 'pointed_dripstone', 'poisonous_potato', 'polar_bear_spawn_egg', 'polished_andesite', 'polished_andesite_slab', 'polished_andesite_stairs', 'polished_basalt', 'polished_blackstone', 'polished_blackstone_bricks', 'polished_blackstone_brick_slab', 'polished_blackstone_brick_stairs', 'polished_blackstone_brick_wall', 'polished_blackstone_button', 'polished_blackstone_pressure_plate', 'polished_blackstone_slab', 'polished_blackstone_stairs', 'polished_blackstone_wall', 'polished_deepslate', 'polished_deepslate_slab', 'polished_deepslate_stairs', 'polished_deepslate_wall', 'polished_diorite', 'polished_diorite_slab', 'polished_diorite_stairs', 'polished_granite', 'polished_granite_slab', 'polished_granite_stairs', 'popped_chorus_fruit', 'poppy', 'porkchop', 'potato', 'potion', 'powder_snow_bucket', 'powered_rail', 'prismarine', 'prismarine_bricks', 'prismarine_brick_slab', 'prismarine_brick_stairs', 'prismarine_crystals', 'prismarine_shard', 'prismarine_slab', 'prismarine_stairs', 'prismarine_wall', 'pufferfish', 'pufferfish_bucket', 'pufferfish_spawn_egg', 'pumpkin', 'pumpkin_pie', 'pumpkin_seeds', 'purple_banner', 'purple_bed', 'purple_candle', 'purple_carpet', 'purple_concrete', 'purple_concrete_powder', 'purple_dye', 'purple_glazed_terracotta', 'purple_shulker_box', 'purple_stained_glass', 'purple_stained_glass_pane', 'purple_terracotta', 'purple_wool', 'purpur_block', 'purpur_pillar', 'purpur_slab', 'purpur_stairs', 'quartz', 'quartz_block', 'quartz_bricks', 'quartz_pillar', 'quartz_slab', 'quartz_stairs', 'rabbit', 'rabbit_foot', 'rabbit_hide', 'rabbit_spawn_egg', 'rabbit_stew', 'rail', 'ravager_spawn_egg', 'raw_copper', 'raw_copper_block', 'raw_gold', 'raw_gold_block', 'raw_iron', 'raw_iron_block', 'redstone', 'redstone_block', 'redstone_lamp', 'redstone_ore', 'redstone_torch', 'red_banner', 'red_bed', 'red_candle', 'red_carpet', 'red_concrete', 'red_concrete_powder', 'red_dye', 'red_glazed_terracotta', 'red_mushroom', 'red_mushroom_block', 'red_nether_bricks', 'red_nether_brick_slab', 'red_nether_brick_stairs', 'red_nether_brick_wall', 'red_sand', 'red_sandstone', 'red_sandstone_slab', 'red_sandstone_stairs', 'red_sandstone_wall', 'red_shulker_box', 'red_stained_glass', 'red_stained_glass_pane', 'red_terracotta', 'red_tulip', 'red_wool', 'repeater', 'repeating_command_block', 'respawn_anchor', 'rooted_dirt', 'rose_bush', 'rotten_flesh', 'saddle', 'salmon', 'salmon_bucket', 'salmon_spawn_egg', 'sand', 'sandstone', 'sandstone_slab', 'sandstone_stairs', 'sandstone_wall', 'scaffolding', 'sculk_sensor', 'scute', 'seagrass', 'sea_lantern', 'sea_pickle', 'shears', 'sheep_spawn_egg', 'shield', 'shield_blocking', 'shroomlight', 'shulker_box', 'shulker_shell', 'shulker_spawn_egg', 'silverfish_spawn_egg', 'skeleton_horse_spawn_egg', 'skeleton_skull', 'skeleton_spawn_egg', 'skull_banner_pattern', 'slime_ball', 'slime_block', 'slime_spawn_egg', 'small_amethyst_bud', 'small_dripleaf', 'smithing_table', 'smoker', 'smooth_basalt', 'smooth_quartz', 'smooth_quartz_slab', 'smooth_quartz_stairs', 'smooth_red_sandstone', 'smooth_red_sandstone_slab', 'smooth_red_sandstone_stairs', 'smooth_sandstone', 'smooth_sandstone_slab', 'smooth_sandstone_stairs', 'smooth_stone', 'smooth_stone_slab', 'snow', 'snowball', 'snow_block', 'soul_campfire', 'soul_lantern', 'soul_sand', 'soul_soil', 'soul_torch', 'spawner', 'spectral_arrow', 'spider_eye', 'spider_spawn_egg', 'splash_potion', 'sponge', 'spore_blossom', 'spruce_boat', 'spruce_button', 'spruce_door', 'spruce_fence', 'spruce_fence_gate', 'spruce_leaves', 'spruce_log', 'spruce_planks', 'spruce_pressure_plate', 'spruce_sapling', 'spruce_sign', 'spruce_slab', 'spruce_stairs', 'spruce_trapdoor', 'spruce_wood', 'spyglass', 'spyglass_in_hand', 'squid_spawn_egg', 'stick', 'sticky_piston', 'stone', 'stonecutter', 'stone_axe', 'stone_bricks', 'stone_brick_slab', 'stone_brick_stairs', 'stone_brick_wall', 'stone_button', 'stone_hoe', 'stone_pickaxe', 'stone_pressure_plate', 'stone_shovel', 'stone_slab', 'stone_stairs', 'stone_sword', 'stray_spawn_egg', 'strider_spawn_egg', 'string', 'stripped_acacia_log', 'stripped_acacia_wood', 'stripped_birch_log', 'stripped_birch_wood', 'stripped_crimson_hyphae', 'stripped_crimson_stem', 'stripped_dark_oak_log', 'stripped_dark_oak_wood', 'stripped_jungle_log', 'stripped_jungle_wood', 'stripped_oak_log', 'stripped_oak_wood', 'stripped_spruce_log', 'stripped_spruce_wood', 'stripped_warped_hyphae', 'stripped_warped_stem', 'structure_block', 'structure_void', 'sugar', 'sugar_cane', 'sunflower', 'suspicious_stew', 'sweet_berries', 'tall_grass', 'target', 'template_banner', 'template_bed', 'template_shulker_box', 'template_skull', 'template_spawn_egg', 'terracotta', 'tinted_glass', 'tipped_arrow', 'tnt', 'tnt_minecart', 'torch', 'totem_of_undying', 'trader_llama_spawn_egg', 'trapped_chest', 'trident', 'trident_in_hand', 'trident_throwing', 'tripwire_hook', 'tropical_fish', 'tropical_fish_bucket', 'tropical_fish_spawn_egg', 'tube_coral', 'tube_coral_block', 'tube_coral_fan', 'tuff', 'turtle_egg', 'turtle_helmet', 'turtle_spawn_egg', 'twisting_vines', 'vex_spawn_egg', 'villager_spawn_egg', 'vindicator_spawn_egg', 'vine', 'wandering_trader_spawn_egg', 'warped_button', 'warped_door', 'warped_fence', 'warped_fence_gate', 'warped_fungus', 'warped_fungus_on_a_stick', 'warped_hyphae', 'warped_nylium', 'warped_planks', 'warped_pressure_plate', 'warped_roots', 'warped_sign', 'warped_slab', 'warped_stairs', 'warped_stem', 'warped_trapdoor', 'warped_wart_block', 'water_bucket', 'waxed_copper_block', 'waxed_cut_copper', 'waxed_cut_copper_slab', 'waxed_cut_copper_stairs', 'waxed_exposed_copper', 'waxed_exposed_cut_copper', 'waxed_exposed_cut_copper_slab', 'waxed_exposed_cut_copper_stairs', 'waxed_oxidized_copper', 'waxed_oxidized_cut_copper', 'waxed_oxidized_cut_copper_slab', 'waxed_oxidized_cut_copper_stairs', 'waxed_weathered_copper', 'waxed_weathered_cut_copper', 'waxed_weathered_cut_copper_slab', 'waxed_weathered_cut_copper_stairs', 'weathered_copper', 'weathered_cut_copper', 'weathered_cut_copper_slab', 'weathered_cut_copper_stairs', 'weeping_vines', 'wet_sponge', 'wheat', 'wheat_seeds', 'white_banner', 'white_bed', 'white_candle', 'white_carpet', 'white_concrete', 'white_concrete_powder', 'white_dye', 'white_glazed_terracotta', 'white_shulker_box', 'white_stained_glass', 'white_stained_glass_pane', 'white_terracotta', 'white_tulip', 'white_wool', 'witch_spawn_egg', 'wither_rose', 'wither_skeleton_skull', 'wither_skeleton_spawn_egg', 'wolf_spawn_egg', 'wooden_axe', 'wooden_hoe', 'wooden_pickaxe', 'wooden_shovel', 'wooden_sword', 'writable_book', 'written_book', 'yellow_banner', 'yellow_bed', 'yellow_candle', 'yellow_carpet', 'yellow_concrete', 'yellow_concrete_powder', 'yellow_dye', 'yellow_glazed_terracotta', 'yellow_shulker_box', 'yellow_stained_glass', 'yellow_stained_glass_pane', 'yellow_terracotta', 'yellow_wool', 'zoglin_spawn_egg', 'zombie_head', 'zombie_horse_spawn_egg', 'zombie_spawn_egg', 'zombie_villager_spawn_egg', 'zombified_piglin_spawn_egg']
+}
+
+//Minecraft1.18.2 基础项目
+{
+	Minecraft_blockId
+	acacia_button金合欢木按钮
+	acacia_door金合欢木门
+	acacia_fence金合欢木栅栏
+	acacia_fence_gate金合欢木栅栏门
+	acacia_leaves金合欢树叶
+	acacia_log金合欢原木
+	acacia_planks金合欢木板
+	acacia_pressure_plate金合欢木压力板
+	acacia_sapling金合欢树苗
+	acacia_sign金合欢木告示牌
+	acacia_slab金合欢木台阶
+	acacia_stairs金合欢木楼梯
+	acacia_trapdoor金合欢木活板门
+	acacia_wall_sign墙上的金合欢木告示牌
+	acacia_wood金合欢木
+	activator_rail激活铁轨
+	air空气
+	allium绒球葱
+	amethyst_block紫水晶块
+	amethyst_cluster紫水晶簇
+	ancient_debris远古残骸
+	andesite安山岩
+	andesite_slab安山岩台阶
+	andesite_stairs安山岩楼梯
+	andesite_wall安山岩墙
+	anvil铁砧
+	attached_melon_stem结果的西瓜茎
+	attached_pumpkin_stem结果的南瓜茎
+	azalea杜鹃花丛
+	azalea_leaves杜鹃树叶
+	azure_bluet蓝花美耳草
+	bamboo竹子
+	bamboo_sapling竹笋
+	barrel木桶
+	barrier屏障
+	basalt玄武岩
+	beacon信标
+	bedrock基岩
+	bee_nest蜂巢
+	beehive蜂箱
+	beetroots甜菜根
+	bell钟
+	big_dripleaf大型垂滴叶
+	big_dripleaf_stem大型垂滴叶茎
+	birch_button白桦木按钮
+	birch_door白桦木门
+	birch_fence白桦木栅栏
+	birch_fence_gate白桦木栅栏门
+	birch_leaves白桦树叶
+	birch_log白桦原木
+	birch_planks白桦木板
+	birch_pressure_plate白桦木压力板
+	birch_sapling白桦树苗
+	birch_sign白桦木告示牌
+	birch_slab白桦木台阶
+	birch_stairs白桦木楼梯
+	birch_trapdoor白桦木活板门
+	birch_wall_sign墙上的白桦木告示牌
+	birch_wood白桦木
+	black_banner黑色旗帜
+	black_bed黑色床
+	black_candle黑色蜡烛
+	black_candle_cake插上黑色蜡烛的蛋糕
+	black_carpet黑色地毯
+	black_concrete黑色混凝土
+	black_concrete_powder黑色混凝土粉末
+	black_glazed_terracotta黑色带釉陶瓦
+	black_shulker_box黑色潜影盒
+	black_stained_glass黑色染色玻璃
+	black_stained_glass_pane黑色染色玻璃板
+	black_terracotta黑色陶瓦
+	black_wall_banner墙上的黑色旗帜
+	black_wool黑色羊毛
+	blackstone黑石
+	blackstone_slab黑石台阶
+	blackstone_stairs黑石楼梯
+	blackstone_wall黑石墙
+	blast_furnace高炉
+	blue_banner蓝色旗帜
+	blue_bed蓝色床
+	blue_candle蓝色蜡烛
+	blue_candle_cake插上蓝色蜡烛的蛋糕
+	blue_carpet蓝色地毯
+	blue_concrete蓝色混凝土
+	blue_concrete_powder蓝色混凝土粉末
+	blue_glazed_terracotta蓝色带釉陶瓦
+	blue_ice蓝冰
+	blue_orchid兰花
+	blue_shulker_box蓝色潜影盒
+	blue_stained_glass蓝色染色玻璃
+	blue_stained_glass_pane蓝色染色玻璃板
+	blue_terracotta蓝色陶瓦
+	blue_wall_banner墙上的蓝色旗帜
+	blue_wool蓝色羊毛
+	bone_block骨块
+	bookshelf书架
+	brain_coral脑纹珊瑚
+	brain_coral_block脑纹珊瑚块
+	brain_coral_fan脑纹珊瑚扇
+	brain_coral_wall_fan墙上的脑纹珊瑚扇
+	brewing_stand酿造台
+	brick_slab砖台阶
+	brick_stairs砖楼梯
+	brick_wall砖块墙
+	bricks砖块
+	brown_banner棕色旗帜
+	brown_bed棕色床
+	brown_candle棕色蜡烛
+	brown_candle_cake插上棕色蜡烛的蛋糕
+	brown_carpet棕色地毯
+	brown_concrete棕色混凝土
+	brown_concrete_powder棕色混凝土粉末
+	brown_glazed_terracotta棕色带釉陶瓦
+	brown_mushroom棕色蘑菇
+	brown_mushroom_block棕色蘑菇方块
+	brown_shulker_box棕色潜影盒
+	brown_stained_glass棕色染色玻璃
+	brown_stained_glass_pane棕色染色玻璃板
+	brown_terracotta棕色陶瓦
+	brown_wall_banner墙上的棕色旗帜
+	brown_wool棕色羊毛
+	bubble_column气泡柱
+	bubble_coral气泡珊瑚
+	bubble_coral_block气泡珊瑚块
+	bubble_coral_fan气泡珊瑚扇
+	bubble_coral_wall_fan墙上的气泡珊瑚扇
+	budding_amethyst紫水晶母岩
+	cactus仙人掌
+	cake蛋糕
+	calcite方解石
+	campfire营火
+	candle蜡烛
+	candle_cake插上蜡烛的蛋糕
+	carrots胡萝卜
+	cartography_table制图台
+	carved_pumpkin雕刻过的南瓜
+	cauldron炼药锅
+	cave_air洞穴空气
+	cave_vines洞穴藤蔓
+	cave_vines_plant洞穴藤蔓植株
+	chain锁链
+	chain_command_block连锁型命令方块
+	chest箱子
+	chipped_anvil开裂的铁砧
+	chiseled_deepslate錾制深板岩
+	chiseled_nether_bricks錾制下界砖块
+	chiseled_polished_blackstone錾制磨制黑石
+	chiseled_quartz_block錾制石英块
+	chiseled_red_sandstone錾制红砂岩
+	chiseled_sandstone錾制砂岩
+	chiseled_stone_bricks錾制石砖
+	chorus_flower紫颂花
+	chorus_plant紫颂植株
+	clay黏土块
+	coal_block煤炭块
+	coal_ore煤矿石
+	coarse_dirt砂土
+	cobbled_deepslate深板岩圆石
+	cobbled_deepslate_slab深板岩圆石台阶
+	cobbled_deepslate_stairs深板岩圆石楼梯
+	cobbled_deepslate_wall深板岩圆石墙
+	cobblestone圆石
+	cobblestone_slab圆石台阶
+	cobblestone_stairs圆石楼梯
+	cobblestone_wall圆石墙
+	cobweb蜘蛛网
+	cocoa可可果
+	command_block命令方块
+	comparator红石比较器
+	composter堆肥桶
+	conduit潮涌核心
+	copper_block铜块
+	copper_ore铜矿石
+	cornflower矢车菊
+	cracked_deepslate_bricks裂纹深板岩砖
+	cracked_deepslate_tiles裂纹深板岩瓦
+	cracked_nether_bricks裂纹下界砖块
+	cracked_polished_blackstone_bricks裂纹磨制黑石砖
+	cracked_stone_bricks裂纹石砖
+	crafting_table工作台
+	creeper_head苦力怕的头
+	creeper_wall_head墙上的苦力怕头颅
+	crimson_button绯红木按钮
+	crimson_door绯红木门
+	crimson_fence绯红木栅栏
+	crimson_fence_gate绯红木栅栏门
+	crimson_fungus绯红菌
+	crimson_hyphae绯红菌核
+	crimson_nylium绯红菌岩
+	crimson_planks绯红木板
+	crimson_pressure_plate绯红木压力板
+	crimson_roots绯红菌索
+	crimson_sign绯红木告示牌
+	crimson_slab绯红木台阶
+	crimson_stairs绯红木楼梯
+	crimson_stem绯红菌柄
+	crimson_trapdoor绯红木活板门
+	crimson_wall_sign墙上的绯红木告示牌
+	crying_obsidian哭泣的黑曜石
+	cut_copper切制铜块
+	cut_copper_slab切制铜台阶
+	cut_copper_stairs切制铜楼梯
+	cut_red_sandstone切制红砂岩
+	cut_red_sandstone_slab切制红砂岩台阶
+	cut_sandstone切制砂岩
+	cut_sandstone_slab切制砂岩台阶
+	cyan_banner青色旗帜
+	cyan_bed青色床
+	cyan_candle青色蜡烛
+	cyan_candle_cake插上青色蜡烛的蛋糕
+	cyan_carpet青色地毯
+	cyan_concrete青色混凝土
+	cyan_concrete_powder青色混凝土粉末
+	cyan_glazed_terracotta青色带釉陶瓦
+	cyan_shulker_box青色潜影盒
+	cyan_stained_glass青色染色玻璃
+	cyan_stained_glass_pane青色染色玻璃板
+	cyan_terracotta青色陶瓦
+	cyan_wall_banner墙上的青色旗帜
+	cyan_wool青色羊毛
+	damaged_anvil损坏的铁砧
+	dandelion蒲公英
+	dark_oak_button深色橡木按钮
+	dark_oak_door深色橡木门
+	dark_oak_fence深色橡木栅栏
+	dark_oak_fence_gate深色橡木栅栏门
+	dark_oak_leaves深色橡树树叶
+	dark_oak_log深色橡木原木
+	dark_oak_planks深色橡木木板
+	dark_oak_pressure_plate深色橡木压力板
+	dark_oak_sapling深色橡树树苗
+	dark_oak_sign深色橡木告示牌
+	dark_oak_slab深色橡木台阶
+	dark_oak_stairs深色橡木楼梯
+	dark_oak_trapdoor深色橡木活板门
+	dark_oak_wall_sign墙上的深色橡木告示牌
+	dark_oak_wood深色橡木
+	dark_prismarine暗海晶石
+	dark_prismarine_slab暗海晶石台阶
+	dark_prismarine_stairs暗海晶石楼梯
+	daylight_detector阳光探测器
+	dead_brain_coral失活的脑纹珊瑚
+	dead_brain_coral_block失活的脑纹珊瑚块
+	dead_brain_coral_fan失活的脑纹珊瑚扇
+	dead_brain_coral_wall_fan墙上的失活脑纹珊瑚扇
+	dead_bubble_coral失活的气泡珊瑚
+	dead_bubble_coral_block失活的气泡珊瑚块
+	dead_bubble_coral_fan失活的气泡珊瑚扇
+	dead_bubble_coral_wall_fan墙上的失活气泡珊瑚扇
+	dead_bush枯萎的灌木
+	dead_fire_coral失活的火珊瑚
+	dead_fire_coral_block失活的火珊瑚块
+	dead_fire_coral_fan失活的火珊瑚扇
+	dead_fire_coral_wall_fan墙上的失活火珊瑚扇
+	dead_horn_coral失活的鹿角珊瑚
+	dead_horn_coral_block失活的鹿角珊瑚块
+	dead_horn_coral_fan失活的鹿角珊瑚扇
+	dead_horn_coral_wall_fan墙上的失活鹿角珊瑚扇
+	dead_tube_coral失活的管珊瑚
+	dead_tube_coral_block失活的管珊瑚块
+	dead_tube_coral_fan失活的管珊瑚扇
+	dead_tube_coral_wall_fan墙上的失活管珊瑚扇
+	deepslate深板岩
+	deepslate_brick_slab深板岩砖台阶
+	deepslate_brick_stairs深板岩砖楼梯
+	deepslate_brick_wall深板岩砖墙
+	deepslate_bricks深板岩砖
+	deepslate_coal_ore深层煤矿石
+	deepslate_copper_ore深层铜矿石
+	deepslate_diamond_ore深层钻石矿石
+	deepslate_emerald_ore深层绿宝石矿石
+	deepslate_gold_ore深层金矿石
+	deepslate_iron_ore深层铁矿石
+	deepslate_lapis_ore深层青金石矿石
+	deepslate_redstone_ore深层红石矿石
+	detector_rail探测铁轨
+	diamond_block钻石块
+	diamond_ore钻石矿石
+	diorite闪长岩
+	diorite_slab闪长岩台阶
+	diorite_stairs闪长岩楼梯
+	diorite_wall闪长岩墙
+	dirt泥土
+	dirt_path土径
+	dispenser发射器
+	dragon_egg龙蛋
+	dragon_head龙首
+	dragon_wall_head墙上的龙首	
+	dried_kelp_block干海带块
+	dripstone_block滴水石块
+	dropper投掷器
+	emerald_block绿宝石块
+	emerald_ore绿宝石矿石
+	enchanting_table附魔台
+	end_gateway末地折跃门
+	end_portal末地传送门
+	end_portal_frame末地传送门框架
+	end_rod末地烛
+	end_stone末地石
+	end_stone_brick_slab末地石砖台阶
+	end_stone_brick_stairs末地石砖楼梯
+	end_stone_brick_wall末地石砖墙
+	end_stone_bricks末地石砖
+	ender_chest末影箱
+	exposed_copper斑驳的铜块
+	exposed_cut_copper斑驳的切制铜块
+	exposed_cut_copper_slab斑驳的切制铜台阶
+	exposed_cut_copper_stairs斑驳的切制铜楼梯
+	farmland耕地
+	fern蕨
+	fire火
+	fire_coral火珊瑚
+	fire_coral_block火珊瑚块
+	fire_coral_fan火珊瑚扇
+	fire_coral_wall_fan墙上的火珊瑚扇
+	fletching_table制箭台
+	flower_pot花盆
+	flowering_azalea盛开的杜鹃花丛
+	flowering_azalea_leaves盛开的杜鹃树叶
+	frosted_ice霜冰
+	furnace熔炉
+	gilded_blackstone镶金黑石
+	glass玻璃
+	glass_pane玻璃板
+	glow_lichen发光地衣
+	glowstone荧石
+	gold_block金块
+	gold_ore金矿石
+	granite花岗岩
+	granite_slab花岗岩台阶
+	granite_stairs花岗岩楼梯
+	granite_wall花岗岩墙
+	grass草
+	grass_block草方块
+	gravel沙砾
+	gray_banner灰色旗帜
+	gray_bed灰色床
+	gray_candle灰色蜡烛
+	gray_candle_cake插上灰色蜡烛的蛋糕
+	gray_carpet灰色地毯
+	gray_concrete灰色混凝土
+	gray_concrete_powder灰色混凝土粉末
+	gray_glazed_terracotta灰色带釉陶瓦
+	gray_shulker_box灰色潜影盒
+	gray_stained_glass灰色染色玻璃
+	gray_stained_glass_pane灰色染色玻璃板
+	gray_terracotta灰色陶瓦
+	gray_wall_banner墙上的灰色旗帜
+	gray_wool灰色羊毛
+	green_banner绿色旗帜
+	green_bed绿色床
+	green_carpet绿色地毯
+	green_candle绿色蜡烛
+	green_candle_cake插上绿色蜡烛的蛋糕
+	green_concrete绿色混凝土
+	green_concrete_powder绿色混凝土粉末
+	green_glazed_terracotta绿色带釉陶瓦
+	green_shulker_box绿色潜影盒
+	green_stained_glass绿色染色玻璃
+	green_stained_glass_pane绿色染色玻璃板
+	green_terracotta绿色陶瓦
+	green_wall_banner墙上的绿色旗帜
+	green_wool绿色羊毛
+	grindstone砂轮
+	hanging_roots垂根
+	hay_block干草块
+	heavy_weighted_pressure_plate重质测重压力板
+	hopper漏斗
+	honey_block蜂蜜块
+	honeycomb_block蜜脾块	
+	horn_coral鹿角珊瑚	
+	horn_coral_block鹿角珊瑚块	
+	horn_coral_fan鹿角珊瑚扇	
+	horn_coral_wall_fan墙上的鹿角珊瑚扇	
+	ice冰	
+	infested_chiseled_stone_bricks被虫蚀的錾制石砖	
+	infested_cobblestone被虫蚀的圆石	
+	infested_cracked_stone_bricks被虫蚀的裂纹石砖	
+	infested_deepslate被虫蚀的深板岩	
+	infested_mossy_stone_bricks被虫蚀的苔石砖	
+	infested_stone被虫蚀的石头	
+	infested_stone_bricks被虫蚀的石砖	
+	iron_bars铁栏杆	
+	iron_block铁块	
+	iron_door铁门	
+	iron_ore铁矿石	
+	iron_trapdoor铁活板门	
+	jack_o_lantern南瓜灯	
+	jigsaw拼图方块	
+	jukebox唱片机	
+	jungle_button丛林木按钮	
+	jungle_door丛林木门	
+	jungle_fence丛林木栅栏	
+	jungle_fence_gate丛林木栅栏门	
+	jungle_leaves丛林树叶	
+	jungle_log丛林原木	
+	jungle_planks丛林木板	
+	jungle_pressure_plate丛林木压力板	
+	jungle_sapling丛林树苗	
+	jungle_sign丛林木告示牌	
+	jungle_slab丛林木台阶	
+	jungle_stairs丛林木楼梯	
+	jungle_trapdoor丛林木活板门	
+	jungle_wall_sign墙上的丛林木告示牌	
+	jungle_wood丛林木	
+	kelp海带	
+	kelp_plant海带植株	
+	ladder梯子	
+	lantern灯笼	
+	lapis_block青金石块	
+	lapis_ore青金石矿石	
+	large_amethyst_bud大型紫晶芽	
+	large_fern大型蕨	
+	lava熔岩	
+	lava_cauldron装有熔岩的炼药锅	
+	lectern讲台	
+	lever拉杆	
+	light光	
+	light_blue_banner淡蓝色旗帜	
+	light_blue_bed淡蓝色床	
+	light_blue_candle淡蓝色蜡烛	
+	light_blue_candle_cake插上淡蓝色蜡烛的蛋糕	
+	light_blue_carpet淡蓝色地毯	
+	light_blue_concrete淡蓝色混凝土	
+	light_blue_concrete_powder淡蓝色混凝土粉末	
+	light_blue_glazed_terracotta淡蓝色带釉陶瓦	
+	light_blue_shulker_box淡蓝色潜影盒	
+	light_blue_stained_glass淡蓝色染色玻璃	
+	light_blue_stained_glass_pane淡蓝色染色玻璃板	
+	light_blue_terracotta淡蓝色陶瓦	
+	light_blue_wall_banner墙上的淡蓝色色旗帜	
+	light_blue_wool淡蓝色羊毛	
+	light_gray_banner淡灰色旗帜	
+	light_gray_bed淡灰色床	
+	light_gray_candle淡灰色蜡烛	
+	light_gray_candle_cake插上淡灰色蜡烛的蛋糕	
+	light_gray_carpet淡灰色地毯	
+	light_gray_concrete淡灰色混凝土	
+	light_gray_concrete_powder淡灰色混凝土粉末	
+	light_gray_glazed_terracotta淡灰色带釉陶瓦	
+	light_gray_shulker_box淡灰色潜影盒	
+	light_gray_stained_glass淡灰色染色玻璃	
+	light_gray_stained_glass_pane淡灰色染色玻璃板	
+	light_gray_terracotta淡灰色陶瓦	
+	light_gray_wall_banner墙上的淡灰色旗帜	
+	light_gray_wool淡灰色羊毛	
+	light_weighted_pressure_plate轻质测重压力板	
+	lightning_rod避雷针	
+	lilac丁香	
+	lily_of_the_valley铃兰	
+	lily_pad睡莲	
+	lime_banner黄绿色旗帜	
+	lime_bed黄绿色床	
+	lime_candle黄绿色蜡烛	
+	lime_candle_cake插上黄绿色蜡烛的蛋糕	
+	lime_carpet黄绿色地毯	
+	lime_concrete黄绿色混凝土	
+	lime_concrete_powder黄绿色混凝土粉末	
+	lime_glazed_terracotta黄绿色带釉陶瓦	
+	lime_shulker_box黄绿色潜影盒	
+	lime_stained_glass黄绿色染色玻璃	
+	lime_stained_glass_pane黄绿色染色玻璃板	
+	lime_terracotta黄绿色陶瓦	
+	lime_wall_banner墙上的黄绿色旗帜	
+	lime_wool黄绿色羊毛	
+	lodestone磁石	
+	loom织布机	
+	magenta_banner品红色旗帜	
+	magenta_bed品红色床	
+	magenta_candle品红色蜡烛	
+	magenta_candle_cake插上品红色蜡烛的蛋糕	
+	magenta_carpet品红色地毯	
+	magenta_concrete品红色混凝土	
+	magenta_concrete_powder品红色混凝土粉末	
+	magenta_glazed_terracotta品红色带釉陶瓦	
+	magenta_shulker_box品红色潜影盒	
+	magenta_stained_glass品红色染色玻璃	
+	magenta_stained_glass_pane品红色染色玻璃板	
+	magenta_terracotta品红色陶瓦	
+	magenta_wall_banner墙上的品红色旗帜	
+	magenta_wool品红色羊毛	
+	magma_block岩浆块	
+	medium_amethyst_bud中型紫晶芽	
+	melon西瓜	
+	melon_stem西瓜茎	
+	moss_block苔藓块	
+	moss_carpet苔藓地毯	
+	mossy_cobblestone苔石	
+	mossy_cobblestone_slab苔石台阶	
+	mossy_cobblestone_stairs苔石楼梯	
+	mossy_cobblestone_wall苔石墙	
+	mossy_stone_brick_slab苔石砖台阶	
+	mossy_stone_brick_stairs苔石砖楼梯	
+	mossy_stone_brick_wall苔石砖墙	
+	mossy_stone_bricks苔石砖	
+	moving_piston移动的活塞	
+	mushroom_stem蘑菇柄	
+	mycelium菌丝	
+	nether_brick_fence下界砖栅栏	
+	nether_brick_slab下界砖台阶	
+	nether_brick_stairs下界砖楼梯	
+	nether_brick_wall下界砖墙	
+	nether_bricks下界砖块	
+	nether_gold_ore下界金矿石	
+	nether_portal下界传送门	
+	nether_quartz_ore下界石英矿石	
+	nether_sprouts下界苗	
+	nether_wart下界疣	
+	nether_wart_block下界疣块	
+	netherite_block下界合金块	
+	netherrack下界岩	
+	note_block音符盒	
+	oak_button橡木按钮	
+	oak_door橡木门	
+	oak_fence橡木栅栏	
+	oak_fence_gate橡木栅栏门	
+	oak_leaves橡树树叶	
+	oak_log橡木原木	
+	oak_planks橡木木板	
+	oak_pressure_plate橡木压力板	
+	oak_sapling橡树树苗	
+	oak_sign橡木告示牌	
+	oak_slab橡木台阶	
+	oak_stairs橡木楼梯	
+	oak_trapdoor橡木活板门	
+	oak_wall_sign墙上的橡木告示牌	
+	oak_wood橡木	
+	observer侦测器	
+	obsidian黑曜石	
+	orange_banner橙色旗帜	
+	orange_bed橙色床	
+	orange_candle橙色蜡烛	
+	orange_candle_cake插上橙色蜡烛的蛋糕	
+	orange_carpet橙色地毯	
+	orange_concrete橙色混凝土	
+	orange_concrete_powder橙色混凝土粉末	
+	orange_glazed_terracotta橙色带釉陶瓦	
+	orange_shulker_box橙色潜影盒	
+	orange_stained_glass橙色染色玻璃	
+	orange_stained_glass_pane橙色染色玻璃板	
+	orange_terracotta橙色陶瓦	
+	orange_tulip橙色郁金香	
+	orange_wall_banner墙上的橙色旗帜	
+	orange_wool橙色羊毛	
+	oxeye_daisy滨菊	
+	oxidized_copper氧化的铜块	
+	oxidized_cut_copper氧化的切制铜块	
+	oxidized_cut_copper_slab氧化的切制铜台阶	
+	oxidized_cut_copper_stairs氧化的切制铜楼梯	
+	packed_ice浮冰	
+	peony牡丹	
+	petrified_oak_slab石化橡木台阶	
+	pink_banner粉红色旗帜	
+	pink_bed粉红色床	
+	pink_candle粉红色蜡烛	
+	pink_candle_cake插上粉红色蜡烛的蛋糕	
+	pink_carpet粉红色地毯	
+	pink_concrete粉红色混凝土	
+	pink_concrete_powder粉红色混凝土粉末	
+	pink_glazed_terracotta粉红色带釉陶瓦	
+	pink_shulker_box粉红色潜影盒	
+	pink_stained_glass粉红色染色玻璃	
+	pink_stained_glass_pane粉红色染色玻璃板	
+	pink_terracotta粉红色陶瓦	
+	pink_tulip粉红色郁金香	
+	pink_wall_banner墙上的粉红色旗帜	
+	pink_wool粉红色羊毛	
+	piston_head活塞头	
+	piston活塞	
+	player_head玩家头颅	
+	player_wall_head墙上的玩家头颅	
+	podzol灰化土	
+	pointed_dripstone滴水石锥	
+	polished_andesite磨制安山岩	
+	polished_andesite_slab磨制安山岩台阶	
+	polished_andesite_stairs磨制安山岩楼梯	
+	polished_basalt磨制玄武岩	
+	polished_blackstone磨制黑石	
+	polished_blackstone_brick_slab磨制黑石砖台阶	
+	polished_blackstone_brick_stairs磨制黑石砖楼梯	
+	polished_blackstone_brick_wall磨制黑石砖墙	
+	polished_blackstone_bricks磨制黑石砖	
+	polished_blackstone_button磨制黑石按钮	
+	polished_blackstone_pressure_plate磨制黑石压力板	
+	polished_blackstone_slab磨制黑石台阶	
+	polished_blackstone_stairs磨制黑石楼梯	
+	polished_blackstone_wall磨制黑石墙	
+	polished_deepslate磨制深板岩	
+	polished_deepslate_slab磨制深板岩台阶	
+	polished_deepslate_stairs磨制深板岩楼梯	
+	polished_deepslate_wall磨制深板岩墙	
+	polished_diorite磨制闪长岩	
+	polished_diorite_slab磨制闪长岩台阶	
+	polished_diorite_stairs磨制闪长岩楼梯	
+	polished_granite磨制花岗岩	
+	polished_granite_slab磨制花岗岩台阶	
+	polished_granite_stairs磨制花岗岩楼梯	
+	poppy虞美人	
+	potatoes马铃薯	
+	potted_acacia_sapling金合欢树苗盆栽	
+	potted_allium绒球葱盆栽	
+	potted_azalea_bush杜鹃花丛盆栽	
+	potted_azure_bluet蓝花美耳草盆栽	
+	potted_bamboo竹子盆栽	
+	potted_birch_sapling白桦树苗盆栽	
+	potted_blue_orchid兰花盆栽	
+	potted_brown_mushroom棕色蘑菇盆栽	
+	potted_cactus仙人掌盆栽	
+	potted_cornflower矢车菊盆栽	
+	potted_crimson_fungus绯红菌盆栽	
+	potted_crimson_roots绯红菌索盆栽	
+	potted_dandelion蒲公英盆栽	
+	potted_dark_oak_sapling深色橡树树苗盆栽	
+	potted_dead_bush枯萎的灌木盆栽	
+	potted_fern蕨盆栽	
+	potted_flowering_azalea_bush盛开的杜鹃花丛盆栽	
+	potted_jungle_sapling丛林树苗盆栽	
+	potted_lily_of_the_valley铃兰盆栽	
+	potted_oak_sapling橡树树苗盆栽	
+	potted_orange_tulip橙色郁金香盆栽	
+	potted_oxeye_daisy滨菊盆栽	
+	potted_pink_tulip粉红色郁金香盆栽	
+	potted_poppy虞美人盆栽	
+	potted_red_mushroom红色蘑菇盆栽	
+	potted_red_tulip红色郁金香盆栽	
+	potted_spruce_sapling云杉树苗盆栽	
+	potted_warped_fungus诡异菌盆栽	
+	potted_warped_roots诡异菌索盆栽	
+	potted_white_tulip白色郁金香盆栽	
+	potted_wither_rose凋零玫瑰盆栽	
+	powder_snow细雪	
+	powder_snow_cauldron装有细雪的炼药锅	
+	powered_rail动力铁轨	
+	prismarine海晶石	
+	prismarine_brick_slab海晶石砖台阶	
+	prismarine_brick_stairs海晶石砖楼梯	
+	prismarine_bricks海晶石砖	
+	prismarine_slab海晶石台阶	
+	prismarine_stairs海晶石楼梯	
+	prismarine_wall海晶石墙	
+	pumpkin南瓜	
+	pumpkin_stem南瓜茎	
+	purple_banner紫色旗帜	
+	purple_bed紫色床	
+	purple_candle紫色蜡烛	
+	purple_candle_cake插上紫色蜡烛的蛋糕	
+	purple_carpet紫色地毯	
+	purple_concrete紫色混凝土	
+	purple_concrete_powder紫色混凝土粉末	
+	purple_glazed_terracotta紫色带釉陶瓦	
+	purple_shulker_box紫色潜影盒	
+	purple_stained_glass紫色染色玻璃	
+	purple_stained_glass_pane紫色染色玻璃板	
+	purple_terracotta紫色陶瓦	
+	purple_wall_banner墙上的紫色旗帜	
+	purple_wool紫色羊毛	
+	purpur_block紫珀块	
+	purpur_pillar紫珀柱	
+	purpur_slab紫珀台阶	
+	purpur_stairs紫珀楼梯	
+	quartz_block石英块	
+	quartz_bricks石英砖	
+	quartz_pillar石英柱	
+	quartz_slab石英台阶	
+	quartz_stairs石英楼梯	
+	rail铁轨	
+	raw_copper_block粗铜块	
+	raw_gold_block粗金块	
+	raw_iron_block粗铁块	
+	red_banner红色旗帜	
+	red_bed红色床	
+	red_candle红色蜡烛	
+	red_candle_cake插上红色蜡烛的蛋糕	
+	red_carpet红色地毯	
+	red_concrete红色混凝土	
+	red_concrete_powder红色混凝土粉末	
+	red_glazed_terracotta红色带釉陶瓦	
+	red_mushroom红色蘑菇	
+	red_mushroom_block红色蘑菇方块	
+	red_nether_brick_slab红色下界砖台阶	
+	red_nether_brick_stairs红色下界砖楼梯	
+	red_nether_brick_wall红色下界砖墙	
+	red_nether_bricks红色下界砖块	
+	red_sand红沙	
+	red_sandstone红砂岩	
+	red_sandstone_slab红砂岩台阶	
+	red_sandstone_stairs红砂岩楼梯	
+	red_sandstone_wall红砂岩墙	
+	red_shulker_box红色潜影盒
+	red_stained_glass红色染色玻璃	
+	red_stained_glass_pane红色染色玻璃板	
+	red_terracotta红色陶瓦	
+	red_tulip红色郁金香	
+	red_wall_banner墙上的红色旗帜	
+	red_wool红色羊毛	
+	redstone_block红石块	
+	redstone_lamp红石灯	
+	redstone_ore红石矿石	
+	redstone_torch红石火把	
+	redstone_wall_torch墙上的红石火把	
+	redstone_wire红石线	
+	repeater红石中继器	
+	repeating_command_block循环型命令方块	
+	respawn_anchor重生锚	
+	rooted_dirt缠根泥土	
+	rose_bush玫瑰丛	
+	sand沙子	
+	sandstone砂岩	
+	sandstone_slab砂岩台阶	
+	sandstone_stairs砂岩楼梯	
+	sandstone_wall砂岩墙	
+	scaffolding脚手架	
+	sculk_sensor幽匿感测体	
+	sea_lantern海晶灯	
+	sea_pickle海泡菜	
+	seagrass海草	
+	shroomlight菌光体	
+	shulker_box潜影盒	
+	skeleton_skull骷髅头颅	
+	skeleton_wall_skull墙上的骷髅头颅	
+	slime_block黏液块	
+	small_amethyst_bud小型紫晶芽	
+	small_dripleaf小型垂滴叶	
+	smithing_table锻造台	
+	smoker烟熏炉	
+	smooth_basalt平滑玄武岩	
+	smooth_quartz平滑石英块	
+	smooth_quartz_slab平滑石英台阶	
+	smooth_quartz_stairs平滑石英楼梯	
+	smooth_red_sandstone平滑红砂岩	
+	smooth_red_sandstone_slab平滑红砂岩台阶	
+	smooth_red_sandstone_stairs平滑红砂岩楼梯	
+	smooth_sandstone平滑砂岩	
+	smooth_sandstone_slab平滑砂岩台阶	
+	smooth_sandstone_stairs平滑砂岩楼梯	
+	smooth_stone平滑石头	
+	smooth_stone_slab平滑石头台阶	
+	snow雪	
+	snow_block雪块	
+	soul_campfire灵魂营火	
+	soul_fire灵魂火	
+	soul_lantern灵魂灯笼	
+	soul_sand灵魂沙	
+	soul_soil灵魂土	
+	soul_torch灵魂火把	
+	soul_wall_torch墙上的灵魂火把	
+	spawner刷怪笼	
+	sponge海绵	
+	spore_blossom孢子花	
+	spruce_button云杉木按钮	
+	spruce_door云杉木门	
+	spruce_fence云杉木栅栏	
+	spruce_fence_gate云杉木栅栏门	
+	spruce_leaves云杉树叶	
+	spruce_log云杉原木	
+	spruce_planks云杉木板	
+	spruce_pressure_plate云杉木压力板	
+	spruce_sapling云杉树苗	
+	spruce_sign云杉木告示牌	
+	spruce_slab云杉木台阶	
+	spruce_stairs云杉木楼梯	
+	spruce_trapdoor云杉木活板门	
+	spruce_wall_sign墙上的云杉木告示牌	
+	spruce_wood云杉木	
+	sticky_piston黏性活塞	
+	stone石头	
+	stone_brick_slab石砖台阶	
+	stone_brick_stairs石砖楼梯	
+	stone_brick_wall石砖墙	
+	stone_bricks石砖	
+	stone_button石头按钮	
+	stone_pressure_plate石头压力板	
+	stone_slab石头台阶	
+	stone_stairs石头楼梯	
+	stonecutter切石机	
+	stripped_acacia_log去皮金合欢原木	
+	stripped_acacia_wood去皮金合欢木	
+	stripped_birch_log去皮白桦原木	
+	stripped_birch_wood去皮白桦木	
+	stripped_crimson_hyphae去皮绯红菌核	
+	stripped_crimson_stem去皮绯红菌柄	
+	stripped_dark_oak_log去皮深色橡木原木	
+	stripped_dark_oak_wood去皮深色橡木	
+	stripped_jungle_log去皮丛林原木	
+	stripped_jungle_wood去皮丛林木	
+	stripped_oak_log去皮橡木原木	
+	stripped_oak_wood去皮橡木	
+	stripped_spruce_log去皮云杉原木	
+	stripped_spruce_wood去皮云杉木	
+	stripped_warped_hyphae去皮诡异菌核	
+	stripped_warped_stem去皮诡异菌柄	
+	structure_block结构方块	
+	structure_void结构空位	
+	sugar_cane甘蔗	
+	sunflower向日葵	
+	sweet_berry_bush甜浆果丛	
+	tall_grass高草丛
+	tall_seagrass高海草
+	target标靶
+	terracotta陶瓦
+	tinted_glass遮光玻璃
+	tntTNT
+	torch火把
+	trapped_chest陷阱箱
+	tripwire绊线
+	tripwire_hook绊线钩
+	tube_coral管珊瑚
+	tube_coral_block管珊瑚块
+	tube_coral_fan管珊瑚扇
+	tube_coral_wall_fan墙上的管珊瑚扇
+	tuff凝灰岩
+	turtle_egg海龟蛋
+	twisting_vines缠怨藤
+	twisting_vines_plant缠怨藤植株
+	vine藤蔓
+	void_air虚空空气
+	wall_torch墙上的火把
+	warped_button诡异木按钮
+	warped_door诡异木门
+	warped_fence诡异木栅栏
+	warped_fence_gate诡异木栅栏门
+	warped_fungus诡异菌
+	warped_hyphae诡异菌核
+	warped_nylium诡异菌岩
+	warped_planks诡异木板
+	warped_pressure_plate诡异木压力板
+	warped_roots诡异菌索
+	warped_sign诡异木告示牌
+	warped_slab诡异木台阶
+	warped_stairs诡异木楼梯
+	warped_stem诡异菌柄
+	warped_trapdoor诡异木活板门
+	warped_wall_sign墙上的诡异木告示牌
+	warped_wart_block诡异疣块
+	water水
+	water_cauldron装有水的炼药锅
+	waxed_copper_block涂蜡铜块
+	waxed_cut_copper涂蜡切制铜块
+	waxed_cut_copper_slab涂蜡切制铜台阶
+	waxed_cut_copper_stairs涂蜡切制铜楼梯
+	waxed_exposed_copper斑驳的涂蜡铜块
+	waxed_exposed_cut_copper斑驳的涂蜡切制铜块
+	waxed_exposed_cut_copper_slab斑驳的涂蜡切制铜台阶
+	waxed_exposed_cut_copper_stairs斑驳的涂蜡切制铜楼梯
+	waxed_oxidized_copper氧化的涂蜡铜块
+	waxed_oxidized_cut_copper氧化的涂蜡切制铜块
+	waxed_oxidized_cut_copper_slab氧化的涂蜡切制铜台阶
+	waxed_oxidized_cut_copper_stairs氧化的涂蜡切制铜楼梯
+	waxed_weathered_copper锈蚀的涂蜡铜块
+	waxed_weathered_cut_copper锈蚀的涂蜡切制铜块
+	waxed_weathered_cut_copper_slab锈蚀的涂蜡切制铜台阶
+	waxed_weathered_cut_copper_stairs锈蚀的涂蜡切制铜楼梯
+	weathered_copper锈蚀的铜块
+	weathered_cut_copper锈蚀的切制铜块
+	weathered_cut_copper_slab锈蚀的切制铜台阶
+	weathered_cut_copper_stairs锈蚀的切制铜楼梯
+	weeping_vines垂泪藤
+	weeping_vines_plant垂泪藤植株
+	wet_sponge湿海绵
+	wheat小麦
+	white_banner白色旗帜
+	white_bed白色床
+	white_candle白色蜡烛
+	white_candle_cake插上白色蜡烛的蛋糕
+	white_carpet白色地毯
+	white_concrete白色混凝土
+	white_concrete_powder白色混凝土粉末
+	white_glazed_terracotta白色带釉陶瓦
+	white_shulker_box白色潜影盒
+	white_stained_glass白色染色玻璃
+	white_stained_glass_pane白色染色玻璃板
+	white_terracotta白色陶瓦
+	white_tulip白色郁金香
+	white_wall_banner墙上的白色旗帜
+	white_wool白色羊毛
+	wither_rose凋零玫瑰
+	wither_skeleton_skull凋灵骷髅头颅
+	wither_skeleton_wall_skull墙上的凋灵骷髅头颅
+	yellow_banner黄色旗帜
+	yellow_bed黄色床
+	yellow_candle黄色蜡烛
+	yellow_candle_cake插上黄色蜡烛的蛋糕
+	yellow_carpet黄色地毯
+	yellow_concrete黄色混凝土
+	yellow_concrete_powder黄色混凝土粉末
+	yellow_glazed_terracotta黄色带釉陶瓦
+	yellow_shulker_box黄色潜影盒
+	yellow_stained_glass黄色染色玻璃
+	yellow_stained_glass_pane黄色染色玻璃板
+	yellow_terracotta黄色陶瓦
+	yellow_wall_banner墙上的黄色旗帜
+	yellow_wool黄色羊毛
+	zombie_head僵尸的头
+	zombie_wall_head墙上的僵尸头颅
+
+	Minecraft_liquidId
+	water水
+	flowing_water流动的水
+	lava岩熔
+	flowing_lava流动的熔岩
+		
+	Minecraft_entityId
+	allay悦灵
+	blaze烈焰人	
+	cave_spider洞穴蜘蛛	
+	creeper苦力怕	
+	drowned溺尸	
+	elder_guardian远古守卫者	
+	ender_dragon影龙	
+	enderman末影人	
+	endermite末影螨	
+	evoker唤魔者	
+	ghast恶魂	
+	giant巨人	
+	guardian守卫者	
+	hoglin疣猪兽	
+	husk尸壳	
+	ravager劫掠兽	
+	illusioner幻术师	
+	magma_cube岩浆怪	
+	phantom幻翼	
+	piglin猪灵	
+	piglin_brute猪灵蛮兵	
+	pillager掠夺者	
+	pufferfish河豚	
+	ravager劫掠兽	
+	shulker潜影贝	
+	silverfish蠹虫	
+	skeleton骷髅	
+	slime史莱姆	
+	spider蜘蛛	
+	stray流浪者	
+	vex恼鬼	
+	vindicator卫道士	
+	warden监守者	
+	witch女巫	
+	wither凋灵	
+	wither_skeleton凋灵骷髅	
+	zombie僵尸	
+	zombie_villager僵尸村民	
+	zombified_piglin僵尸猪灵	
+	zoglin僵尸疣猪兽	
+	axolotl美西螈	
+	bat蝙蝠	
+	cat猫	
+	chicken鸡	
+	cod鳕鱼	
+	cow牛	
+	dolphin海豚	
+	donkey驴	
+	frog青蛙	
+	glow_squid发光鱿鱼	
+	goat山羊	
+	horse马	
+	iron_golem铁傀儡	
+	llama羊驼	
+	mooshroom哞菇	
+	mule骡	
+	ocelot豹猫	
+	panda熊猫	
+	parrot鹦鹉	
+	pig猪	
+	polar_bear北极熊	
+	rabbit兔子	
+	salmon鲑鱼	
+	sheep绵羊	
+	skeleton_horse骷髅马	
+	snow_golem雪傀儡
+	squid鱿鱼	
+	tadpole蝌蚪	
+	tropical_fish热带鱼	
+	turtle海龟	
+	villager村民	
+	wolf狼	
+	zombie_horse僵尸马	
+	area_effect_cloud区域效果云	
+	leash_knot拴绳	
+	painting画	
+	item_frame物品展示框	
+	armor_stand盔甲架	
+	evoker_fangs唤魔者尖牙	
+	end_crystal末地水晶	
+	egg掷出的鸡蛋	
+	arrow射出的箭或药箭	
+	spectral_arrow射出的光灵箭	
+	trident三叉戟	
+	snowball掷出的雪球	
+	fireball恶魂火球	
+	small_fireball烈焰人火球或火焰弹	
+	ender_pearl掷出的末影珍珠	
+	eye_of_ender掷出的末影之眼	
+	potion掷出的药水	
+	experience_bottle掷出的附魔之瓶	
+	wither_skull凋灵之首	
+	firework_rocket烟花火箭	
+	shulker_bullet潜影贝导弹	
+	dragon_fireball末影龙火球	
+	llama_spit羊驼的口水	
+	boat船	
+	chest_boat运输船	
+	minecart矿车	
+	chest_minecart运输矿车	
+	furnace_minecart动力矿车	
+	tnt_minecartTNT矿车	
+	hopper_minecart漏斗矿车	
+	command_block_minecart命令方块矿车	
+	spawner_minecart刷怪笼矿车	
+	tnt激活的TNT	
+	falling_block掉落中的方块	
+	experience_orb经验球	
+	item物品
+	iron_sword铁剑
+	iron_shovel铁锹
+	iron_pickaxe铁镐
+	iron_axe铁斧
+	iron_hoe铁锄
+	wooden_sword木剑
+	wooden_shovel木锹
+	wooden_pickaxe木镐
+	wooden_axe木斧
+	wooden_hoe木锄
+	stone_sword石剑
+	stone_shovel石锹
+	stone_pickaxe石镐
+	stone_axe石斧
+	stone_hoe石锄
+	diamond_sword钻石剑
+	diamond_shovel钻石锹
+	diamond_pickaxe钻石镐
+	diamond_axe钻石斧
+	diamond_hoe钻石锄
+	golden_sword金剑
+	golden_shovel金锹
+	golden_pickaxe金镐
+	golden_axe金斧
+	golden_hoe金锄
+	leather_helmet皮革头盔
+	leather_chestplate皮革胸甲
+	leather_leggings皮革护腿
+	leather_boots皮革靴子
+	chainmail_helmet锁链头盔
+	chainmail_chestplate锁链胸甲
+	chainmail_leggings锁链护腿
+	chainmail_boots锁链靴子
+	iron_helmet铁头盔
+	iron_chestplate铁胸甲
+	iron_leggings铁护腿
+	iron_boots铁靴子
+	diamond_helmet钻石头盔
+	diamond_chestplate钻石胸甲
+	diamond_leggings钻石护腿
+	diamond_boots钻石靴子
+	golden_helmet金头盔
+	golden_chestplate金胸甲
+	golden_leggings金护腿
+	golden_boots金靴子
+	turtle_helmet海龟壳
+	scute鳞甲
+	flint_and_steel打火石
+	bow弓
+	arrow箭
+	apple苹果
+	coal煤炭
+	charcoal木炭
+	diamond钻石
+	iron_ingot铁锭
+	gold_ingot金锭
+	stick木棍
+	bowl碗
+	mushroom_stew蘑菇煲
+	string线
+	feather羽毛
+	gunpowder火药
+	wheat_seeds小麦种子
+	wheat小麦
+	bread面包
+	flint燧石
+	porkchop生猪排
+	cooked_porkchop熟猪排
+	painting画
+	golden_apple金苹果
+	enchanted_golden_apple附魔金苹果
+	bucket桶
+	water_bucket水桶
+	lava_bucket熔岩桶
+	milk_bucket奶桶
+	minecart矿车
+	saddle鞍
+	redstone红石
+	snowball雪球
+	oak_boat橡木船
+	spruce_boat云杉木船
+	birch_boat白桦木船
+	jungle_boat丛林木船
+	acacia_boat金合欢木船
+	dark_oak_boat深色橡木船
+	mangrove_boat红树木船
+	oak_chest_boat橡木运输船
+	spruce_chest_boat云杉木运输船
+	birch_chest_boat白桦木运输船
+	jungle_chest_boat丛林木运输船
+	acacia_chest_boat金合欢木运输船
+	dark_oak_chest_boat深色橡木运输船
+	mangrove_chest_boat红树木运输船
+	leather皮革
+	pufferfish_bucket河豚桶
+	salmon_bucket鲑鱼桶
+	cod_bucket鳕鱼桶
+	tropical_fish_bucket热带鱼桶
+	brick红砖
+	clay_ball黏土
+	sugar_cane甘蔗
+	kelp海带
+	paper纸
+	book书
+	slime_ball黏液球
+	chest_minecart运输矿车
+	furnace_minecart动力矿车
+	tnt_minecartTNT矿车
+	hopper_minecart漏斗矿车
+	command_block_minecart命令方块矿车
+	egg鸡蛋
+	compass指南针
+	recovery_compass追溯指针
+	fishing_rod钓鱼竿
+	clock时钟
+	glowstone_dust荧石粉
+	cod生鳕鱼
+	salmon生鲑鱼
+	tropical_fish热带鱼
+	pufferfish河豚
+	cooked_cod熟鳕鱼
+	cooked_salmon熟鲑鱼
+	honey_bottle蜂蜜瓶
+	honeycomb蜜脾
+	ink_sac墨囊
+	red_dye红色染料
+	green_dye绿色染料
+	cocoa_beans可可豆
+	lapis_lazuli青金石
+	purple_dye紫色染料
+	cyan_dye青色染料
+	light_gray_dye淡灰色染料
+	gray_dye灰色染料
+	pink_dye粉红色染料
+	lime_dye黄绿色染料
+	yellow_dye黄色染料
+	light_blue_dye淡蓝色染料
+	magenta_dye品红色染料
+	orange_dye橙色染料
+	bone_meal骨粉
+	blue_dye蓝色染料
+	brown_dye棕色染料
+	black_dye黑色染料
+	white_dye白色染料
+	bone骨头
+	sugar糖
+	cookie曲奇
+	shears剪刀
+	melon_slice西瓜片
+	dried_kelp干海带
+	pumpkin_seeds南瓜种子
+	melon_seeds西瓜种子
+	beef生牛肉
+	cooked_beef牛排
+	chicken生鸡肉
+	cooked_chicken熟鸡肉
+	rotten_flesh腐肉
+	ender_pearl末影珍珠
+	blaze_rod烈焰棒
+	ghast_tear恶魂之泪
+	gold_nugget金粒
+	nether_wart下界疣
+	glass_bottle玻璃瓶
+	potion药水
+	splash_potion喷溅药水
+	lingering_potion滞留药水
+	tipped_arrow药箭
+	spectral_arrow光灵箭
+	spider_eye蜘蛛眼
+	fermented_spider_eye发酵蛛眼
+	blaze_powder烈焰粉
+	magma_cream岩浆膏
+	ender_eye末影之眼
+	glistering_melon_slice闪烁的西瓜片
+	experience_bottle附魔之瓶
+	fire_charge火焰弹
+	writable_book书与笔
+	written_book成书
+	emerald绿宝石
+	item_frame物品展示框
+	carrot胡萝卜
+	potato马铃薯
+	baked_potato烤马铃薯
+	poisonous_potato毒马铃薯
+	map空地图
+	filled_map地图或探险家地图
+	golden_carrot金胡萝卜
+	carrot_on_a_stick胡萝卜钓竿
+	nether_star下界之星
+	pumpkin_pie南瓜派
+	firework_rocket烟花火箭
+	firework_star烟火之星
+	enchanted_book附魔书
+	nether_brick下界砖
+	quartz下界石英
+	prismarine_shard海晶碎片
+	prismarine_crystals海晶砂粒
+	rabbit生兔肉
+	cooked_rabbit熟兔肉
+	rabbit_stew兔肉煲
+	rabbit_foot兔子脚
+	rabbit_hide兔子皮
+	armor_stand盔甲架
+	iron_horse_armor铁马铠
+	golden_horse_armor金马铠
+	diamond_horse_armor钻石马铠
+	lead拴绳
+	name_tag命名牌
+	mutton生羊肉
+	cooked_mutton熟羊肉
+	end_crystal末地水晶
+	chorus_fruit紫颂果
+	popped_chorus_fruit爆裂紫颂果
+	beetroot甜菜根
+	beetroot_seeds甜菜种子
+	beetroot_soup甜菜汤
+	dragon_breath龙息
+	shield盾牌
+	elytra鞘翅
+	totem_of_undying不死图腾
+	shulker_shell潜影壳
+	iron_nugget铁粒
+	knowledge_book知识之书
+	trident三叉戟
+	phantom_membrane幻翼膜
+	nautilus_shell鹦鹉螺壳
+	heart_of_the_sea海洋之心
+	music_disc_13音乐唱片13
+	music_disc_cat音乐唱片Cat
+	music_disc_blocks音乐唱片Blocks
+	music_disc_chirp音乐唱片Chirp
+	music_disc_far音乐唱片Far
+	music_disc_mall音乐唱片Mall
+	music_disc_mellohi音乐唱片Mellohi
+	music_disc_stal音乐唱片Stal
+	music_disc_strad音乐唱片Strad
+	music_disc_ward音乐唱片Ward
+	music_disc_11音乐唱片11
+	music_disc_wait音乐唱片Wait
+	debug_stick调试棒
+	bat_spawn_egg蝙蝠刷怪蛋
+	bee_spawn_egg蜜蜂刷怪蛋
+	blaze_spawn_egg烈焰人刷怪蛋
+	cat_spawn_egg猫刷怪蛋
+	cave_spider_spawn_egg洞穴蜘蛛刷怪蛋
+	chicken_spawn_egg鸡刷怪蛋
+	cod_spawn_egg鳕鱼刷怪蛋
+	cow_spawn_egg牛刷怪蛋
+	creeper_spawn_egg苦力怕刷怪蛋
+	dolphin_spawn_egg海豚刷怪蛋
+	donkey_spawn_egg骡刷怪蛋
+	drowned_spawn_egg溺尸刷怪蛋
+	elder_guardian_spawn_egg远古守卫者刷怪蛋
+	enderman_spawn_egg末影人刷怪蛋
+	endermite_spawn_egg末影螨刷怪蛋
+	evoker_spawn_egg唤魔者刷怪蛋
+	frog_spawn_egg青蛙刷怪蛋
+	ghast_spawn_egg恶魂刷怪蛋
+	guardian_spawn_egg守卫者刷怪蛋
+	horse_spawn_egg马刷怪蛋
+	husk_spawn_egg尸壳刷怪蛋
+	ravager_spawn_egg劫掠兽刷怪蛋
+	llama_spawn_egg羊驼刷怪蛋
+	magma_cube_spawn_egg岩浆怪刷怪蛋
+	mooshroom_spawn_egg哞菇刷怪蛋
+	mule_spawn_egg骡刷怪蛋
+	ocelot_spawn_egg豹猫刷怪蛋
+	panda_spawn_eg熊猫刷怪蛋g
+	parrot_spawn_egg鹦鹉刷怪蛋
+	phantom _spawn_egg幻翼刷怪蛋
+	pig_spawn_egg猪刷怪蛋
+	pillager_spawn_egg掠夺者刷怪蛋
+	polar_bear_spawn_egg北极熊刷怪蛋
+	pufferfish_spawn_egg河豚刷怪蛋
+	rabbit_spawn_egg兔子刷怪蛋
+	salmon_spawn_egg鲑鱼刷怪蛋
+	sheep_spawn_egg绵羊刷怪蛋
+	shulker_spawn_egg潜影贝刷怪蛋
+	silverfish_spawn_egg蠹虫刷怪蛋
+	skeleton_spawn_egg骷髅刷怪蛋
+	skeleton_horse_spawn_egg骷髅马刷怪蛋
+	slime_spawn_egg史莱姆刷怪蛋
+	spider_spawn_egg蜘蛛刷怪蛋
+	squid_spawn_egg鱿鱼刷怪蛋
+	stray_spawn_egg流浪者刷怪蛋
+	tadpole_spawn_egg蝌蚪刷怪蛋
+	tropical_fish_spawn_egg热带鱼刷怪蛋
+	turtle_spawn_egg海龟刷怪蛋
+	vex_spawn_egg恼鬼刷怪蛋
+	villager_spawn_egg村民刷怪蛋
+	vindicator_spawn_egg卫道士刷怪蛋
+	warden_spawn_egg监守者刷怪蛋
+	witch_spawn_egg女巫刷怪蛋
+	wither_skeleton_spawn_egg凋灵骷髅刷怪蛋
+	wolf_spawn_egg狼刷怪蛋
+	zombie_spawn_egg僵尸刷怪蛋
+	zombie_horse_spawn_egg僵尸马刷怪蛋
+	zombie_pigman_spawn_egg僵尸猪人刷怪蛋
+	zombie_villager_spawn_egg僵尸村民刷怪蛋
+	crossbow弩
+	flower_banner_pattern旗帜图案(花盾徽)
+	creeper_banner_pattern旗帜图案(苦力怕盾徽)
+	skull_banner_pattern旗帜图案(头颅盾徽)
+	mojang_banner_pattern旗帜图案(Mojang盾徽)
+	suspicious_stew迷之炖菜
+	echo_shard回响碎片
+	Minecraft_spellsId
+	sweeping横扫之刃
+	aqua_affinity水下速掘
+	depth_strider深海探索者
+	respiration水下呼吸
+	lure饵钓
+	fire_aspect火焰附加
+	looting抢夺
+	channeling引雷
+	luck_of_the_sea海之眷顾
+	smite亡灵杀手
+	feather_falling摔落保护
+	efficiency效率
+	impaling穿刺
+	thorns荆棘
+	flame火矢
+	bane_of_arthropods节肢杀手
+	fortune时运
+	punch冲击
+	quick_charge快速装填
+	multishot多重射击
+	piercing穿透
+	riptide激流
+	infinity无限
+	loyalty忠诚
+	binding_curse绑定诅咒
+	vanishing_curse消失诅咒
+	protection保护
+	blast_protection爆炸保护
+	fire_protection火焰保护
+	projectile_protection弹射物保护
+	power力量
+	mending经验修补
+	knockback击退
+	frost_walker冰霜行者
+	unbreaking耐久
+	silk_touch精准采集
+	sharpness锋利
+	soul_speed灵魂疾行
+	Minecraft_effectId
+	speed速度	
+	slowness缓慢
+	haste急迫
+	mining_fatigue挖掘疲劳
+	strength力量
+	instant_health瞬间治疗
+	instant_damage瞬间伤害
+	jump_boost跳跃提升
+	nausea反胃
+	regeneration再生
+	resistance抗性提升
+	fire_resistance抗火
+	water_breathing水下呼吸
+	invisibility隐形
+	blindness失明
+	night_vision夜视
+	hunger饥饿
+	weakness虚弱
+	poison中毒
+	wither凋零
+	health_boost生命提升
+	absorption伤害吸收
+	saturation饱和
+	glowing发光
+	levitation漂浮
+	luck幸运
+	unluck霉运
+	slow_falling缓降
+	conduit_power潮涌能量
+	dolphins_grace海豚的恩惠
+	bad_omen不祥之兆
+	hero_of_the_village村庄英雄
+	Minecraft_particleId
+	ambient_entity_effect信标效果
+	angry_villager村民的愤怒粒子
+	ash在灵魂沙峡谷生物群系中飘散的颗粒
+	block方块被摧毁、玩家疾跑、铁傀儡行走产生的粒子
+	blockdust盔甲架被摧毁、生物跌落于方块时产生的粒子
+	block_marker对应方块的贴图玩家手持光或屏障时显现于已放置的光/屏障处
+	bubble水中的实体、守卫者激光、浮漂产生的气泡
+	bubble_column_up水下灵魂沙产生的涌流气泡柱
+	bubble_pop气泡柱的顶部
+	campfire_cosy_smoke营火产生的烟雾
+	campfire_signal_smoke放置在干草块上的营火产生的烟雾
+	cloud基岩版中着火的生物进入水中、Java版中实体死亡时产生的烟雾粒子
+	composter堆肥桶被填充时产生的粒子
+	crimson_spore在绯红森林生物群系中飘散的颗粒
+	crit玩家造成暴击、尖牙进行攻击、箭被射出时产生的粒子
+	current_down水下岩浆块形成的涡流气泡柱
+	damage_indicator生物受到近战攻击时产生的粒子
+	dolphin海豚游泳时产生的水花粒子
+	dragon_breath末影龙的龙息、末影龙火球产生的粒子
+	dripping_dripstone_lava滴水石锥渗出且未滴落的熔岩粒子
+	dripping_dripstone_water滴水石锥渗出且未滴落的水粒子
+	dripping_honey蜂巢或蜂箱渗出且未滴落的蜂蜜粒子
+	dripping_lava渗过方块且未滴落的熔岩粒子
+	dripping_obsidian_tear哭泣的黑曜石渗出且未滴落的粒子
+	dripping_water渗过方块的水粒子以及湿海绵、下雨时的树叶产生的水粒子
+	dust红石矿石、红石火把、充能的红石线、充能的红石中继器产生的粒子
+	dust_color_transition激活的幽匿感测体产生的粒子
+	effect唤魔者施法、时出现的粒子,以及喷溅药水、滞留药水、附魔之瓶破碎时产生的粒子
+	elder_guardian玩家被远古守卫者给予挖掘疲劳时出现的“鬼影”
+	electric_spark闪电击中铜块时产生的粒子
+	enchant从书架流入附魔台的符号文字
+	enchanted_hit生物被附有锋利、亡灵杀手或节肢杀手魔咒的剑或斧攻击时出现的粒子
+	end_rod	endrod末地烛、潜影贝导弹产生的粒子
+	entity_effect带有状态效果的生物、凋灵护甲、区域效果云、药箭产生的粒子
+	explosion爆炸、末影龙死亡、哞菇被除菇时出现的粒子
+	explosion_emitter爆炸、末影龙死亡时出现的粒子
+	falling_dripstone_lava滴水石锥滴落的熔岩粒子
+	falling_dripstone_water滴水石锥滴落的水粒子
+	falling_dust浮空而未下落的沙子、沙砾、混凝土粉末、铁砧产生的粒子
+	falling_honey蜂巢或蜂箱滴落的蜂蜜粒子
+	falling_lava渗过方块滴落的熔岩粒子
+	falling_nectar沾有花粉的蜜蜂掉落的花粉
+	falling_obsidian_tear哭泣的黑曜石滴落的粒子
+	falling_spore_blossom孢子花掉落的孢子粒子
+	falling_water渗过方块滴落以及着地的水粒子
+	firework烟花火箭的尾迹和爆炸、海豚被喂食后产生的粒子
+	fishing钓鱼时出现的水花粒子
+	flame火把、熔炉、岩浆怪着地和刷怪笼产生的火苗粒子
+	flash烟花火箭爆炸时的闪烁效果
+	glow发光鱿鱼产生的荧光粒子
+	glow_squid_ink发光鱿鱼被攻击时喷的荧光墨汁
+	happy_villager使用骨粉、与村民交易、喂养幼年动物、玩家踩踏海龟蛋时出现的粒子
+	heart生物繁殖或被驯服时出现的爱心粒子
+	instant_effect瞬间治疗、瞬间伤害喷溅药水和滞留药水破碎在空中时产生的粒子
+	item玩家进食、物品损坏以及鸡蛋、末影之眼、喷溅药水、滞留药水、附魔之瓶破碎时产生的碎片
+	item_slime史莱姆着地产生的粒子
+	item_snowball扔出雪球、召唤凋灵、召唤铁傀儡时出现的粒子
+	landing_honey蜂巢或蜂箱渗出的已着地的蜂蜜粒子
+	landing_lava渗过方块着地的熔岩粒子
+	landing_obsidian_tear哭泣的黑曜石渗出的已着地的粒子
+	large_smoke烈焰人、火燃烧、动力矿车启动、水和熔岩接触时出现的烟雾粒子
+	lava熔岩产生的火花粒子
+	mycelium菌丝产生的孢子粒子
+	nautilus激活的潮涌核心产生的粒子
+	note激活音符盒时出现的音符
+	poof爆炸、生物死亡、刷怪笼生成生物、蠹虫钻入方块时出现的烟雾粒子
+	portal下界传送门、末影人、末影螨、末影珍珠、末影之眼、末影箱、龙蛋、食用紫颂果后瞬移、末地折跃门产生的粒子
+	rain雨滴
+	scrape用斧为铜块除锈时产生的粒子
+	smoke火把、点燃的TNT、漏斗、发射器、末地传送门、酿造台、刷怪笼、熔炉、恶魂火球、凋灵之首、凋灵、雨中的熔岩、营火上的食物、红石火把熄灭、往末地传送门框架上放置末影之眼、驯服生物产生的粒子
+	sneeze幼年熊猫打喷嚏
+	snowflake玩家在细雪中移动时产生的雪花粒子
+	soul穿戴灵魂疾行靴子的生物在灵魂沙或灵魂土上行走时出现的小灵魂粒子
+	soul_fire_flame灵魂火把产生的火苗粒子
+	spit羊驼啐生物时产生的粒子
+	spore_blossom_air在孢子花周围发散的孢子粒子
+	splash水中的实体、离开水后的狼、船产生的水花粒子
+	squid_ink鱿鱼被攻击时喷出的墨汁
+	sweep_attack剑的横扫动画
+	totem_of_undying激活不死图腾时出现的粒子
+	underwater水下飘散的颗粒
+	vibration传向幽匿感测体的振动粒子
+	warped_spore在诡异森林生物群系中飘散的颗粒
+	wax_off用斧给铜块除蜡时出现的粒子
+	wax_on用蜜脾给铜块涂蜡时出现的粒子
+	white_ash在玄武岩三角洲生物群系中飘散的颗粒
+	witch女巫产生的粒子
+}
+
+//PlaceholderAPI 变量
+{
+	/placeholderapi (/papi)
+    /papi icloud[可写内容]/ecloud[变量集]
+
+    权限
+    permissions:
+    placeholderapi.admin:
+    描述: 允许使用管理员命令
+    默认拥有组: 管理员
+    placeholderapi.injector.chat.bypass:
+    描述: 允许在聊天[1]中使用变量
+    默认拥有组: 管理员
+    placeholderapi.injector.signs.bypass:
+    描述: 允许在牌子上使用变量
+    默认拥有组: 管理员
+    placeholderapi.injector.anvil.bypass:
+    描述: 允许在铁砧上使用变量
+    默认拥有组: 管理员
+
+    %server_time_<format>% 当前时间
+
+    JavaScript变量
+
+    %javascript_<your placeholder identifier>%  javascript_占位符
+
+    服务器变量
+    %server_online% 服务器当前在线人数
+    %server_unique_joins% 服务器在线人数
+    %server_uptime% 服务器运行时间
+    %server_ram_used% 服务器内存使用
+    %server_ram_free% 服务器内存空闲
+    %server_ram_total% 服务器内存总计
+    %server_ram_max% 服务器最大内存
+    %server_name% 服务器名
+    %server_version% 服务器版本
+    %server_max_players% 服务器最大玩家数
+    %server_tps% 服务器TPS
+    %server_tps_1% 服务器当前TPS
+    %server_tps_5% 服务器 5 分钟前TPS
+    %server_tps_15% 服务器 15 分钟前TPS
+    %server_tps_1_colored%
+    %server_tps_5_colored%
+    %server_tps_15_colored%
+    %server_online_<world>%
+    %server_has_whitelist% 服务器是否启用了白名单
+    %server_total_chunks% 服务器总区块数
+    %server_total_living_entities% 服务器总活跃实体
+    %server_total_entities% 服务器总实体数
+    %server_time_<SimpleDateFormat>%
+    %server_countdown_<SimpleDateFormat>_%
+	%server_countdown_dd.MM.yyyy_01.01.2020%
+
+    播放音乐
+    占位符被解析时会播放音乐
+    %sound_<sound>-<volume>-<pitch>% 播放音乐 sound 为音乐 volume 音量 pitch 音调
+    %sound_ORB_PICKUP-1-2% 播放捡起经验球的音效，音量为1，音调为2
+
+    全局音乐
+    当占位符被解析时，为所有在服务器上的玩家播放音乐
+    %sound_all_<sound>-<volume>-<pitch>% 全局播放音乐 sound 为音乐 volume 音量 pitch 音调
+    %sound_all_ORB_PICKUP-1-2% 全局播放捡起经验球的音效，音量为1，音调为2
+
+    检测服务器状态的变量
+    %pinger_isonline_testplugins.com:25565% 查看服务器是否在线
+    %pinger_players_yourip:yourport% 查看玩家数量
+    %pinger_max_youraddress.com% 查看最大玩家数？
+    %pinger_motd_testplugins.com% 查看欢迎信息motd
+
+    蹦极
+    %bungee_total% 蹦极服总数
+    %bungee_<servername>%
+    RedisBungee 另一个蹦极服插件
+    %redisbungee_total% 同上
+    %redisbungee_<servername>%
+    NMS Player placeholders
+    %nmsplayer_ping%
+
+    玩家变量
+    %player_timestamp% 玩家时间？
+    %player_server% 玩家服务器？
+    %player_name% 玩家名
+    %player_displayname% 玩家昵称【包括 称号】
+    %player_uuid% 玩家的UUID
+    %player_gamemode% 玩家的游戏模式
+    %player_x%
+    %player_y%
+    %player_z% 玩家的X Y Z坐标
+    %player_world% 玩家所在世界
+    %player_is_op% 玩家是否为OP
+    %player_bed_x%
+    %player_bed_y%
+    %player_bed_z% 玩家床/出生点的X Y Z坐标
+    %player_bed_world% 玩家床/出生点的世界
+    %player_ip% 玩家的IP
+    %player_allow_flight% 玩家是否允许飞行
+    %player_can_pickup_items% 玩家能否捡起物品
+    %player_compass_x%
+    %player_compass_y%
+    %player_compass_z% 玩家指南针所指向的X Y Z坐标
+    %player_compass_world% 玩家指南针所指向的世界
+    %player_has_permission_<permission>% 玩家是否有 XXX 权限
+    %player_custom_name% 玩家的自定义名字
+    %player_exp% 玩家的经验值
+    %player_exp_to_level% 玩家到下级还有多少经验值
+    %player_total_exp% 玩家的总共经验值
+    %player_level% 玩家的等级
+    %player_first_join_date% 玩家第一次加入游戏的日期
+    %player_fly_speed% 玩家飞行速度
+    %player_food_level% 玩家饥饿等级
+    %player_health% 玩家的血量
+    %player_max_health% 玩家最大的血量
+    %player_health_scale% 玩家血量百分比
+    %player_item_in_hand% 玩家手上的东西
+    %player_last_damage% 玩家上次 受到/造成 的伤害
+    %player_max_air%
+    %player_remaining_air%
+    %player_no_damage_ticks% 玩家没有 受到/造成 伤害的时间 单位为tick
+    %player_max_no_damage_ticks% 玩家最大没有 受到/造成 伤害的时间 单位为tick
+    %player_time% 玩家时间
+    %player_time_offset%
+    %player_saturation% 玩家的饥饿值
+    %player_sleep_ticks% 玩家睡觉的时间 单位tick
+    %player_walk_speed% 玩家走路的速度
+    %player_ticks_lived% 玩家生存的时间 单位tick
+    %player_seconds_lived% 玩家生存的时间 单位秒
+    %player_minutes_lived% 玩家生存的时间 单位分钟
+    %player_ping% 玩家的延迟 单位毫秒
+    %player_ping_<player>% 某某玩家的延迟 单位毫秒
+
+    检测物品栏
+    %invcheck_m:<Material name or ID>_a:<amount>_d:_n:<displayname>_l:<lore-line-1,lore-line-2>% 检测物品栏有无物品——m:物品ID a:物品数量 d:数据附加值 n:自定义名字
+    %invcheck_m:STONE_a:64% - 检测玩家是否有64个石头
+    %invcheck_m:STONE_a:1_n:&aAwesome-Stone% 检测玩家有没有一个叫做 &aAwesome-Stone 的石头
+
+    检测物品栏 - CheckItem
+    CheckItem 占位符用于检测玩家背包中的特定物品.
+    安装指令: /papi ecloud download CheckItem
+
+    %checkitem_<modifier1>,<modifier2>,<...>%
+    例子:%checkitem_mat:stone,namecontains:Test,strict%
+
+    Modifiers:
+    通过在变量中添加不同的 Modifiers(修饰符) 进行精准匹配
+    namecontains:<name> - 检查是否有名称中包含指定 <name> 的物品
+    namestartswith:<name> - 检查是否有以名称 <name> 开头的物品
+    nameequals:<name> - 检查是否有和名称 <name> 完全匹配的物品(区分大小写)
+    mat:<material> - 检查是否有材质为 <material> 的物品(例如: STONE)
+    amt:<number> - 检查物品的数量是否大于 <number> 个数
+    data:<number> - 检查物品的 Data 数值是否为 (列入: 红色羊毛的 data 值为 14 (WOOL:14)).
+    Data 修饰符仅适用于 1.12.2 及之前的版本!
+    lorecontains:<text> - 检查 Lore 中是否包含 <text>
+    strict - 需要 mat: 修饰符. 严格检查物品名和Lore. (如果背包中有一个名为 Test 的石头, 并且使用了 %checkitem_mat:stone,strict% 检查是否有石头, 那么它将会返回 false)
+    inhand - 检查物品是否被玩家拿在手上 (也包括副手)
+
+    统计信息
+    Statistic 占位符提供了大量的统计信息
+    适用于 1.13 及以上版本的下载指令:
+
+    /papi ecloud download Statistic
+    对于 1.12.2 及更早的版本:
+
+    /papi ecloud download Statistic 1.7.0
+    支持 SpigotAPI 中的所有 Statistic 枚举值, 使用以下占位符
+
+    %statistic_<StatisticType>%
+    详细的值请访问 API 页面中的 Statistic 枚举页面
+
+    获取指定方块 / 实体 / 物品的占位符:
+    %statistic_mine_block:<material>% -- 挖掘指定方块的次数
+    %statistic_use_item:<Item Material>% -- 使用了多少次这个物品
+    %statistic_break_item:<Item Material>% -- 用坏了多少次这个物品
+    %statistic_craft_item:<Item Material>% -- 制造了多少次这个物品
+    %statistic_kill_entity:<MobType>% -- 杀死指定实体的次数
+    %statistic_entity_killed_by:<MobType>% -- 被指定实体杀死的次数
+
+    其他占位符:
+    %statistic_mine_block% -- 总共挖掘了多少方块
+    %statistic_use_item% -- 总共使用了多少物品
+    %statistic_break_item% -- 总共用坏了多少物品
+    %statistic_craft_item% -- 总共制造了多少物品
+    %statistic_ticks_played% -- 总游戏时间 - 单位: Tick
+    %statistic_seconds_played% -- 总游戏时间 - 单位: 秒
+    %statistic_minutes_played% -- 总游戏时间 - 单位: 分钟
+    %statistic_hours_played% -- 总游戏时间 - 单位: 小时
+    %statistic_days_played% -- 总游戏时间 - 单位: 天
+    %statistic_time_played% -- 总游戏时间 - 完整显示
+    %statistic_seconds_played_remaining% -- 玩家的剩余时间 - 单位: 秒
+    %statistic_minutes_played_remaining% -- 玩家的剩余时间 - 单位: 分钟
+    %statistic_hours_played_remaining% -- 玩家的剩余时间 - 单位: 小时
+    %statistic_days_played_remaining% -- 玩家的剩余时间 - 单位: 天
+    %statistic_animals_bred% -- 繁殖动物的次数
+    %statistic_armor_cleaned% -- 清除防具
+    %statistic_banner_cleaned% -- 清除旗帜
+    %statistic_beacon_interacted% -- 触发信标
+    %statistic_boat_one_cm% -- 划船总距离 - 单位: cm
+    %statistic_brewingstand_interaction% -- 酿造台触发次数
+    %statistic_cake_slices_eaten% -- 吃过多少片蛋糕
+    %statistic_cauldron_filled% -- 酿造锅填满次数
+    %statistic_cauldron_used% -- 锅的使用次数
+    %statistic_chest_opened% -- 打开了多少次箱子
+    %statistic_climb_one_cm% -- 梯子的爬行距离 - 单位: cm
+    %statistic_crafting_table_interaction% -- 触发工作台的次数
+    %statistic_crouch_one_cm% -- 潜行走了多少距离 - 单位: cm
+    %statistic_damage_dealt% -- 造成了多少次伤害
+    %statistic_damage_taken% -- 受伤了多少次
+    %statistic_deaths% -- 死亡总次数
+    %statistic_dispenser_inspected% -- 发射机的出发次数
+    %statistic_dive_one_cm% -- 潜水移动了多少距离 - 单位: cm
+    %statistic_drop% -- 扔了多少东西
+    %statistic_dropper_inspected% -- 投掷器的出发次数
+    %statistic_enderchest_opened% -- 末影箱的使用次数
+    %statistic_fall_one_cm% -- 摔落的总距离 - 单位: cm
+    %statistic_fish_caught% -- 钓到鱼的次数
+    %statistic_flower_potted% -- 在花盆里种花的次数
+    %statistic_fly_one_cm% -- 鞘翅飞行的总距离 - 单位: cm
+    %statistic_furnace_interaction% -- 熔炉的触发次数
+    %statistic_hopper_inspected% -- 漏斗的出发次数
+    %statistic_horse_one_cm% -- 骑马移动的总距离 - 单位: cm
+    %statistic_item_enchanted% -- 给物品附魔的总次数
+    %statistic_jump% -- 跳了多少次
+    %statistic_junk_fished% -- 钓到了多少次垃圾
+    %statistic_leave_game% -- 离开了多少次游戏
+    %statistic_join_game% -- 登陆了多少次游戏
+    %statistic_minecart_one_cm% -- 坐矿车移动的总距离 - 单位: cm
+    %statistic_noteblock_played% -- 音符盒的使用次数
+    %statistic_noteblock_tuned% -- 改变音符盒音调的次数
+    %statistic_pig_one_cm% -- 骑猪的移动总距离 - 单位: cm
+    %statistic_player_kills% -- 杀死了多少个玩家
+    %statistic_record_played% -- 放唱片的次数
+    %statistic_sprint_one_cm% -- 疾跑移动的距离 - 单位: cm
+    %statistic_swim_one_cm% -- 游泳移动的距离 - 单位: cm
+    %statistic_talked_to_villager% -- 和村民的对话次数
+    %statistic_time_since_death% -- 上一次死亡后至今过去了多久
+    %statistic_ticks_since_death% -- 上一次死亡后至今过去了多久 - 单位: Tick
+    %statistic_seconds_since_death% -- 上一次死亡后至今过去了多久 - 单位: 秒
+    %statistic_minutes_since_death% -- 上一次死亡后至今过去了多久 - 单位: 分钟
+    %statistic_hours_since_death% -- 上一次死亡后至今过去了多久 - 单位: 小时
+    %statistic_days_since_death% -- 上一次死亡后至今过去了多久 - 单位: 天
+    %statistic_traded_with_villager% -- 与村民的交易次数
+    %statistic_trapped_chest_triggered% -- 陷阱箱的触发次数
+    %statistic_walk_one_cm% -- 走路移动了多少距离 - 单位: cm
+    %statistic_sleep_in_bed% -- 睡觉的次数
+    %statistic_sneak_time% -- 潜行的时间
+    %statistic_aviate_one_cm% -- 飞行的距离 - 单位: cm
+    %mvdw_<placeholder without brackets>% 这是格式 接下面的变量 不要变量旁边的%%
+
+    √AcidIsland
+    %acidisland_level% 岛的等级
+    %acidisland_island_x%
+    %acidisland_island_y%
+    %acidisland_island_z% 岛的坐标
+    %acidisland_island_world% 岛所在世界
+    %acidisland_team_size% 队伍规模
+    %acidisland_coop_islands% 限制岛屿
+
+    √AdvancedFly
+    %advancedfly_warns% 警告次数
+    %advancedfly_allowflight% 是否可以飞行
+    %advancedfly_lastwarnedby% 上次被谁警告
+
+    √AnimatedMenu( [] = 可选项 )
+    %animatedmenu_motd_<ip>_[port]% 检测IP:PORT的欢迎信息
+    %animatedmenu_status_<ip>_[port]_<onlinemessage>_<offlinemessage>% 如果在线输出online 离线输出offline
+    %animatedmenu_status_testplugins.com_&aOnline_&cOffline%
+    %animatedmenu_status_testplugins.com_25565_&aOnline_&cOffline%
+
+    √ASkyBlock
+    %askyblock_level% 岛等级
+    %askyblock_island_y%
+    %askyblock_island_z% YZ坐标
+    %askyblock_island_world% 所在世界
+    %askyblock_team_size% 队伍规模
+    %askyblock_coop_islands% 限制岛屿
+
+    √AutoRank
+    %autorank_current_rank% 当前排位
+    %autorank_next_rank% 下面的排位
+    %autorank_time_of_player% 玩家时间
+    %autorank_local_time% 本地时间
+    %autorank_global_time% 全局时间
+
+    √AutoSell
+    %autosell_in_autosell_mode% 是否为自动出售模式
+    %autosell_in_autoblocks_mode% 自动方块？
+    %autosell_in_automelt_mode% 是否为自动冶炼模式
+    %autosell_current_shop% 当前商店
+    %autosell_total_multiplier%
+    %autosell_time_multiplier%
+    %autosell_perm_multiplier%
+    %autosell_perm_multiplier_name%
+    %autosell_time_multiplier_minsleft%
+    %autosell_time_multiplier_timeleft% 这些都是什么鬼 multiplier是乘积的意思啊
+
+    √ChatColor
+    %chatcolor_chatcolor%聊天颜色
+    %chatcolor_namecolor%名称颜色
+
+    √ChatReaction
+    %chatreaction_wins% 胜利次数
+    √CheckNameHistory
+    %checknamehistory_previous_names_<#>% 以前的名字
+    %checknamehistory_previous_name_date_<#>% 以前名字的日期
+
+    √Compassance
+    %compassance_p_string% 行
+    %compassance_p_selectedtheme% 选择的主题
+    %compassance_p_target% 目标
+    %compassance_p_target_location% 目标位置
+    %compassance_p_target_distance% 目标距离
+    %compassance_p_string_theme_<theme-id>% 一行主题？
+
+    √CraftConomy
+    插件列表
+    %craftconomy_<currency>% 返回玩家钱数的2倍
+    %craftconomy_<currency>@10% 10倍
+    %craftconomy_<currency>@int% 返回int倍
+
+    √DeluxeTags
+    插件列表
+    %deluxetags_tag% 标签
+    %deluxetags_identifier% 鉴定人
+    %deluxetags_description% 描述
+    %deluxetags_amount% 数量
+
+    √DonateParty
+    插件列表
+    %donateparty_goal% 目标
+    %donateparty_goal_needed% 所需物品
+
+
+    √EnjinMinecraftPlugin
+    插件列表
+    %enjinminecraftplugin_points% 点数
+    √Essentials
+    Essentials
+    %essentials_nickname% 昵称
+    %essentials_godmode% 是否为上帝模式
+    %essentials_jailed% 是否在监狱中
+    %essentials_kit_last_use_<kitname>% 最后一次使用的工具包
+    %essentials_has_kit_<kitname>% 是否有XX工具包
+    %essentials_kit_is_available_<kitname>% 是否可以获得XX工具包
+    %essentials_kit_time_until_available_<kitname>% 知道可以获得的时间
+    %essentials_pm_recipient% 收到PM
+
+    √EZBlocks
+    插件列表
+    %ezblocks_broken% 破坏
+    √EZPrestige
+    插件列表
+    %ezprestige_prestige%威望
+    %ezprestige_prestigetag%威望等级
+    %ezprestige_nextprestige% 下一个威望等级所需的点数
+    %ezprestige_nextprestigetag% 下一个威望等级
+
+    插件列表
+    %ezrankslite_player% 玩家
+    %ezrankslite_displayname% 展示名称
+    %ezrankslite_world% 世界
+    %ezrankslite_rank% 等级
+    %ezrankslite_rankup% 下一级
+    %ezrankslite_cost% 花费
+    %ezrankslite_cost_formatted% 格式化花费
+    %ezrankslite_balance% 钱数
+    %ezrankslite_balance_formatted% 格式化钱数
+    %ezrankslite_difference% 差距
+    %ezrankslite_difference_formatted% 格式化 差距
+    %ezrankslite_progress% 发展
+    %ezrankslite_progressexact% 精准的发展
+    %ezrankslite_progressbar%
+    %ezrankslite_rankprefix%等级前缀
+    %ezrankslite_rankupprefix% 下一级等级前缀
+    %ezrankslite_lastrank% 上一级
+    %ezrankslite_lastrankprefix% 上级前缀
+
+    √EZRanksPro
+    插件列表
+    %ezrankspro_player%
+    %ezrankspro_displayname%
+    %ezrankspro_world%
+    %ezrankspro_rank%
+    %ezrankspro_rankup%
+    %ezrankspro_cost%
+    %ezrankspro_cost_formatted%
+    %ezrankspro_balance%
+    %ezrankspro_balance_formatted%
+    %ezrankspro_difference%
+    %ezrankspro_difference_formatted%
+    %ezrankspro_progress%
+    %ezrankspro_progressexact%
+    %ezrankspro_progressbar%
+    %ezrankspro_rankprefix%
+    %ezrankspro_rankupprefix%
+    %ezrankspro_lastrank%
+    %ezrankspro_lastrankprefix%
+
+    √Factions MCore
+    插件列表
+    %factions_faction%
+
+    %factions_power%
+
+    %factions_powermax%
+
+    %factions_factionpower%
+
+    %factions_factionpowermax%
+
+    %factions_title%
+
+    %factions_role%
+
+    %factions_claims%
+
+    %factions_onlinemembers%
+
+    %factions_allmembers%
+
+    √Factions 1.6.9.5 (Factions UUID)
+    插件列表
+    %factions_faction% 所在的派系
+    %factions_power% 能量
+
+    %factions_powermax% 最大能量
+
+    %factions_factionpower% 派系能量
+
+    %factions_factionpowermax% 派系最大能量
+
+    %factions_title% 派系标题
+
+    %factions_role% 派系任务
+
+    %factions_claims% 认领派系
+
+    %factions_onlinemembers% 在线成员
+
+    %factions_allmembers% 所有成员
+
+    %factions_chat_tag% 聊天标签
+
+    √GAListener
+    插件列表
+    %galistener_votes% 投票
+    √GangsPlus
+    插件列表
+    %gangsplus_in_gang% 组队的
+    %gangsplus_gang% 队伍
+
+    %gangsplus_gang_tag% 队伍标签
+
+    %gangsplus_gang_rank% 队伍排名
+
+    %gangsplus_gang_homes%队伍基地
+
+    %gangsplus_gang_friendlyfire% 友伤
+
+    %gangsplus_gang_online% 在线
+
+    %gangsplus_gang_size% 规模
+
+    %gangsplus_gang_leader% 领导人
+
+    %gangsplus_gang_level% 等级
+
+
+    %gangsplus_gang_wins% 胜利次数
+
+    %gangsplus_gang_losses% 失败次数
+
+    %gangsplus_gang_wlr% 胜利失败比
+
+    %gangsplus_gang_kills% 击杀数
+
+    %gangsplus_gang_deaths% 死亡数
+
+    %gangsplus_gang_kdr% 击杀死亡比
+
+    √Heroes
+    插件列表
+    %heroes_skill_level_<skillname>% 技能等级
+    %heroes_main_class_name% 主要职业名
+
+    %heroes_main_class_description% 描述
+
+    %heroes_main_class_tier% 阶段
+
+    %heroes_second_class_name% 第二职业名
+
+    %heroes_second_class_description% 描述
+
+    %heroes_second_class_tier% 阶段
+
+    %heroes_level% 英雄等级
+
+    %heroes_mana% 神力
+
+    %heroes_mana_regen% 神力回复
+
+    %heroes_max_mana% 最大神力
+
+    %heroes_mastered_classes% 有的职业
+
+    %heroes_mastered_classes_amount% 总共有几个职业
+
+    %heroes_party_is_no_pvp% 队伍有无友伤
+
+    %heroes_party_size% 队伍规模
+
+    %heroes_party_leader% 队伍领导人
+
+    √IslandWorld
+    插件列表
+    %islandworld_points_with_party% 组队点数
+    %islandworld_points_without_party% 单人点数
+
+    %islandworld_island_members% 岛成员
+
+    %islandworld_all_members% 所有成员
+
+    %islandworld_can_build% 能否建筑
+
+    %islandworld_in_party% 是否在队内
+
+
+    √Jobs Reborn
+    插件列表
+    %jobs_jobs% 职业
+    %jobs_format% 格式
+
+    %jobs_name_<number>% 名字
+
+    %jobs_level_<number>% 等级
+
+    %jobs_maxlevel_<number>% 最大等级
+
+    %jobs_exp_<number>% 经验值
+
+
+    √JonWeather
+    插件列表
+    %jonweather_address% 玩家设置的的个人详细地址
+    %jonweather_now_province% 实时天气-省份
+
+    %jonweather_now_adcode% 实时天气-AdCode(行政区划代码)
+
+    %jonweather_now_city% 实时天气-城市
+
+    %jonweather_now_reporttime% 实时天气-更新时间 例：2021-7-24 01:53
+
+    %jonweather_now_province% 实时天气-天气现象(中文描述) 例：多云
+
+    %jonweather_now_temperature% 实时天气-气温(°C) 例：25
+
+    %jonweather_now_winddirection% 实时天气-风向 例：东北
+
+    %jonweather_now_windpower% 实时天气-风力(风速级别) 例：6
+
+    %jonweather_now_humidity% 实时天气-湿度(%) 例：77
+
+    以下变量中 # 为整数，1表示明天，2表示后天，3表示大后天
+
+    %jonweather_forecast_#_date% 预报天气-某天的日期 例：2021-7-24
+
+    %jonweather_forecast_#_weeknum% 预报天气-某天是星期几(阿拉伯数字) 例：6
+
+    %jonweather_forecast_#_dayweather% 预报天气-某天白天的天气现象(中文描述)
+
+    %jonweather_forecast_#_daytemp% 预报天气-某天白天的气温(°C)
+
+    %jonweather_forecast_#_daywind% 预报天气-某天白天的风向
+
+    %jonweather_forecast_#_daypower% 预报天气-某天白天的风力(风速等级)
+
+    %jonweather_forecast_#_nightweather% 预报天气-某天夜间的天气现象(中文描述)
+
+    %jonweather_forecast_#_nighttemp% 预报天气-某天夜间的气温(°C)
+
+    %jonweather_forecast_#_nightwind% 预报天气-某天夜间的风向
+
+    %jonweather_forecast_#_nightpower% 预报天气-某天夜间的风力(风速等级)
+
+
+    √killStats
+    插件列表
+    %killstats_kills% 击杀
+    %killstats_killrank% 击杀所在组
+
+    %killstats_deaths% 死亡
+
+    %killstats_deathrank% 死亡所在组
+
+    %killstats_streak%
+
+    %killstats_streakrank%
+
+    %killstats_kdr% 击杀死亡比
+
+    %killstats_kdrrank% 所在组
+
+
+    √LeaderHeads
+    插件列表
+    #表示第几位的玩家/分数
+    %leaderheads_player_<leaderboard type>_#%
+
+    %leaderheads_score_<leaderboard type>_#%
+
+    这些是类型
+
+    sg-kills, sg-deaths, sg-wins, sg-coins, sg-played 饥饿游戏 击杀 死亡 胜利 硬币 玩过的游戏,
+
+    tr-wins, tr-looses, tr-played, tp-kills tr 胜利 失败 玩过的游戏 击杀,
+
+    tp-elo, tp-deaths, tp elo 死亡
+
+    treasure, traded, swim, played, pig, mobkills,
+
+    宝藏 交易 游泳 玩 猪 怪物击杀数
+
+    minecart, fish, horse, fly, joined, mine, kills, enchanted, drop, dive, deaths, damage-give, damage-receive, cake, climb, boat, bred, walk, refer,
+
+    矿车 鱼 马 飞行 加入 挖方块 击杀 附魔 掉落 潜水 死亡 打出的伤害 受到的伤害 蛋糕 爬 船 喂动物 走 委托
+
+    vr-total, vr-monthly, vr-streak, vr-previous, swcc-wins, swcc-kills, swcc-deaths, swcc-played,
+
+    vr 总计 每月 连 过去 swcc 胜利 击杀 死亡 玩过的游戏
+
+    buycraft, ptr-time, bwr-deaths, bwr-beds, bwr-score, bwr-loses, bwr-wins, bwr-kd, bwr-games, bwr-kills, ps-kills, ps-elo, ps-deaths, ps-streak,
+
+    ? ptr时间 bwr 死亡 摧毁的床数 积分 失败 胜利 KD 玩过的游戏 击杀 ps击杀 ? 死亡 连杀
+
+    battlestreak, battlekills, battledeaths, town-land, town-residents, nation-land, nation-residents, mcmmo-power, sc-deaths, sc-members, sc-ratio, 
+    连续对战 击杀 死亡 城镇 地 领地 国家 地 领地 mcmmo 能量 sc 死亡 成员 比率
+
+    quests-points, ez-blocks, sql-swr-blocks, flat-swr-blocks, sql-swr-score, sql-swr-wins, sql-swr-played, sql-swr-deaths, sql-swr-kills, flat-swr-wins, flat-swr-played, flat-swr-deaths,
+
+    任务点数 ez方块 sql-swr-方块 flat-swr-方块 sql-swr 分数 胜利 玩过 死亡 击杀 胜利 玩过 死亡
+
+
+    flat-swr-kills, flat-swr-score, sbs-deaths, uf-chunks, uf-members, uf-balance, uf-power,
+
+    击杀 分数 sbs死亡 区块 成员 价值 能量
+
+    cr-wins, f-balance, asb-level, f-chunks, f-members, f-power, ai-level, sql-ws-score,
+
+    cr胜利次数 f钱数 asb 等级 f区块 成员 能量 ai等级 sql ws 分数
+
+    sql-ws-wins, sql-ws-played, sql-ws-deaths, sql-ws-kills, flat-ws-wins, flat-ws-played, flat-ws-deaths, flat-ws-kills, flat-ws-score, sql-sw-score, sql-sw-wins, sql-sw-played,
+
+    sql ws 胜利次数 玩过 死亡 击杀 胜利 玩过 死亡 击杀 分数 分数 胜利 玩过
+
+    sql-sw-deaths, sql-sw-kills, rv-votes, flat-sw-wins, flat-sw-played, flat-sw-deaths, flat-sw-kills, sbs-kills, flat-sw-score, usb-level, sbs-killstreak, sbs-mobkills,
+
+    死亡 击杀 票数 胜利 玩过 死亡 击杀 击杀 分数 等级 连杀 击杀怪物
+
+
+    balance, gal-votes, iwlevel, battlelevel, battlescore, playerpoints, ks-kills, ks-deaths, ks-streak, ks-ratio, uv-total, uv-monthly
+
+    价值 票数 等级 等级 分数 点数 击杀 死亡 连杀 比率 总计 每月
+
+
+    译者注：这些插件没见过啊(╯‵□′)╯︵┻━┻
+
+    √LegendQuest
+    插件列表
+    (these placeholders were added by LegendQuest and may change as LegendQuest handles adding its own placeholders through the DeluxeChat API)
+    %legendquest_race% 竞赛
+
+    %legendquest_mastered% 是否领取
+
+    %legendquest_class% 第一职业
+
+    %legendquest_subclass% 第二职业
+
+    %legendquest_level% 等级
+
+    %legendquest_exp% 经验
+
+    %legendquest_statline% 统计行
+
+    %legendquest_hpbar% 血量条
+
+    %legendquest_hp% 血量
+
+    %legendquest_manabar% 神力条
+
+    %legendquest_mana% 神力
+
+    %legendquest_karma% 善恶点
+
+    %legendquest_party% 组队
+
+    √LWC
+    插件列表
+    %lwc_locks% 上锁总数
+
+    √Marriage (reloaded)
+    插件列表
+    %marriage_is_married% 是否结婚
+    %marriage_is_priest% 是否为神父
+
+    %marriage_gender% 性别
+
+    %marriage_gender_chat_prefix% 聊天前缀
+
+    %marriage_last_name% 姓
+
+    %marriage_has_pvp_enabled% 有无PVP
+
+    %marriage_has_home_set% 是否设置家
+
+    %marriage_home_x%
+
+    %marriage_home_y%
+
+    %marriage_home_z% XYZ坐标
+
+    %marriage_partner% 父母名字=-=
+
+
+    √MarriageMaster
+    插件列表
+    %marriagemaster_married% 是否结婚
+    %marriagemaster_partner% 那个伙伴：D是
+
+
+    √McInfected
+    插件列表
+    %mcinfected_score% 得分
+    %mcinfected_kills% 击杀
+
+    %mcinfected_deaths% 死亡
+
+    %mcinfected_wins% 胜利
+
+    %mcinfected_losses% 失败
+
+    %mcinfected_killstreak%
+
+    %mcinfected_time% 时间
+
+
+    √McInfected-Ranks
+    插件列表
+    %mcinfected-ranks_rank% 所在组
+    %mcinfected-ranks_prefix% 所在组前缀
+
+
+    √McMMO
+    插件列表
+    %mcmmo_level_<skillname>% 技能等级
+    %mcmmo_rank_<skillname>% 技能所在组
+
+    %mcmmo_xp_remaining_<skillname>% 这一级多了多少经验
+
+    %mcmmo_xp_needed_<skillname>% 到下一级还要多少经验
+
+    %mcmmo_xp_<skillname>% 技能的经验
+
+    %mcmmo_power_level% 能量等级
+
+    %mcmmo_power_level_cap% 最大等级？
+
+    %mcmmo_in_party% 是否组队
+
+    %mcmmo_party_name% 组队名
+
+    %mcmmo_is_party_leader% 是否为组队领导人
+
+    %mcmmo_party_leader% 组队领导人是
+
+    %mcmmo_party_size% 队伍规模
+
+    √MineCrates
+    插件列表
+    %minecrates_area_handler_type% 区域类型
+    %minecrates_area_name% 区域名
+
+    %minecrates_in_reward_area% 奖励区域
+
+    %minecrates_counter% 计数器
+
+    %minecrates_chance% 几率
+
+    %minecrates_total_needed% 总需要
+
+    %minecrates_reward_list_name% 列出奖励名
+
+    √MySQLTokens
+    插件列表
+    %mysqltokens_tokens% 代笔
+    √MythicMobs
+    点击该行字跳转
+
+    √Nicky
+    插件列表
+    %nicky_nickname% 昵称
+
+    √Nicknamer
+    插件列表
+    %nicknamer_has_nickname% 是否有昵称
+    %nicknamer_has_skin% 是否有皮肤
+
+    %nicknamer_nickname% 昵称
+
+
+    √OnTime
+    插件列表
+    %ontime_last_login% 上次登入时间
+    %ontime_last_vote% 上次投票时间
+
+    %ontime_time_played_month% 玩过几个月
+
+    %ontime_referrals_month% 下线几个月
+
+    %ontime_votes_month% 投票过几个月
+
+    %ontime_time_played_today% 今天玩了多长时间
+
+    %ontime_referrals_today% 今天下线时间
+
+    %ontime_votes_today% 今天投票
+
+    %ontime_time_played_total% 总计游戏时间
+
+    %ontime_points_total% 总计点数
+
+    %ontime_referrals_total% 总计离线时间
+
+    %ontime_votes_total% 总计投票数
+
+    %ontime_time_played_week% 总计玩过几周
+
+    %ontime_referrals_week% 离线几周
+
+    %ontime_votes_week% 总计投票
+
+
+    √PVPRewards
+    插件列表
+    %pvprewards_point% 玩家PVP积分
+    %pvprewards_exp% 玩家PVP经验值
+
+    %pvprewards_rank% 玩家PVP段位的展示名
+
+    %pvprewards_rank_key% 玩家PVP段位对应的键的名称 (不常用)
+
+    %pvprewards_ranktop_place% 玩家在排行榜上的名次 (正整数)
+
+    以下变量中 # 表示名次数字, 范围是 1-10
+
+    %pvprewards_ranktop_#_player% 排行榜上第#名的玩家的名称
+
+    %pvprewards_ranktop_#_rank% 排行榜上第#名的玩家的段位展示名
+
+    %pvprewards_ranktop_#_exp% 排行榜上第#名的玩家的PVP经验值
+
+    %pvprewards_ranktop_#_point% 排行榜上第#名的玩家的PVP积分
+
+
+    √PlayerPoints
+    插件列表
+    %playerpoints_points% 点数
+
+    √PlotSquared
+    插件列表
+    %plotsquared_currentplot_alias% 当前地皮的简称
+    %plotsquared_currentplot_owner% 当前地皮主人
+
+    %plotsquared_currentplot_members_size% 当前地皮成员
+
+    %plotsquared_currentplot_world% 当前地皮世界
+
+    %plotsquared_has_plot% 是否有地皮
+
+    %plotsquared_has_build_rights% 是否有建筑的权限
+
+    %plotsquared_plot_count% 地皮数量
+
+    %plotsquared_allowed_plot_count% 允许的地皮数量
+
+    √PointsAPI
+    插件列表
+    %pointsapi_points% 点数
+
+    √PrisonMines
+    插件列表
+    # mine name你指定
+    %prisonmines_blocks_mined_<mine name>% 挖掉的方块
+
+    %prisonmines_percent_mined_<mine name>% 挖掉的百分比
+
+    %prisonmines_percent_left_<mine name>% 剩余的百分比
+
+
+    %prisonmines_time_until_reset_<mine name>% 重置还剩时间
+
+    %prisonmines_has_timed_reset_<mine name>% 上次重置过去的时间
+
+    %prisonmines_has_percentage_reset_<mine name>% 剩余时间百分比
+
+    获取玩家当前位置
+    %prisonmines_name% 名字
+
+    %prisonmines_blocks_mined% 挖掉的方块
+
+    %prisonmines_percent_mined% 挖掉的百分比
+
+    %prisonmines_percent_left% 剩余的百分比
+
+    %prisonmines_time_until_reset% 直到重置还剩时间
+
+    %prisonmines_has_timed_reset% 过去的时间
+
+    %prisonmines_has_percentage_reset% 剩余时间百分比
+
+    √ProQuests
+    插件列表
+    %proquests_completed_quests% 完成的任务
+    %proquests_active_quests% 激活的
+
+    %proquests_monthly_points% 每月点数
+
+    %proquests_total_points% 总点数
+
+    %proquests_progress_bar_<quest identifier>%
+
+    %proquests_progress_<quest identifier>% 发展？
+
+    %proquests_total_<quest identifier>% 总计
+
+    √pvpstats
+    插件列表
+    %pvpstats_kills% 击杀
+    %pvpstats_deaths% 死亡
+
+    %pvpstats_elo%
+
+    %pvpstats_killstreak% 连杀
+
+    %pvpstats_maxstreak% 最大连杀
+
+
+    √QuickSell
+    插件列表
+    %quicksell_booster% 加成
+    %quicksell_booster_time% 加成时间
+
+
+    √RoyalCommands
+    插件列表
+    %royalcommands_nickname% 昵称
+
+    √SellAll
+    插件列表
+    %sellall_multiplier% 倍增？
+    %sellall_multitime%时间？
+
+
+    SimpleClans
+    插件列表
+    %simpleclans_in_clan% 公会
+    %simpleclans_join_date% 加入时间
+
+    %simpleclans_rank% 等级
+
+    %simpleclans_tag% 标签
+
+    %simpleclans_tag_label%
+
+    %simpleclans_civilian_kills%
+
+    %simpleclans_neutral_kills%
+
+    %simpleclans_rival_kills%
+
+    %simpleclans_weighted_kills% 各种击杀
+
+    %simpleclans_deaths% 死亡
+
+    %simpleclans_kdr% 击杀死亡比
+
+    %simpleclans_is_leader% 是否为领导人
+
+    %simpleclans_clan_tag%团队标签
+
+    %simpleclans_clan_tag_label%
+
+    %simpleclans_clan_color_tag% 颜色标签
+
+    %simpleclans_clan_founded_string%
+
+    %simpleclans_clan_name% 公会名
+
+    %simpleclans_clan_average_wk% 平均wk？
+
+    %simpleclans_clan_balance% 公会资金
+
+    %simpleclans_clan_size% 公会规模
+
+    %simpleclans_clan_total_civilian%
+
+    %simpleclans_clan_total_neutral%
+
+    %simpleclans_clan_total_rival%
+
+    %simpleclans_clan_total_deaths%
+
+    %simpleclans_clan_total_kdr% 各种总计
+
+    %simpleclans_clan_friendly_fire% 友伤
+
+    %simpleclans_clan_allow_deposit%
+
+    %simpleclans_clan_allow_withdraw% 是否允许？？
+
+    %simpleclans_clan_is_unrivable% SMG?
+
+    %simpleclans_clan_leader_size% 领导团队
+
+
+    √SimpleKillTracker
+    插件列表
+    %simplekilltracker_kills% 击杀
+    %simplekilltracker_deaths% 死亡
+
+    %simplekilltracker_kdr% KD比
+
+
+    √SkywarsReloaded
+    插件列表
+    %skywarsreloaded_score% 得分
+    %skywarsreloaded_wins% 胜利
+
+    %skywarsreloaded_kills% 击杀
+
+    %skywarsreloaded_deaths% 死亡
+
+    %skywarsreloaded_games% 游戏
+
+    %skywarsreloaded_games_played% 玩过的游戏
+
+    %skywarsreloaded_map_name% 当前地图名
+
+    %skywarsreloaded_selected_kit% 选择的工具包
+
+    %skywarsreloaded_blocks% 方块？
+
+    %skywarsreloaded_timevote% 投票时间？
+
+    %skywarsreloaded_time_vote%
+
+    %skywarsreloaded_opvote%
+
+    %skywarsreloaded_op_vote% OP投票？
+
+    √SimpleCoinsAPI
+    插件列表
+    %simplecoinsapi_coins% 钱数
+
+    √SimplePrefix/Suffix
+    插件列表
+    %simpleprefix_prefix%
+    %simpleprefix_suffix%
+
+
+
+    %simplesuffix_prefix%
+
+    %simplesuffix_suffix% 都是前缀后缀
+
+    √SkillAPI
+    插件列表
+    %skillapi_attribute_points% 点数
+    %skillapi_mana% 神力
+
+    %skillapi_max_mana% 最大神力
+
+    %skillapi_skill_level_<skillName>% 技能的等级
+
+    %skillapi_skill_points_<skillName>% 点数
+
+    %skillapi_skill_cost_<skillName>% 花费
+
+    %skillapi_skill_levelreq_<skillName>% 需要等级
+
+    %skillapi_skill_is_maxed_<skillName>% 是否满级
+
+    %skillapi_skill_message_<skillName>% 消息
+
+    %skillapi_skill_type_<skillName>% 类型
+
+    %skillapi_skill_req_<skillName>% 需求
+
+    这些下面的和上面的意思相同，#号你可以替换成 1-<玩家拥有的技能数> 将展示玩家 第一个 第二个······技能
+
+    %skillapi_player_skill_points_<#>%
+
+    %skillapi_player_skill_level_<#>% %skillapi_player_skill_levelreq_<#>%
+
+    %skillapi_player_skill_name_<#>%
+
+    %skillapi_player_skill_message_<#>%
+
+    %skillapi_player_skill_req_<#>%
+
+    %skillapi_player_skill_type_<#>%
+
+    %skillapi_player_skill_can_autolevel_<#>%
+
+    %skillapi_player_skill_can_cast_<#>%
+
+    √SQLPerms
+
+    %sqlperms_rank_<channel>% 等级
+
+    %sqlperms_prefix_<chanel% 前缀
+
+    √SQLTokens
+
+    %sqltokens_tokens% 代币
+
+    stTitles
+
+    %sttitles_name% 名字
+    %sttitles_id% ID
+
+    %sttitles_display% 展示名
+
+    %sttitles_content% 内容
+
+    SuperbVote
+    插件列表
+    %superbvote_votes% 投票
+
+    TokenEnchant
+    插件列表
+    %tokenenchant_tokens% 代币
+
+    TokenManager
+    插件列表
+    %tokenmanager_tokens% 代币
+
+    Towny
+    插件列表
+    %towny_town% 城镇
+    %towny_friends% 朋友
+
+    %towny_nation% 国家
+
+    %towny_title% 标题
+
+    %towny_town_residents% 领地
+
+    %towny_town_size% 城镇大小
+
+    %towny_town_tag% 城镇标签
+
+    %towny_town_balance% 城镇资金
+
+    %towny_town_mayor%
+
+    %towny_surname% 又名
+
+    %towny_town_rank% 城镇排名
+
+    %towny_nation_rank% 国家排名
+
+    √USkyblock
+    插件列表
+    %uskyblock_island_rank% 岛的排名
+    %uskyblock_island_level% 岛的等级
+
+
+    √UltimateVotes
+    插件列表
+    %ultimatevotes_monthlyvotes% 月投票
+    %ultimatevotes_totalvotes% 总计票数
+
+    %ultimatevotes_hasvoted% 是否投票
+
+
+    √Vault (经济)
+    插件列表
+    %vault_eco_balance%
+    %vault_eco_balance_fixed%
+
+    %vault_eco_balance_formatted% 都是钱数
+
+    √Vault (权限)
+    插件列表
+    %vault_rank% 排名
+    %vault_prefix% 前缀
+
+    %vault_rankprefix% 排名前缀
+
+    %vault_rankprefix_#%
+
+    %vault_suffix% 后缀
+
+    %vault_ranksuffix% 排名后缀
+
+    %vault_ranksuffix_#%
+
+    %vault_prefix_color% 前缀颜色
+
+    √VoteParty
+    插件列表
+    %voteparty_counter% 计数
+    %voteparty_votes% 票数
+
+    %voteparty_total_votes_needed% 总计需要票数
+
+    %voteparty_is_ignoring% 是否忽略？
+
+    √VoteRoulette
+    插件列表
+    %voteroulette_votes_lifetime% 投票时间
+    %voteroulette_votes_day% 投票天数
+
+    %voteroulette_current_vote_cycle% 当前回合？
+
+    %voteroulette_current_vote_streak% 当前连续？
+
+    %voteroulette_hours_since_last_vote% 自从上次投票过去了
+
+    %voteroulette_longest_vote_streak% 最长连续投票
+
+    %voteroulette_unclaimed_milestone_count% 没有领取的连续数量
+
+    %voteroulette_unclaimed_reward_count% 没有领取的奖励数量
+
+    %voteroulette_last_vote_timestamp% 上次投票时间
+
+    √VotingPlugin
+    插件列表
+    %VotingPlugin_CanVote% 是否可以投票
+    %VotingPlugin_Total% 总计
+
+    %VotingPlugin_Total_SITENAME% 总计【网页名】
+
+    %VotingPlugin_Next_SITENAME% 下个
+
+    %VotingPlugin_Last_SITENAME% 上个
+
+    %VotingPlugin_Points% 积分
+
+    WickedSkyWars
+
+    %wickedskywars_score% 点数
+
+    %wickedskywars_kills% 击杀
+
+    %wickedskywars_deaths% 死亡
+
+    %wickedskywars_played% 玩过
+
+    %wickedskywars_won% 胜利
+
+    BattleLevels
+
+    %battlelevels_level% 等级
+
+    %battlelevels_score% 分数
+
+    %battlelevels_bar%
+
+    %battlelevels_topstreak% 最大连杀
+
+    %battlelevels_killstreak% 连杀
+
+    %battlelevels_kills% 击杀
+
+    %battlelevels_deaths% 死亡
+
+    %battlelevels_kdr% KDR
+
+    %battlelevels_globalbooster% 全局加成
+
+    %battlelevels_globalboosterenabled% 是否开启全局加成
+
+
+    %battlelevels_neededfornext% 下部需要
+
+    %battlelevels_neededfornextremaining%
+
+    √MyCommand
+
+    %mycommand_playerdata_<variable_name>% 玩家数据
+
+    √DeliveryMan
+
+    %deliveryman_prizes_all% 所有奖励
+
+    %deliveryman_prizes_from:[menu id]% 来自菜单ID的奖励
+
+    %deliveryman_has_prize:[menu id]:[prize id]% 从菜单ID有的奖励ID
+
+
+    √AdvancedAbilities
+
+    %advancedabilities_legendaryswords% 传说的剑
+
+    %advancedabilities_vampire% 吸血鬼
+
+    %advancedabilities_protection% 保护范围
+
+    %advancedabilities_triplearrow% 三倍箭
+
+    %advancedabilities_miningluck% 时运
+
+    %advancedabilities_woodchopping% 伐木
+
+    %advancedabilities_adrenaline% 肾上腺素
+
+    %advancedabilities_featherweight% 羽毛的重量
+
+    %advancedabilities_fireresistance% 防火
+
+    %advancedabilities_explosionresistance% 防爆炸
+
+    %advancedabilities_antibadmagic% 防魔法
+
+    %advancedabilities_antipoison% 防中毒
+
+    %advancedabilities_mywolf% 狼
+
+    %advancedabilities_legendaryprotection% 传说保护
+
+    %advancedabilities_pirate% 海盗？
+
+    下面的和上面一样 不过是等级
+
+    %advancedabilities_legendaryswords_level%
+    %advancedabilities_vampire_level%
+    %advancedabilities_protection_level%
+    %advancedabilities_triplearrow_level%
+    %advancedabilities_miningluck_level%
+    %advancedabilities_woodchopping_level%
+    %advancedabilities_adrenaline_level%
+    %advancedabilities_featherweight_level%
+    %advancedabilities_fireresistance_level%
+    %advancedabilities_explosionresistance_level%
+    %advancedabilities_antibadmagic_level%
+    %advancedabilities_antipoison_level%
+    %advancedabilities_mywolf_level%
+    %advancedabilities_legendaryprotection_level%
+    %advancedabilities_pirate_level%
+
+    SkyWars
+    %skywars_coins% 硬币
+    %skywars_stats_deaths% 死亡
+    %skywars_stats_kills% 击杀
+    %skywars_stats_wins% 胜利
+    %skywars_stats_played% 玩过的游戏
+    %skywars_stats_arrow_shot% 被射过几只箭
+    %skywars_stats_arrow_hit% 射过几只箭
+    %skywars_stats_blocks_broken% 挖过多少方块
+    %skywars_stats_blocks_placed% 放过多少方块
+    %skywars_stats_distance_walked% 走过的距离
+    %skywars_stats_time_played% 玩过的时间
+    %skywars_glass% 外围玻璃
+    %skywars_arena_name% 竞技场名
+    %skywars_arena_max_players% 最大玩家
+    %skywars_arena_ingame_players% 在游戏中的玩家数
+    Multiverse-Core
+    安装变量：/papi ecloud download multiverse
+
+    以下变量均以用户当前所处世界为标准
+
+    插件列表
+    %multiverse_world_alias% 当前世界别名
+    %multiverse_world_all_property_names% 当前世界所有属性名
+    %multiverse_world_generator%
+    %multiverse_world_name% 当前世界世界名
+    %multiverse_world_name_colored% 当前世界世界名(带颜色)
+    %multiverse_world_permissible_name%
+    %multiverse_world_time% 当前世界的时间
+    %multiverse_world_animals_spawn_enabled% 当前世界是否允许生成动物
+    %multiverse_world_monsters_spawn_enabled% 当前世界是否允许生成敌对生物
+    %multiverse_world_access_permission% 当前世界的访问权限
+    %multiverse_world_adjust_spawn_enabled% 是否允许调节
+    %multiverse_world_allow_flight_enabled% 是否允许飞行
+    %multiverse_world_auto_heal_enabled% 是否自动回血
+    %multiverse_world_auto_load_enabled%
+    %multiverse_world_bed_respawn_enabled% 是否允许重生在设置的床
+    %multiverse_world_color% 颜色
+    %multiverse_world_currency%
+    %multiverse_world_difficulty% 世界难度
+    %multiverse_world_environment% 世界生态环境
+    %multiverse_world_gamemode% 世界模式
+    %multiverse_world_hunger_enabled% 是否饥饿
+    %multiverse_world_player_limit% 用户限制
+    %multiverse_world_price% 价格
+    %multiverse_world_seed% 种子
+    %multiverse_world_style%
+    %multiverse_world_type% 世界类型
+    playerpoint
+    点券
+    %playerpoints_points% 玩家拥有的点券
+}
