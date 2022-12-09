@@ -298,6 +298,7 @@ F3+I 获得当前指向方块的信息（设置方块在此位置）
 /tellraw @a {"text":"<Bibibishop050> 我是呆瓜","color":"yellow"} ---有颜色的说话
 /tellraw @a [{"text":"Bibibishop050取得了进度"},{"text":"[呆呆瓜瓜]","color":"dark_purple"}]     ---假成就
 /tellraw @a [{"text":"Yao_Tang取得了进度"},{"text":"[谁在切胡萝卜？]","color":"yellow"}]  ---假成就
+/tellraw @a [{"text":"Yao_Tang取得了进度"},{"text":"[我从哪儿来？]","color":"yellow","hoverEvent":{"action":"show_text","value":"穿越了时空隧道"}}] ---假成就(停留显示)
 
 /summon minecraft:experience_bottle 1077 -22 185                   ---生成经验瓶修装备
 /summon item ~ ~ ~ {Item:{id:"minecraft:diamond",Count:64b}}       ---生成掉落物64颗钻石
@@ -334,7 +335,9 @@ F3+I 获得当前指向方块的信息（设置方块在此位置）
 /co lookup u:Litch_77 a:chat t:99d       ---玩家聊天记录
 
 [Ledger回档插件]
+/ledger inspect  ---开启/关闭查询
 /ledger rollback range:回档的半径 after:5m   ---区域回档
+/ledger player id   ---玩家加入服务器记录
 
 [MATRIX Learning-robot 反作弊插件]
 检测项 {
@@ -657,16 +660,18 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 /region define 区域名 所有者   ---创建受保护的区域
 /rg addowner 区域名 ID  ---worldguard区域 添加区域内白名单
 
-/give @p minecraft:elytra{Unbreakable:1b} 1      ---无法破坏的翅膀
-/give @p minecraft:diamond_pickaxe{Unbreakable:1b} 1      ---无法破坏的钻石镐
-/give @p minecraft:netherite_shovel{Unbreakable:1b} 1      ---无法破坏的合金铲
+/give @p minecraft:elytra{Unbreakable:1b} 1              ---无法破坏的翅膀
+/give @p minecraft:diamond_pickaxe{Unbreakable:1b} 1     ---无法破坏的钻石镐
+/give @p minecraft:netherite_shovel{Unbreakable:1b} 1    ---无法破坏的合金铲
 /give @p minecraft:splash_potion{CustomPotionEffects:[{Id:1,Amplifier:100,Duration:1000000}]} 1     ---给予速度2020%无限时间喷溅药水
 
+/effect give @a minecraft:hero_of_the_village 300 255 true  ---给予村庄英雄255效果 全场1元购
+
 粒子效果ID:https://minecraft.fandom.com/zh/wiki/%E7%B2%92%E5%AD%90
-/execute as Yao_Tang at @s run particle glow ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a            ---绿灰星星的Yao_Tang
-/execute as Yao_Tang at @s run particle electric_spark ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a    ---白色星星的Yao_Tang
-/execute as Yao_Tang at @s run particle cloud ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a               ---冒爆炸烟的Yao_Tang
-/execute as Yao_Tang at @s run particle campfire_cosy_smoke ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a    ---冒烟的Yao_Tang
+/execute as Yao_Tang at @s run particle glow ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a            ---灰绿星星
+/execute as Yao_Tang at @s run particle electric_spark ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a    ---白色星星
+/execute as Yao_Tang at @s run particle cloud ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a               ---冒爆炸烟
+/execute as Yao_Tang at @s run particle campfire_cosy_smoke ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a    ---冒烟
 /execute as Yao_Tang at @s run particle item snow ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a    ---脚下有雪的粒子特效
 /particle minecraft:flame ~ ~ ~ 20 0.1 20 0.0001 300 force @a    ---火焰散布粒子效果
 /particle minecraft:heart ~ ~ ~ 10 10 10 200 100000      ---爱心爆炸
@@ -718,8 +723,8 @@ NBT格式化颜色:[{"color":"yellow"},{"常用为技术性名称"}] 参考：ht
 /team modify MidnightField friendlyFire false       ---关闭队伍的PVP
 
 [Scoreboard记分板]
-/scoreboard objectives add hp health ["hp"]  ---新建生命值 hp 记分板
-/scoreboard objectives setdisplay list hp    ---显示在TAB
+/scoreboard objectives add hp health ["hp"]  ---新建生命值记分板
+/scoreboard objectives setdisplay list hp    ---将生命值显示在TABList中
 
 /scoreboard objectives add dgb deathCount ["呆瓜榜"]  ---新建阵亡次数 dgb 记分板
 /scoreboard objectives setdisplay sidebar dgb        ---显示在屏幕右侧
@@ -729,14 +734,14 @@ F3+A：重新加载所有区块。
 F3+B：打开或关闭显示实体的碰撞箱。同时显示实体的朝向。
 F3+C：以execute in ''维度'' run tp的形式复制玩家当前的坐标及旋转角度。
 按住F3+C10秒会导致调试性的游戏崩溃，并生成Minecraft崩溃报告。
-按住key|Ctrl+F3+C10秒会强制Java虚拟机崩溃，生成虚拟机崩溃报告，而不是常规的Minecraft崩溃报告。然而，对于某些键盘，它只能使用右侧Ctrl触发，而使用左侧只会产生普通的崩溃。
+按住Ctrl+F3+C 10秒会强制Java虚拟机崩溃，生成虚拟机崩溃报告，而不是常规的Minecraft崩溃报告，对于某些键盘，它只能使用右侧Ctrl触发，而使用左侧只会产生普通的崩溃。
 一些键盘可能不允许同时按下F3+C（可能是因为它们在同一竖列中）
-F3+D：清除聊天记录（包括之前输入的信息和命令）（Java版1.11后，玩家仍可通过上下方向键查看输入过的命令和信息）。
+F3+D：清除聊天记录（包括之前输入的信息和命令）
 F3+G：打开或关闭显示玩家周边区块的边界。
 F3+H：打开或关闭显示物品栏中物品的ID、工具的耐久度、盔甲的颜色值和地图的放大尺寸。
 F3+I：将玩家注视的方块/实体的数据复制到粘贴板。
 F3+L：生成、保存性能分析数据。
-F3+N：在上一个游戏模式与旁观模式间切换。（在1.15及以下的版本中，则是在创造模式与旁观模式间切换。）
+F3+N：在上一个游戏模式与旁观模式间切换。
 F3+P：开启或关闭Minecraft失去窗口焦点时的自动暂停功能。
 F3+Q：显示所有F3 + 按键的组合键。
 F3+T：重新加载纹理、模型、声音及所有其他资源包内容。
@@ -951,7 +956,7 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
 物品的 主标签 和 副标签{
     /give @p minecraft:wooden_axe{display:{Name:"[\"小木斧\"]",Lore:["[\"世界由你来改变\"]"]}} 1
 }
-无法破坏的 白色足力健 加速度{
+无法破坏的 鞋子 加速度{
     /give @p minecraft:leather_boots{Unbreakable:1b,display:{Name:"[\"足力健\"]",color:15660533},AttributeModifiers:[{AttributeName:"generic.movement_speed",Name:"noName",Amount:0.05d,Operation:0,UUID:[I;8262,6277,5898,1237],Slot:feet}]} 1
 }
 
@@ -1040,6 +1045,9 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
 	/give @p minecraft:coal{display:{Name:"[{\"text\":\"炉岩碳\",\"color\":\"yellow\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]",Lore:["{\"text\":\"\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"[ 蕴含神秘力量的材料 ]\",\"color\":\"red\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\">> 天界的炉岩沙漠里特有的燃料\",\"color\":\"white\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\">> 听说它能产生很强的能量\",\"color\":\"white\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\">> 可以启动装备强化机器\",\"color\":\"white\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}"]},Enchantments:[{id:"minecraft:unbreaking",lvl:1s}]} 1
 }
 
+生成一只有鞍的猪{
+	/summon minecraft:pig ~ ~1 ~ {Saddle:1b}
+}
 让最近的猪 给予一股力量 推出去{
 	/data merge entity @e[type=pig,sort=nearest,limit=1] {Motion:[0d,10d,5d]}
 }
