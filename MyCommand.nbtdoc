@@ -279,7 +279,27 @@ usage: mcbots [-c <arg>] [-d <arg>] [-g] [-j <arg>] [-l <arg>] [-m] [-n]
 F3+I 获得当前指向方块的信息（设置方块在此位置）
 当指向方块时输入/fill 后接tab可补充指向的方块坐标
 当summon召唤实体时，指向的位置为精准位置12.34
-结构方块structure_block
+
+[Place]
+结构方块 - structure_block
+/place template  ---放置结构
+/place feature minecraft:bonus_chest   ---在附近放置奖励箱
+/place feature minecraft:end_island    ---放置末地小岛
+/place feature minecraft:disk_sand     ---区域放置沙子
+/place feature minecraft:disk_gravel   ---区域放置沙砾
+/place feature minecraft:flower_meadow ---区域放置牧场的花
+/place feature minecraft:flower_plain  ---区域放置平原的花
+/place feature minecraft:mega_spruce   ---区域放置灰化土和一棵云杉树
+/place feature minecraft:meadow_trees        ---放置有蜂巢的树
+/place feature minecraft:swamp_oak           ---放置古老的橡树
+/place feature minecraft:spruce              ---放置云杉树
+/place feature minecraft:mega_pine           ---放置超高的云杉树
+/place feature minecraft:huge_red_mushroom   ---放置红蘑菇
+/place feature minecraft:huge_brown_mushroom ---放置棕色蘑菇
+/place feature minecraft:mangrove_vegetation ---放置大型红树
+/place feature minecraft:mega_jungle_tree    ---放置丛林树
+/place feature minecraft:sculk_patch_ancient_city  ---区域感染成幽匿地
+/place feature minecraft:sculk_patch_deep_dark     ---区域感染成更大片的幽匿地
 
 [mv多世界服务器插件]
 /mv create zyworld normal  ---世界创建
@@ -296,6 +316,7 @@ F3+I 获得当前指向方块的信息（设置方块在此位置）
 /effect give Yao_Tang minecraft:strength 99999 255 true       ---无气泡永久力量效果255
 /tellraw @a {"text":"<Bibibishop050> 我是呆瓜"}        ---代替说话
 /tellraw @a {"text":"<Bibibishop050> 我是呆瓜","color":"yellow"} ---有颜色的说话
+/tellraw @a {"text":"zhx201933加入了游戏","color":"yellow"}      ---加入了游戏
 /tellraw @a [{"text":"Bibibishop050取得了进度"},{"text":"[呆呆瓜瓜]","color":"dark_purple"}]     ---假成就
 /tellraw @a [{"text":"Yao_Tang取得了进度"},{"text":"[谁在切胡萝卜？]","color":"yellow"}]  ---假成就
 /tellraw @a [{"text":"Yao_Tang取得了进度"},{"text":"[我从哪儿来？]","color":"yellow","hoverEvent":{"action":"show_text","value":"穿越了时空隧道"}}] ---假成就(停留显示)
@@ -665,7 +686,7 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 /give @p minecraft:netherite_shovel{Unbreakable:1b} 1    ---无法破坏的合金铲
 /give @p minecraft:splash_potion{CustomPotionEffects:[{Id:1,Amplifier:100,Duration:1000000}]} 1     ---给予速度2020%无限时间喷溅药水
 
-/effect give @a minecraft:hero_of_the_village 300 255 true  ---给予村庄英雄255效果 全场1元购
+/effect give @s minecraft:hero_of_the_village 99999 255 true  ---给予村庄英雄255效果 全场1元购
 
 粒子效果ID:https://minecraft.fandom.com/zh/wiki/%E7%B2%92%E5%AD%90
 /execute as Yao_Tang at @s run particle glow ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a            ---灰绿星星
