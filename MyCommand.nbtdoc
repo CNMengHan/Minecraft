@@ -681,7 +681,7 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 /region define 区域名 所有者   ---创建受保护的区域
 /rg addowner 区域名 ID  ---worldguard区域 添加区域内白名单
 
-/give @p minecraft:elytra{Unbreakable:1b} 1              ---无法破坏的翅膀
+/give @p minecraft:elytra{Unbreakable:1b} 1              ---无法破坏的鞘翅
 /give @p minecraft:diamond_pickaxe{Unbreakable:1b} 1     ---无法破坏的钻石镐
 /give @p minecraft:netherite_shovel{Unbreakable:1b} 1    ---无法破坏的合金铲
 /give @p minecraft:splash_potion{CustomPotionEffects:[{Id:1,Amplifier:100,Duration:1000000}]} 1     ---给予速度2020%无限时间喷溅药水
@@ -770,21 +770,26 @@ F3+F4：打开游戏模式切换器。按住F3并多次按F4，玩家选定的�
 shift+F3：打开含有性能评测图表的调试屏幕。
 Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Alt+F3同时打开两个图表）
 
+[刷怪笼]
+//{RequiredPlayerRange:触发刷怪范围,SpawnRange:最大刷怪范围,SpawnCount:每次刷怪数量,MaxNearbyEntities:刷怪数量限制,MinSpawnDelay:最小延迟,Delay:基础延迟,最大延迟:8}
+/setblock ~ ~1 ~ minecraft:spawner{RequiredPlayerRange:999,SpawnRange:5,SpawnCount:10,MaxNearbyEntities:999,MinSpawnDelay:8,Delay:8,MaxSpawnDelay:8} replace
+
 [item]
 箱子的第一格为container.0
 命令/replaceitem在1.17后更改为/item 语法被更改
 /item replace entity @s weapon.offhand with minecraft:shield{BlockEntityTag:{Base:15}} 1  ---在自己的左手生成一个黑色的盾牌
-/item replace entity Bibibishop050 armor.head with minecraft:allium    ---在玩家头上放一朵绒球葱
-/item replace entity Life_candy armor.head with minecraft:axolotl_bucket  ---在玩家头上放一个美西螈桶
-/item replace entity Tu_tuzi armor.head with minecraft:lantern      ---在玩家头上放一盏灯笼
-/item replace entity Bibibishop050 hotbar.8 with minecraft:cooked_beef 64   ---在玩家物品栏最后一格放牛排64个
+/item replace entity Bibibishop050 armor.head with minecraft:allium        ---在玩家头上放一朵绒球葱
+/item replace entity Life_candy armor.head with minecraft:axolotl_bucket   ---在玩家头上放一个美西螈桶
+/item replace entity Tu_tuzi armor.head with minecraft:lantern             ---在玩家头上放一盏灯笼
+/item replace entity Bibibishop050 hotbar.8 with minecraft:cooked_beef 64  ---在玩家物品栏最后一格放牛排64个
 
-/item replace block ~ ~2 ~ container.26 with minecraft:spruce_sapling 4  ---将上方2格处的一个箱子右下角槽位内的物品替换成4棵云杉树苗
-/item replace entity @p hotbar.8 with minecraft:spruce_sapling 4  ---将最近玩家的快捷栏最右槽位内的物品替换成4棵云杉树苗
-/item replace block ~ ~1 ~ container.4 with minecraft:coal_block 64  ---将上方漏斗最后一格替换并放入64个煤炭块
-/item replace block ~ ~1 ~ container.4 with minecraft:blaze_powder 64 ---将上方酿造台燃料格替换并放入64个烈焰粉
-/item replace block ~ ~2 ~ container.1 with minecraft:coal_block 64  ---将上2格的烟熏炉燃料格替换并放入64个煤炭块
-/item replace block -67 116 89 container.0 with minecraft:coal_block 64  ---将指定坐标的发射器第一格替换并放入64个煤炭块
+/item replace block ~ ~2 ~ container.26 with minecraft:spruce_sapling 4 ---在上方2格处的一个箱子右下角槽位内的物品替换成4棵云杉树苗
+/item replace entity @p hotbar.8 with minecraft:spruce_sapling 4        ---在最近玩家的快捷栏最右槽位内的物品替换成4棵云杉树苗
+/item replace block ~ ~1 ~ container.4 with minecraft:coal_block 64     ---在上方漏斗最后一格替换并放入64个煤炭块
+/item replace block ~ ~1 ~ container.4 with minecraft:blaze_powder 64   ---在上方酿造台燃料格替换并放入64个烈焰粉
+/item replace block ~ ~2 ~ container.1 with minecraft:coal_block 64     ---在上2格的烟熏炉燃料格替换并放入64个煤炭块
+/item replace block -67 116 89 container.0 with minecraft:coal_block 64 ---在指定坐标的发射器第一格替换并放入64个煤炭块
+/item replace block -539 69 242 container.0 with minecraft:bread 64     ---在指定坐标的发射器第一格替换并放入64个面包
 
 游戏规则设置 - Game Rule {
 	announceAdvancements	是否在聊天框中公告玩家进度的达成.
@@ -1024,7 +1029,7 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
     summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:diamond",Count:1b},PickupDelay:32767s}
 }
 生成无法爆炸的 TNT{
-	/summon minecraft:tnt ~ ~1 ~ {Fuse:32766}
+	/summon minecraft:tnt ~ ~1 ~ {Fuse:32767}
 }
 
 放置一个亮着的 红石灯{
@@ -1084,7 +1089,7 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
 }
 
 在命令方块中循环 持续获得玩家的y坐标并显示在yLevel的计分板中{
-	execute as @a store result score @s yLevel run data get entity @s Pos[1]
+	/execute as @a store result score @s yLevel run data get entity @s Pos[1]
 }
 
 告示牌点击关窗fill{
