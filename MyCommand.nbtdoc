@@ -5,15 +5,22 @@
 ██║ ╚═╝ ██║██║██║ ╚████║███████╗╚██████╗██║  ██║██║  ██║██║        ██║   
 ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝        ╚═╝   
 
-URL-Navigation
-
+Link
 https://meteorclient.com/   ---彗星 1.19/1.19.2
 https://liquidbounce.net/    ---Liquidbounce 1.8.9/1.12.2
 https://www.wurstclient.net/   ---Wurst ~1.19.2
 https://aristois.net/   ---Aristois端 ~1.19.2
 
+PCLII
+https://afdian.net/p/0164034c016c11ebafcb52540025c377
+Download 1 https://ltcat.lanzoum.com/iJrst0fn1w0h
+Download 2 https://pan.baidu.com/s/1gVT83NYD8Xq5HeuZDIm6JQ?pwd=49gk 
+
 Socks Proxy
 https://www.uu-proxy.com/
+
+NBT Color
+https://minecraft.fandom.com/zh/wiki/%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BB%A3%E7%A0%81
 
 [MeteorClient彗星.Command]
 .server  ---获取服务器信息
@@ -37,9 +44,9 @@ https://www.uu-proxy.com/
 .gamemode creative ---改成创造模式(可使用追溯指针)
 .gamemode spectator ---改成观察者模式
 .swarm 工人系统
-.swarm join        ---加入主机
-.swarm connections ---连接主机
-.swarm disconnect  ---断开主机
+.swarm join        ---加入Meteor主机
+.swarm connections ---连接Meteor主机
+.swarm disconnect  ---断开Meteor主机
 .swarm exec /tpa Life_candy ---远程命令执行和聊天
 .swarm follow Life_candy ---跟随玩家
 .swarm goto x z  ---命令去某个地方
@@ -246,8 +253,6 @@ Hitboxes + Kill Aura 放大碰撞箱后再利用杀戮
 种子指定查询 - https://www.chunkbase.com/apps/biome-finder#2063708333177633993
 IP:mc.snly.cc:20211 - Sakura的服务器
 2063708333177633993
-IP:218.89.171.145:65258 - 小楚的服务器
-6851702759501838259
 IP:mchai.top:21001 - 心海 海之韵 服务器 大型严格反作弊服务器
 9167182545767792685
 IP:nutmc.cn - 低反作弊 无地皮
@@ -260,7 +265,7 @@ usage: mcbots [-c <arg>] [-d <arg>] [-g] [-j <arg>] [-l <arg>] [-m] [-n]
 [--nicks <arg>] [-p <arg>] [--password <arg>] [-r] -s <arg> [-t <arg>] [--token <arg>] [--username <arg>] [-x]
 -c,--count <arg>        机器人数量
 -d,--delay <arg>        连接延迟（ms）<min> <max>
--g,--gravity            ?尝试通过摔倒来模拟重力
+-g,--gravity            有重力
 -j,--join-msg <arg>     加入信息/命令
 -l,--proxy-list <arg>   代理列表文件的路径或URL，每行包含proxy:port
 -m,--minimal            无任何侦听器的最小运行
@@ -278,7 +283,7 @@ usage: mcbots [-c <arg>] [-d <arg>] [-g] [-j <arg>] [-l <arg>] [-m] [-n]
 [方块信息获取]
 F3+I 获得当前指向方块的信息（设置方块在此位置）
 当指向方块时输入/fill 后接tab可补充指向的方块坐标
-当summon召唤实体时，指向的位置为精准位置12.34
+当summon召唤实体时，指向的位置为双精度浮点数
 
 [Place]
 结构方块 - structure_block
@@ -313,7 +318,6 @@ F3+I 获得当前指向方块的信息（设置方块在此位置）
 /ch give Yao_Tang &c&k[@]&c&l[腐竹]&k[@]&f 0      ---称号（乱码 腐竹 乱码）红
 /ch give Yao_Tang &c[&6S&eu&ag&3a&1r&8-&5S&ce&6r&ev&ae&br&1]&f 0   ---称号彩色Sugar-Server
 
-/effect give Yao_Tang minecraft:strength 99999 255 true       ---无气泡永久力量效果255
 /tellraw @a {"text":"<Bibibishop050> 我是呆瓜"}        ---代替说话
 /tellraw @a {"text":"<Bibibishop050> 我是呆瓜","color":"yellow"} ---有颜色的说话
 /tellraw @a {"text":"zhx201933加入了游戏","color":"yellow"}      ---加入了游戏
@@ -325,7 +329,7 @@ F3+I 获得当前指向方块的信息（设置方块在此位置）
 /summon item ~ ~ ~ {Item:{id:"minecraft:diamond",Count:64b}}       ---生成掉落物64颗钻石
 /give @s firework_rocket{Fireworks:{Explosions:[{Type:0,Trail:1,Colors:[I;15790320],FadeColors:[I;15790320]}],Flight:120}}   ---飞行时间120s的烟花
 
-/give Yao_Tang minecraft:item_frame{EntityTag:{Invisible:1b}}      ---隐形的展示框
+/give @s minecraft:item_frame{EntityTag:{Invisible:1b}}      ---隐形的展示框
 .nbt set {EntityTag:{Invisible:1b}}
 
 [Copy]
@@ -681,17 +685,24 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 /region define 区域名 所有者   ---创建受保护的区域
 /rg addowner 区域名 ID  ---worldguard区域 添加区域内白名单
 
+[ServerNBT插件]
+{Count:1b,id:"minecraft:name_tag",tag:{display:{Name:'{"text":"牧师","color":"dark_aqua","bold":"true"}'}}}   ---命名牌粗体颜色字{NBT}
+{Count:1b,id:"minecraft:name_tag",tag:{display:{Name:'{"text":"awdvawr","obfuscated":true}'}}}    ---命名牌乱码(使用前请先给命名牌命名)
+
 /give @p minecraft:elytra{Unbreakable:1b} 1              ---无法破坏的鞘翅
 /give @p minecraft:diamond_pickaxe{Unbreakable:1b} 1     ---无法破坏的钻石镐
 /give @p minecraft:netherite_shovel{Unbreakable:1b} 1    ---无法破坏的合金铲
-/give @p minecraft:splash_potion{CustomPotionEffects:[{Id:1,Amplifier:100,Duration:1000000}]} 1     ---给予速度2020%无限时间喷溅药水
+/give @p minecraft:splash_potion{CustomPotionEffects:[{Id:1,Amplifier:100,Duration:1000000}]} 1         ---给予速度2020%无限时间喷溅药水
+/setblock ~ ~ ~ minecraft:end_gateway{Age:200,ExitPortal:{X:462,Y:71,Z:2165},ExactTeleport:1b} replace  ---生成指定坐标的折跃门
 
-/effect give @s minecraft:hero_of_the_village 99999 255 true  ---给予村庄英雄255效果 全场1元购
+/effect give @s minecraft:hero_of_the_village 99999 255 true  ---给予村庄英雄255效果 村民交易为1绿宝石
+/effect give Yao_Tang minecraft:strength 99999 255 true       ---无气泡永久力量效果255
 
-粒子效果ID:https://minecraft.fandom.com/zh/wiki/%E7%B2%92%E5%AD%90
+[粒子效果]
+粒子ID:https://minecraft.fandom.com/zh/wiki/%E7%B2%92%E5%AD%90
 /execute as Yao_Tang at @s run particle glow ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a            ---灰绿星星
 /execute as Yao_Tang at @s run particle electric_spark ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a    ---白色星星
-/execute as Yao_Tang at @s run particle cloud ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a               ---冒爆炸烟
+/execute as Yao_Tang at @s run particle cloud ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a               ---爆炸烟
 /execute as Yao_Tang at @s run particle campfire_cosy_smoke ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a    ---冒烟
 /execute as Yao_Tang at @s run particle item snow ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a    ---脚下有雪的粒子特效
 /particle minecraft:flame ~ ~ ~ 20 0.1 20 0.0001 300 force @a    ---火焰散布粒子效果
@@ -708,33 +719,27 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 /title Yao_Tang title ["",{"text":"wwwww","color":"red","bold":"true"},{"text":" rua~❤","color":"yellow","italic":"true","bold":"true"}]
 ---红黄字幕
 
-[ServerNBT插件]
-{Count:1b,id:"minecraft:name_tag",tag:{display:{Name:'{"text":"牧师","color":"dark_aqua","bold":"true"}'}}}   ---命名牌粗体颜色字{NBT}
-{Count:1b,id:"minecraft:name_tag",tag:{display:{Name:'{"text":"awdvawr","obfuscated":true}'}}}    ---命名牌乱码(使用前请先给命名牌命名)
-
 [音乐音效]
-/execute at @a run playsound minecraft:ambient.basalt_deltas.loop voice @a ~ ~ ~ 100   ---频噪
-/execute at @a run playsound minecraft:ambient.cave voice @a ~ ~ ~ 100    ---车站 墓地
-/execute at @a run playsound minecraft:ambient.underwater.loop.additions.rare voice @a ~ ~ ~ 1000    ---下水道
-/execute at @a run playsound minecraft:ambient.warped_forest.additions voice @a ~ ~ ~ 100    ---鬼魂 鬼群 灵堂
-/execute at @a run playsound minecraft:music_disc.5 voice @a ~ ~ ~ 100    ---音乐disc.5
+/execute at @a run playsound minecraft:ambient.basalt_deltas.loop voice @a ~ ~ ~ 100               ---频噪
+/execute at @a run playsound minecraft:ambient.cave voice @a ~ ~ ~ 100                             ---车站 墓地
+/execute at @a run playsound minecraft:ambient.underwater.loop.additions.rare voice @a ~ ~ ~ 1000  ---下水道
+/execute at @a run playsound minecraft:ambient.warped_forest.additions voice @a ~ ~ ~ 100          ---鬼魂 鬼群 灵堂
+/execute at @a run playsound minecraft:music_disc.5 voice @a ~ ~ ~ 100                             ---音乐disc.5
 
 [Execute]
-/execute as @e[type=snowball] at @s run summon lightning_bolt ~ ~ ~               ---雷电雪球（雪球抛物线持续生成闪电）
-/execute as @e[type=cow] at @s run summon lightning_bolt ~ ~ ~                   ---雷击全图牛
-/execute as @e[type=minecraft:zombie] at @s run summon lightning_bolt ~ ~ ~     ---雷击全图僵尸
-/execute as zhx201933 at @s run summon lightning_bolt ~ ~ ~                    ---电人
+/execute as @e[type=snowball] at @s run summon lightning_bolt ~ ~ ~           ---雷电雪球（雪球抛物线持续生成闪电）
+/execute as @e[type=cow] at @s run summon lightning_bolt ~ ~ ~                ---雷击全图牛
+/execute as @e[type=minecraft:zombie] at @s run summon lightning_bolt ~ ~ ~   ---雷击全图僵尸
+/execute as zhx201933 at @s run summon lightning_bolt ~ ~ ~                   ---电人
 /execute at Life_candy run summon minecraft:lightning_bolt                    ---电人
-/execute as Yao_Tang at @s run summon experience_bottle ~ ~ ~                ---生成跟踪Yao_Tang的经验瓶
+/execute as Player at @s run summon experience_bottle ~ ~ ~                   ---在该玩家处生成经验瓶
 /execute as @e[type=snowball] at @s unless block ~ ~-1 ~ air run summon tnt ~ ~ ~     ---该实体直接爆炸
-/execute as KennethLiu at @s run particle cloud ~ ~ ~ 1 1 1 0 999999999 normal @a         ---崩CPU
+/execute as KennethLiu at @s run particle cloud ~ ~ ~ 1 1 1 0 999999999 normal @a     ---游戏崩溃
 
 /advancement grant @a everything    ---获得全进度
 /advancement revoke @a everything   ---删除全进度
 
-NBT格式化颜色:[{"color":"yellow"},{"常用为技术性名称"}] 参考：https://minecraft.fandom.com/zh/wiki/%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BB%A3%E7%A0%81
-
-[Team团队-称号]
+[Team]
 /team add MidnightField "MidnightField"
 /team modify MidnightField prefix {"text":"[午夜の领域] ","color":"gold","bold":"true"}  给予MidnightField队伍前面标签显示
 /team modify MidnightField suffix {"text":" [队伍]","color":"dark_red","bold":"true"}   给予MidnightField队伍后面标签显示
@@ -770,9 +775,22 @@ F3+F4：打开游戏模式切换器。按住F3并多次按F4，玩家选定的�
 shift+F3：打开含有性能评测图表的调试屏幕。
 Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Alt+F3同时打开两个图表）
 
+[世界边界]
+/worldborder center ~ ~         ---设置当前位置为世界中心点
+/worldborder set 5000 0         ---设置边界为5000直径
+/worldborder damage amount 999  ---设置边界伤害为999
+
 [刷怪笼]
 //{RequiredPlayerRange:触发刷怪范围,SpawnRange:最大刷怪范围,SpawnCount:每次刷怪数量,MaxNearbyEntities:刷怪数量限制,MinSpawnDelay:最小延迟,Delay:基础延迟,最大延迟:8}
 /setblock ~ ~1 ~ minecraft:spawner{RequiredPlayerRange:999,SpawnRange:5,SpawnCount:10,MaxNearbyEntities:999,MinSpawnDelay:8,Delay:8,MaxSpawnDelay:8} replace
+
+[掉落几率]
+生成一只 100% 掉落钻石的羊
+/summon minecraft:sheep ~ ~1 ~ {HandItems:[{id:"minecraft:diamond",Count:64b},{}],HandDropChances:[1f,0.0f],Color:0}
+生成一只 50% 掉落钻石的羊
+/summon minecraft:sheep ~ ~1 ~ {HandItems:[{id:"minecraft:diamond",Count:64b},{}],HandDropChances:[0.5f,0.0f],Color:0}
+生成一只 25% 掉落绿宝石的羊
+/summon minecraft:sheep ~ ~1 ~ {HandItems:[{id:"minecraft:emerald",Count:64b},{}],HandDropChances:[0.25f,0.0f],Color:0}
 
 [item]
 箱子的第一格为container.0
@@ -782,68 +800,66 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
 /item replace entity Life_candy armor.head with minecraft:axolotl_bucket   ---在玩家头上放一个美西螈桶
 /item replace entity Tu_tuzi armor.head with minecraft:lantern             ---在玩家头上放一盏灯笼
 /item replace entity Bibibishop050 hotbar.8 with minecraft:cooked_beef 64  ---在玩家物品栏最后一格放牛排64个
+/item replace block ~ ~2 ~ container.26 with minecraft:spruce_sapling 4    ---在上方2格处的一个箱子右下角槽位内的物品替换成4棵云杉树苗
+/item replace entity @p hotbar.8 with minecraft:spruce_sapling 4           ---在最近玩家的快捷栏最右槽位内的物品替换成4棵云杉树苗
+/item replace block ~ ~1 ~ container.4 with minecraft:coal_block 64        ---在上方漏斗最后一格替换并放入64个煤炭块
+/item replace block ~ ~1 ~ container.4 with minecraft:blaze_powder 64      ---在上方酿造台燃料格替换并放入64个烈焰粉
+/item replace block ~ ~2 ~ container.1 with minecraft:coal_block 64        ---在上2格的烟熏炉燃料格替换并放入64个煤炭块
+/item replace block -67 116 89 container.0 with minecraft:coal_block 64    ---在指定坐标的发射器第一格替换并放入64个煤炭块
+/item replace block -539 69 242 container.0 with minecraft:bread 64        ---在指定坐标的发射器第一格替换并放入64个面包
 
-/item replace block ~ ~2 ~ container.26 with minecraft:spruce_sapling 4 ---在上方2格处的一个箱子右下角槽位内的物品替换成4棵云杉树苗
-/item replace entity @p hotbar.8 with minecraft:spruce_sapling 4        ---在最近玩家的快捷栏最右槽位内的物品替换成4棵云杉树苗
-/item replace block ~ ~1 ~ container.4 with minecraft:coal_block 64     ---在上方漏斗最后一格替换并放入64个煤炭块
-/item replace block ~ ~1 ~ container.4 with minecraft:blaze_powder 64   ---在上方酿造台燃料格替换并放入64个烈焰粉
-/item replace block ~ ~2 ~ container.1 with minecraft:coal_block 64     ---在上2格的烟熏炉燃料格替换并放入64个煤炭块
-/item replace block -67 116 89 container.0 with minecraft:coal_block 64 ---在指定坐标的发射器第一格替换并放入64个煤炭块
-/item replace block -539 69 242 container.0 with minecraft:bread 64     ---在指定坐标的发射器第一格替换并放入64个面包
-
-游戏规则设置 - Game Rule {
-	announceAdvancements	是否在聊天框中公告玩家进度的达成.
-    blockExplosionDropDecay	由方块源（除TNT）爆炸炸毁的方块是否会有概率不掉落.
-    commandBlockOutput	命令方块执行命令时是否在聊天框中向管理员显示.
-    commandBlocksEnabled	命令方块在游戏中是否被启用.
-    disableElytraMovementCheck	是否让服务器停止检查使用鞘翅玩家的移动速度.
-    disableRaids	是否禁用袭击.
-    doDaylightCycle	是否进行昼夜更替和月相变化.
-    doEntityDrops	非生物实体是否掉落物品.
-    doFireTick	火是否蔓延及自然熄灭.
-    doImmediateRespawn	玩家死亡时是否不显示死亡界面直接重生.
-    doInsomnia	幻翼是否在夜晚生成.
-    doLimitedCrafting	玩家的合成配方是否需要解锁才能使用.
-    doMobLoot	生物在死亡时是否掉落物品.
-    doMobSpawning	生物是否自然生成.不影响刷怪笼.
-    doPatrolSpawning	控制灾厄巡逻队的生成.
-    doTileDrops	方块被破坏时是否掉落物品.
-    doTraderSpawning	控制流浪商人的生成.
-    doWardenSpawning	监守者是否生成.
-    doWeatherCycle	天气是否变化.
-    drowningDamage	玩家是否承受窒息伤害.
-    fallDamage	玩家是否承受跌落伤害.
-    fireDamage	玩家是否承受火焰伤害.
-    forgiveDeadPlayers	当被激怒的条件敌对生物的目标玩家死亡时，该生物是否恢复未激怒状态.
-    freezeDamage	玩家是否承受冰冻伤害.
-    functionCommandLimit	通过/function命令执行命令的最大数量.
-    globalSoundEvents	玩家是否能听到可无视距离播放给全部玩家的特定游戏事件音效.
-    keepInventory	玩家死亡后是否保留物品栏物品.
-    lavaSourceConversion	流动的熔岩是否可产生熔岩源.
-    logAdminCommands	是否在服务器日志中记录管理员使用过的命令.
-    maxCommandChainLength	决定了连锁型命令方块能连锁执行的总数量.
-    maxEntityCramming	玩家或生物能同时推动其他可推动实体的数量，超过此数量时将承受每半秒3（♥♥）的窒息伤害.设置成0可以停用这个规则.
-    mobExplosionDropDecay	由生物源爆炸炸毁的方块是否会有概率不掉落.
-    mobGriefing	生物是否能够进行破坏性行为及修改行为.
-    naturalRegeneration	玩家是否能在饥饿值足够时自然恢复生命值.
-    playersSleepingPercentage	设置跳过夜晚所需的入睡玩家所占百分比.设置为0时，1个玩家入睡即可跳过夜晚.设置为大于100的值会使玩家无法通过入睡跳过夜晚.
-    pvp	玩家之间能否造成伤害.
-    randomTickSpeed	每游戏刻每区段中随机的方块刻发生的频率（例如植物生长，树叶腐烂等）.为0时禁用随机刻，较高的数字将增大随机刻频率.
-    reducedDebugInfo	调试屏幕是否简化而非显示详细信息；同时影响实体碰撞箱（通过F3+B查看）和区块边界（通过F3+G查看）效果的显示.
-    respawnblocksexplode	玩家在非主世界维度使用床或在非下界维度使用重生锚时是否会爆炸.
-    sendCommandFeedback	玩家执行命令的返回信息是否在聊天框中显示.同时影响命令方块是否保存命令输出文本.
-    showBorderEffect	边界是否发出红色粒子.
-    showCoordinates	是否在聊天框区域持续实时显示玩家坐标.
-    showDeathMessages	是否在聊天框中显示玩家的死亡信息.同样影响是否在宠物（狼、猫和鹦鹉）死亡时通知它的主人.
-    showTags	是否展示物品的物品组件.
-    snowAccumulationHeight	下雪时可在一格方块空间内堆积的雪的最高层数.
-    spawnRadius	首次进入服务器的玩家和没有重生点的死亡玩家在重生时与世界重生点坐标的距离.
-    spectatorsGenerateChunks	是否允许旁观模式的玩家生成区块.
-    tntExplodes	TNT是否会爆炸.
-    tntExplosionDropDecay	由TNT爆炸炸毁的方块是否会有概率不掉落.
-    universalAnger	被激怒的条件敌对生物是否攻击附近任何玩家（而非只攻击激怒它们的玩家）.当forgiveDeadPlayers关闭时会有更好的效果.
-    waterSourceConversion	流动的水是否可产生水源.
-}
+游戏规则设置 - Game Rule
+announceAdvancements        是否在聊天框中公告玩家进度的达成.
+commandBlockOutput          命令方块执行命令时是否在聊天框中向管理员显示.
+sendCommandFeedback         玩家执行命令的返回信息是否在聊天框中显示.同时影响命令方块是否保存命令输出文本.
+blockExplosionDropDecay     由方块源（除TNT）爆炸炸毁的方块是否会有概率不掉落.
+commandBlocksEnabled        命令方块在游戏中是否被启用.
+disableElytraMovementCheck  是否让服务器停止检查使用鞘翅玩家的移动速度.
+disableRaids                是否禁用袭击.
+doDaylightCycle             是否进行昼夜更替和月相变化.
+doEntityDrops               非生物实体是否掉落物品.
+doFireTick                  火是否蔓延及自然熄灭.
+doImmediateRespawn          玩家死亡时是否不显示死亡界面直接重生.
+doInsomnia                  幻翼是否在夜晚生成.
+doLimitedCrafting	        玩家的合成配方是否需要解锁才能使用.
+doMobLoot                   生物在死亡时是否掉落物品.
+doMobSpawning               生物是否自然生成.不影响刷怪笼.
+doPatrolSpawning	        控制灾厄巡逻队的生成.
+doTileDrops                 方块被破坏时是否掉落物品.
+doTraderSpawning	        控制流浪商人的生成.
+doWardenSpawning	        监守者是否生成.
+doWeatherCycle	            天气是否变化.
+drowningDamage	            玩家是否承受窒息伤害.
+fallDamage	                玩家是否承受跌落伤害.
+fireDamage                  玩家是否承受火焰伤害.
+freezeDamage	            玩家是否承受冰冻伤害.
+keepInventory	            玩家死亡后是否保留物品栏物品.
+forgiveDeadPlayers	        当被激怒的条件敌对生物的目标玩家死亡时，该生物是否恢复未激怒状态.
+functionCommandLimit	    通过/function命令执行命令的最大数量.
+globalSoundEvents           玩家是否能听到可无视距离播放给全部玩家的特定游戏事件音效.
+lavaSourceConversion        流动的熔岩是否可产生熔岩源.
+logAdminCommands            是否在服务器日志中记录管理员使用过的命令.
+maxCommandChainLength	    决定了连锁型命令方块能连锁执行的总数量.
+maxEntityCramming           玩家或生物能同时推动其他可推动实体的数量，超过此数量时将承受每半秒3（♥♥）的窒息伤害.设置成0可以停用这个规则.
+mobExplosionDropDecay	    由生物源爆炸炸毁的方块是否会有概率不掉落.
+mobGriefing                 生物是否能够进行破坏性行为及修改行为.
+naturalRegeneration         玩家是否能在饥饿值足够时自然恢复生命值.
+playersSleepingPercentage	设置跳过夜晚所需的入睡玩家所占百分比.设置为0时，1个玩家入睡即可跳过夜晚.设置为大于100的值会使玩家无法通过入睡跳过夜晚.
+pvp                         玩家之间能否造成伤害.
+randomTickSpeed             游戏刻每区段中随机的方块刻发生的频率（例如植物生长，树叶腐烂等）.为0时禁用随机刻，较高的数字将增大随机刻频率.
+reducedDebugInfo            调试屏幕是否简化而非显示详细信息；同时影响实体碰撞箱（通过F3+B查看）和区块边界（通过F3+G查看）效果的显示.
+respawnblocksexplode        玩家在非主世界维度使用床或在非下界维度使用重生锚时是否会爆炸.
+showBorderEffect            边界是否发出红色粒子.
+showCoordinates             是否在聊天框区域持续实时显示玩家坐标.
+showDeathMessages           是否在聊天框中显示玩家的死亡信息.同样影响是否在宠物（狼、猫和鹦鹉）死亡时通知它的主人.
+showTags                    是否展示物品的物品组件.
+snowAccumulationHeight      下雪时可在一格方块空间内堆积的雪的最高层数.
+spawnRadius                 首次进入服务器的玩家和没有重生点的死亡玩家在重生时与世界重生点坐标的距离.
+spectatorsGenerateChunks    是否允许旁观模式的玩家生成区块.
+tntExplodes                 TNT是否会爆炸.
+tntExplosionDropDecay       由TNT爆炸炸毁的方块是否会有概率不掉落.
+universalAnger              被激怒的条件敌对生物是否攻击附近任何玩家（而非只攻击激怒它们的玩家）.当forgiveDeadPlayers关闭时会有更好的效果.
+waterSourceConversion       流动的水是否可产生水源.
 
 自定义村民 单页买卖 NBT 修复了名字显示 NoAI{
 	/summon minecraft:villager ~ ~1 ~ {NoAI:1b,Brain:{memories:{job_site:{pos:[I;0,0,0],dimension:"minecraft:overworld"}}},Offers:{Recipes:[{maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:emerald",Count:55b},sell:{id:"techreborn:electronic_circuit",Count:1b}}]}}
@@ -956,12 +972,8 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
     /tellraw @a [{"selector":"@r","color":"gold","bold":true,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false},{"text":" 你今天真好看！","color":"aqua","bold":true,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"hoverEvent":{"action":"show_text","value":"来自喵酱"}}]
 }
 
-生成折跃门到达坐标 传送门 折跃{
-    /setblock ~ ~ ~ minecraft:end_gateway{Age:200,ExitPortal:{X:462,Y:71,Z:2165},ExactTeleport:1b} replace
-}
-
 一个锁住的箱子 需要拿特定命名的物品才能打开{
-    /give @p minecraft:chest{BlockEntityTag:{CustomName:"{\"text\":\"江野的箱子\"}",Lock:"1234"}} 1
+    /give @p minecraft:chest{BlockEntityTag:{CustomName:"{\"text\":\"awa的箱子\"}",Lock:"1234"}} 1
 }
 
 极速 加速 盾牌{
@@ -984,16 +996,6 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
 }
 无法破坏的 鞋子 加速度{
     /give @p minecraft:leather_boots{Unbreakable:1b,display:{Name:"[\"足力健\"]",color:15660533},AttributeModifiers:[{AttributeName:"generic.movement_speed",Name:"noName",Amount:0.05d,Operation:0,UUID:[I;8262,6277,5898,1237],Slot:feet}]} 1
-}
-
-生成一只 100% 掉落钻石的羊{
-    /summon minecraft:sheep ~ ~1 ~ {HandItems:[{id:"minecraft:diamond",Count:64b},{}],HandDropChances:[1f,0.0f],Color:0}
-}
-生成一只 50% 掉落钻石的羊{
-    /summon minecraft:sheep ~ ~1 ~ {HandItems:[{id:"minecraft:diamond",Count:64b},{}],HandDropChances:[0.5f,0.0f],Color:0}
-}
-生成一只 25% 掉落绿宝石的羊{
-    /summon minecraft:sheep ~ ~1 ~ {HandItems:[{id:"minecraft:emerald",Count:64b},{}],HandDropChances:[0.25f,0.0f],Color:0}
 }
 
 普通装备箱{
@@ -1086,10 +1088,6 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
 
 生成一只狼 主人是Tu_tuzi{
 	/summon minecraft:wolf ~ ~1 ~ {Owner:"Tu_tuzi",CatType:0}
-}
-
-在命令方块中循环 持续获得玩家的y坐标并显示在yLevel的计分板中{
-	/execute as @a store result score @s yLevel run data get entity @s Pos[1]
 }
 
 告示牌点击关窗fill{
