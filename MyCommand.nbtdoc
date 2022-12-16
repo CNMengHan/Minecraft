@@ -14,7 +14,7 @@ https://aristois.net/   ---Aristois端 ~1.19.2
 PCLII
 https://afdian.net/p/0164034c016c11ebafcb52540025c377
 Download 1 https://ltcat.lanzoum.com/iJrst0fn1w0h
-Download 2 https://pan.baidu.com/s/1gVT83NYD8Xq5HeuZDIm6JQ?pwd=49gk 
+Download 2 https://pan.baidu.com/s/1gVT83NYD8Xq5HeuZDIm6JQ?pwd=49gk
 
 Socks Proxy
 https://www.uu-proxy.com/
@@ -306,35 +306,13 @@ F3+I 获得当前指向方块的信息（设置方块在此位置）
 /place feature minecraft:sculk_patch_ancient_city  ---区域感染成幽匿地
 /place feature minecraft:sculk_patch_deep_dark     ---区域感染成更大片的幽匿地
 
-[mv多世界服务器插件]
-/mv create zyworld normal  ---世界创建
-/mv create 世界名 normal -t flat ---超平坦
-/mv import 世界名 normal   ---加载导入的世界（保持开启）
-/mvcreate 世界名 normal -s -1820780390    ---用种子创建
-/mv coord   ---查看当前世界
-
-[ch称号服务器插件]
-/ch give YaoTang &b&l[糖糖] 0        ---称号
-/ch give Yao_Tang &c&k[@]&c&l[腐竹]&k[@]&f 0      ---称号（乱码 腐竹 乱码）红
-/ch give Yao_Tang &c[&6S&eu&ag&3a&1r&8-&5S&ce&6r&ev&ae&br&1]&f 0   ---称号彩色Sugar-Server
-
+[tellraw]
 /tellraw @a {"text":"<Bibibishop050> 我是呆瓜"}        ---代替说话
 /tellraw @a {"text":"<Bibibishop050> 我是呆瓜","color":"yellow"} ---有颜色的说话
 /tellraw @a {"text":"zhx201933加入了游戏","color":"yellow"}      ---加入了游戏
 /tellraw @a [{"text":"Bibibishop050取得了进度"},{"text":"[呆呆瓜瓜]","color":"dark_purple"}]     ---假成就
 /tellraw @a [{"text":"Yao_Tang取得了进度"},{"text":"[谁在切胡萝卜？]","color":"yellow"}]  ---假成就
 /tellraw @a [{"text":"Yao_Tang取得了进度"},{"text":"[我从哪儿来？]","color":"yellow","hoverEvent":{"action":"show_text","value":"穿越了时空隧道"}}] ---假成就(停留显示)
-
-/summon minecraft:experience_bottle 1077 -22 185                   ---生成经验瓶修装备
-/summon item ~ ~ ~ {Item:{id:"minecraft:diamond",Count:64b}}       ---生成掉落物64颗钻石
-/give @s firework_rocket{Fireworks:{Explosions:[{Type:0,Trail:1,Colors:[I;15790320],FadeColors:[I;15790320]}],Flight:120}}   ---飞行时间120s的烟花
-
-/give @s minecraft:item_frame{EntityTag:{Invisible:1b}}      ---隐形的展示框
-.nbt set {EntityTag:{Invisible:1b}}
-
-[Copy]
-/clone ~ ~1 ~ ~ ~1 ~ ~-1 ~1 ~ replace move    ---方块复制
-/clone 8 -62 -8 8 -62 -8 8 -60 -8            ---方块复制(复制 A点坐标 B点坐标 到此坐标) 箱子内物品也会随之复制
 
 [小木斧创世神插件]
 //copy      ---复制选区
@@ -671,16 +649,6 @@ baritone设置文档{
     Colorselectionpos2	选点2颜色
 }
 
-/give @s minecraft:player_head{SkullOwner:"玩家ID"}     ---获得玩家头
-https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
-
-/summon minecraft:lightning_bolt        ---生成闪电
-/title Yao_Tang title "awa"       ---弹幕白字awa
-/spreadplayers 172 90 4000 8000 false @p    ---命令方块 随机传送
-点击告示牌 随机传送{
-	/give @p minecraft:oak_sign{BlockEntityTag:{Text1:"[{\"text\":\"[冒险]\",\"color\":\"aqua\",\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]",Text2:"[{\"text\":\"点我随机传送\",\"color\":\"aqua\",\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/spreadplayers 115 -842 10000 10000 false @s\"}}]",Text3:"[{\"text\":\"\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]",Text4:"[{\"text\":\"\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]"}} 1
-}
-
 [Worldguard区域保护插件]
 /region define 区域名 所有者   ---创建受保护的区域
 /rg addowner 区域名 ID  ---worldguard区域 添加区域内白名单
@@ -689,14 +657,50 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 {Count:1b,id:"minecraft:name_tag",tag:{display:{Name:'{"text":"牧师","color":"dark_aqua","bold":"true"}'}}}   ---命名牌粗体颜色字{NBT}
 {Count:1b,id:"minecraft:name_tag",tag:{display:{Name:'{"text":"awdvawr","obfuscated":true}'}}}    ---命名牌乱码(使用前请先给命名牌命名)
 
+[mv多世界服务器插件]
+/mv create zyworld normal  ---世界创建
+/mv create 世界名 normal -t flat ---超平坦
+/mv import 世界名 normal   ---加载导入的世界（保持开启）
+/mvcreate 世界名 normal -s -1820780390    ---用种子创建
+/mv coord   ---查看当前世界
+
+[ch称号服务器插件]
+/ch give YaoTang &b&l[糖糖] 0        ---称号
+/ch give Yao_Tang &c&k[@]&c&l[腐竹]&k[@]&f 0      ---称号（乱码 腐竹 乱码）红
+/ch give Yao_Tang &c[&6S&eu&ag&3a&1r&8-&5S&ce&6r&ev&ae&br&1]&f 0   ---称号彩色Sugar-Server
+
 /give @p minecraft:elytra{Unbreakable:1b} 1              ---无法破坏的鞘翅
 /give @p minecraft:diamond_pickaxe{Unbreakable:1b} 1     ---无法破坏的钻石镐
 /give @p minecraft:netherite_shovel{Unbreakable:1b} 1    ---无法破坏的合金铲
 /give @p minecraft:splash_potion{CustomPotionEffects:[{Id:1,Amplifier:100,Duration:1000000}]} 1         ---给予速度2020%无限时间喷溅药水
 /setblock ~ ~ ~ minecraft:end_gateway{Age:200,ExitPortal:{X:462,Y:71,Z:2165},ExactTeleport:1b} replace  ---生成指定坐标的折跃门
+/give @s firework_rocket{Fireworks:{Explosions:[{Type:0,Trail:1,Colors:[I;15790320],FadeColors:[I;15790320]}],Flight:120}}   ---飞行时间120s的烟花
 
 /effect give @s minecraft:hero_of_the_village 99999 255 true  ---给予村庄英雄255效果 村民交易为1绿宝石
 /effect give Yao_Tang minecraft:strength 99999 255 true       ---无气泡永久力量效果255
+/summon minecraft:wolf ~ ~1 ~ {Owner:"Tu_tuzi",CatType:0}     ---生成一只有主人的狼
+
+/give @s minecraft:player_head{SkullOwner:"玩家ID"}     ---获得玩家头
+https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
+
+/summon minecraft:lightning_bolt        ---生成闪电
+
+/advancement grant @a everything    ---获得全进度
+/advancement revoke @a everything   ---删除全进度
+
+/give @s minecraft:item_frame{EntityTag:{Invisible:1b}}      ---隐形的展示框
+
+/summon minecraft:experience_bottle 1077 -22 185                   ---生成经验瓶修装备
+/summon item ~ ~ ~ {Item:{id:"minecraft:diamond",Count:64b}}       ---生成掉落物64颗钻石
+
+/spreadplayers 172 90 4000 8000 false @p    ---命令方块 随机传送
+点击告示牌 随机传送{
+	/give @p minecraft:oak_sign{BlockEntityTag:{Text1:"[{\"text\":\"[冒险]\",\"color\":\"aqua\",\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]",Text2:"[{\"text\":\"点我随机传送\",\"color\":\"aqua\",\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/spreadplayers 115 -842 10000 10000 false @s\"}}]",Text3:"[{\"text\":\"\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]",Text4:"[{\"text\":\"\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]"}} 1
+}
+
+[Copy]
+/clone ~ ~1 ~ ~ ~1 ~ ~-1 ~1 ~ replace move    ---方块复制
+/clone 8 -62 -8 8 -62 -8 8 -60 -8            ---方块复制(复制 A点坐标 B点坐标 到此坐标) 箱子内物品也会随之复制
 
 [粒子效果]
 粒子ID:https://minecraft.fandom.com/zh/wiki/%E7%B2%92%E5%AD%90
@@ -714,9 +718,11 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 /particle minecraft:end_rod ~ ~10 ~ 10 0 10 0 100     ---星星天花板
 /particle minecraft:note ~ ~3 ~ 2 2 2 0 2      ---音符
 
-/title Yao_Tang title ["",{"text":"qwqqwqwqwqwq","color":"red","bold":"true"},{"text":"qwqwqwqwq","color":"yellow","italic":"true"}]
+[title]
+/title Yao_Tang title "123"       ---弹幕白字123
+/title Yao_Tang title ["",{"text":"123","color":"red","bold":"true"},{"text":"456","color":"yellow","italic":"true"}]
 ---彩字屏幕
-/title Yao_Tang title ["",{"text":"wwwww","color":"red","bold":"true"},{"text":" rua~❤","color":"yellow","italic":"true","bold":"true"}]
+/title Yao_Tang title ["",{"text":"123","color":"red","bold":"true"},{"text":"456","color":"yellow","italic":"true","bold":"true"}]
 ---红黄字幕
 
 [音乐音效]
@@ -736,9 +742,6 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 /execute as @e[type=snowball] at @s unless block ~ ~-1 ~ air run summon tnt ~ ~ ~     ---该实体直接爆炸
 /execute as KennethLiu at @s run particle cloud ~ ~ ~ 1 1 1 0 999999999 normal @a     ---游戏崩溃
 
-/advancement grant @a everything    ---获得全进度
-/advancement revoke @a everything   ---删除全进度
-
 [Team]
 /team add MidnightField "MidnightField"
 /team modify MidnightField prefix {"text":"[午夜の领域] ","color":"gold","bold":"true"}  给予MidnightField队伍前面标签显示
@@ -754,6 +757,10 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 
 /scoreboard objectives add dgb deathCount ["呆瓜榜"]  ---新建阵亡次数 dgb 记分板
 /scoreboard objectives setdisplay sidebar dgb        ---显示在屏幕右侧
+/scoreboard players add Yao_Tang dgb 1              ---指定玩家值+1
+
+[利用隐形盔甲架实现浮空字]
+/summon minecraft:armor_stand ~ ~1 ~ {CustomName:"[{\"text\":\"欢迎加入服务器\",\"color\":\"aqua\"}]",CustomNameVisible:1b,Invisible:1,NoBasePlate:1,Rotation:[0f]}
 
 [Debug]
 F3+A：重新加载所有区块。
@@ -792,10 +799,20 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
 生成一只 25% 掉落绿宝石的羊
 /summon minecraft:sheep ~ ~1 ~ {HandItems:[{id:"minecraft:emerald",Count:64b},{}],HandDropChances:[0.25f,0.0f],Color:0}
 
+[data]
+生成一只有鞍的猪
+/summon minecraft:pig ~ ~1 ~ {Saddle:1b}
+让最近的猪弹射出去
+/data merge entity @e[type=pig,sort=nearest,limit=1] {Motion:[0d,10d,5d]}
+让最近的猪弹射出去 并且不会摔死
+/data merge entity @e[type=minecraft:pig,sort=nearest,limit=1] {Motion:[0d,1d,0d],Invulnerable:1}
+让最近的猪 血量设置为1
+/data modify entity @e[type=pig,limit=1,sort=nearest] Health set value 1
+
 [item]
 箱子的第一格为container.0
 命令/replaceitem在1.17后更改为/item 语法被更改
-/item replace entity @s weapon.offhand with minecraft:shield{BlockEntityTag:{Base:15}} 1  ---在自己的左手生成一个黑色的盾牌
+/item replace entity @s weapon.offhand with minecraft:shield{BlockEntityTag:{Base:15}} 1  ---在自己的左手替换物品为一个黑色的盾牌
 /item replace entity Bibibishop050 armor.head with minecraft:allium        ---在玩家头上放一朵绒球葱
 /item replace entity Life_candy armor.head with minecraft:axolotl_bucket   ---在玩家头上放一个美西螈桶
 /item replace entity Tu_tuzi armor.head with minecraft:lantern             ---在玩家头上放一盏灯笼
@@ -810,6 +827,7 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
 
 游戏规则设置 - Game Rule
 announceAdvancements        是否在聊天框中公告玩家进度的达成.
+logAdminCommands            是否在服务器日志中记录管理员使用过的命令.
 commandBlockOutput          命令方块执行命令时是否在聊天框中向管理员显示.
 sendCommandFeedback         玩家执行命令的返回信息是否在聊天框中显示.同时影响命令方块是否保存命令输出文本.
 blockExplosionDropDecay     由方块源（除TNT）爆炸炸毁的方块是否会有概率不掉落.
@@ -838,7 +856,6 @@ forgiveDeadPlayers	        当被激怒的条件敌对生物的目标玩家死�
 functionCommandLimit	    通过/function命令执行命令的最大数量.
 globalSoundEvents           玩家是否能听到可无视距离播放给全部玩家的特定游戏事件音效.
 lavaSourceConversion        流动的熔岩是否可产生熔岩源.
-logAdminCommands            是否在服务器日志中记录管理员使用过的命令.
 maxCommandChainLength	    决定了连锁型命令方块能连锁执行的总数量.
 maxEntityCramming           玩家或生物能同时推动其他可推动实体的数量，超过此数量时将承受每半秒3（♥♥）的窒息伤害.设置成0可以停用这个规则.
 mobExplosionDropDecay	    由生物源爆炸炸毁的方块是否会有概率不掉落.
@@ -1071,23 +1088,6 @@ waterSourceConversion       流动的水是否可产生水源.
 }
 炉岩碳{
 	/give @p minecraft:coal{display:{Name:"[{\"text\":\"炉岩碳\",\"color\":\"yellow\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]",Lore:["{\"text\":\"\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"[ 蕴含神秘力量的材料 ]\",\"color\":\"red\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\">> 天界的炉岩沙漠里特有的燃料\",\"color\":\"white\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\">> 听说它能产生很强的能量\",\"color\":\"white\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\">> 可以启动装备强化机器\",\"color\":\"white\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}","{\"text\":\"\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}"]},Enchantments:[{id:"minecraft:unbreaking",lvl:1s}]} 1
-}
-
-生成一只有鞍的猪{
-	/summon minecraft:pig ~ ~1 ~ {Saddle:1b}
-}
-让最近的猪 给予一股力量 推出去{
-	/data merge entity @e[type=pig,sort=nearest,limit=1] {Motion:[0d,10d,5d]}
-}
-让最近的猪 弹起来 并且有无敌效果不会摔死{
-	/data merge entity @e[type=minecraft:pig,sort=nearest,limit=1] {Motion:[0d,1d,0d],Invulnerable:1}
-}
-让最近的猪 血量设置为1{
-	/data modify entity @e[type=pig,limit=1,sort=nearest] Health set value 1
-}
-
-生成一只狼 主人是Tu_tuzi{
-	/summon minecraft:wolf ~ ~1 ~ {Owner:"Tu_tuzi",CatType:0}
 }
 
 告示牌点击关窗fill{
