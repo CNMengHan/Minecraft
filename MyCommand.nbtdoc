@@ -96,7 +96,7 @@ MeteorClient彗星CN翻译文档{
     Infinity Miner	无限挖矿
     自动挖矿（右键此项打开更多的选择菜单	这个在打开的时候默认打开一堆功能，如果不需要请右键点击后取消勾选smart module toggle一项
     Liquid Fillter	填充附近的液体	
-    Mount Bypass	允许你越过非法堆叠插件？	
+    Mount Bypass		
     Nuker	打破周围方块	
     Packet Mine	发包挖掘	通过发包的方式挖掘，自己端无挖方块动画和声音
     Stash Finder	寻找隐藏的容器之类的	记录存储物品方块的位置（游戏内通知并且生成表格和JSON文件）
@@ -173,7 +173,7 @@ MeteorClient彗星CN翻译文档{
     Velocity	抗水流	
     Player 玩家		
     Air Place	在空中放方块	
-    Anti Afk	防挂机踢	away from keyboard
+    Anti Afk	挂机
     Anti Hunger	防饥饿	
     Auto Clicker	自动点击	
     Auto Drop	自动丢	
@@ -189,8 +189,8 @@ MeteorClient彗星CN翻译文档{
     Exp Thrower	自动丢附魔之瓶	
     Fake Player	生成一个假玩家	
     Fast Use	快速使用	快速右键
-    Ghost Hand	鬼手	穿透方块和功能性方块交互，隔墙开箱子等
-    Liquid Interact	与液体互动？	
+    Ghost Hand	穿透方块和功能性方块交互，隔墙开箱子等
+    Liquid Interact	与液体互动	
     Middle Click Extra	额外中键	当你快捷栏有可以用的东西时，中键可以快捷使用
     Name Protect	保护名字	
     No Break Delay	没有破坏延迟	
@@ -198,9 +198,9 @@ MeteorClient彗星CN翻译文档{
     No Mining Trace	挖掘穿过实体	
     No Rotate	不大陀螺	
     Protals	在传送门中可以打开GUI	
-    Potion Saver	节省药水时间	?这都能省
+    Potion Saver	节省药水时间
     Potion Spoof	药水欺骗	给你渲染一些假药水效果
-    Reach	手 长	
+    Reach	延长手的距离	
     Rotation	固定视角	
     Speed Mine	快速挖掘	
     XCarry		合成栏多放4格物品
@@ -257,8 +257,6 @@ IP:mchai.top:21001 - 心海 海之韵 服务器 大型严格反作弊服务器
 9167182545767792685
 IP:nutmc.cn - 低反作弊 无地皮
 6837164887862627082
-IP:mc.ryoukyuu.xyz - Rivals
-6419760204598985305
 
 [MC-Bots机器人] - https://github.com/crpmax/mc-bots
 usage: mcbots [-c <arg>] [-d <arg>] [-g] [-j <arg>] [-l <arg>] [-m] [-n]
@@ -742,6 +740,10 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 /execute as @e[type=snowball] at @s unless block ~ ~-1 ~ air run summon tnt ~ ~ ~     ---该实体直接爆炸
 /execute as KennethLiu at @s run particle cloud ~ ~ ~ 1 1 1 0 999999999 normal @a     ---游戏崩溃
 
+[Datapack] HACK
+/datapack disable "mod:forge"  ---禁用数据包
+/datapack enable "mod:forge"   ---启用数据包
+
 [Team]
 /team add MidnightField "MidnightField"
 /team modify MidnightField prefix {"text":"[午夜の领域] ","color":"gold","bold":"true"}  给予MidnightField队伍前面标签显示
@@ -878,6 +880,59 @@ tntExplosionDropDecay       由TNT爆炸炸毁的方块是否会有概率不掉�
 universalAnger              被激怒的条件敌对生物是否攻击附近任何玩家（而非只攻击激怒它们的玩家）.当forgiveDeadPlayers关闭时会有更好的效果.
 waterSourceConversion       流动的水是否可产生水源.
 
+闪电雪球Execute解析
+/execute as @e[type=snowball] at @s run summon lightning_bolt ~ ~ ~
+循环命令方块
+解析：
+“as @e[type=snowball]：作为雪球来执行命令
+“at @s”：执行命令的位置为雪球自己所在位置
+“run”：执行
+“summon lightning_bolt ~ ~ ~”
+其中as、at和run就是子命令。@e[type=snowball]，@s和summon lightning_bolt ~ ~ ~是对象。
+常见子命令：
+as：作为
+at：位于
+facing：面向
+in：位于哪个维度（world world_nether world_the_end）
+run：运行
+常见条件子命令：
+if：如果
+unless：除非
+
+火焰弓Execute解析
+/execute as @e[type=arrow] at @s run particle flame ~ ~ ~ 0.3 0.3 0.3 0 1 normal @a
+循环命令方块
+particle指令解析：
+1、“~ ~ ~”：粒子出现位置
+2、“0.3 0.3 0.3”：粒子扩散范围
+3、“0 1”：0是粒子飞行速度，1是粒子数量
+4、“normal”：普通模式
+5、“@a”：可以看到粒子的对象
+6、“flame”：粒子类型
+
+搭桥雪球Execute解析
+/execute as @e[type=snowball] at @s run setblock ~ ~1 ~ stone
+循环命令方块
+指令解析：
+1、“~ ~1 ~”：方块放置位置（这里为雪球上方一格）
+2、“stone”：方块种类，可以修改为其他方块（比如黑曜石obsidian）
+
+熔岩行者Execute解析
+踏上岩浆时会生成黑曜石
+熔岩行者I：/execute as @p at @s if block ~ ~-1 ~ lava run setblock ~ ~-1 ~ obsidian
+熔岩行者II：/execute as @p at @s if block ~ ~-1 ~ lava run fill ~1 ~-1 ~1 ~-1 ~-1 ~-1 obsidian
+循环命令方块
+指令解析：
+1、“if block ~ ~-1 ~ lava”：如果下方的方块是岩浆
+2、“fill”：在一个区域内填充方块
+
+闪电爆炸雪球Execute解析
+拖尾粒子指令：/execute as @e[type=snowball] at @s run particle item snow ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a
+爆炸效果指令：/execute as @e[type=snowball] at @s unless block ~ ~-1 ~ air run summon tnt ~ ~ ~
+雷电效果指令：/execute as @e[type=snowball] at @s unless block ~ ~-1 ~ air run summon lightning_bolt ~ ~ ~
+循环命令方块
+“unless”：除非
+
 自定义村民 单页买卖 NBT 修复了名字显示 NoAI{
 	/summon minecraft:villager ~ ~1 ~ {NoAI:1b,Brain:{memories:{job_site:{pos:[I;0,0,0],dimension:"minecraft:overworld"}}},Offers:{Recipes:[{maxUses:9999998,uses:1,max:null,buy:{id:"minecraft:emerald",Count:55b},sell:{id:"techreborn:electronic_circuit",Count:1b}}]}}
 }
@@ -899,64 +954,6 @@ waterSourceConversion       流动的水是否可产生水源.
 }
 属性钻石鞋子{
 	/nbt Yao_Tang {Count:1b,id:"minecraft:diamond_boots",tag:{AttributeModifiers:[{Amount:9.0E9d,AttributeName:"minecraft:generic.attack_damage",Name:"Attack",Operation:0,UUID:[I;0,1,0,1]},{Amount:9.0E9d,AttributeName:"minecraft:generic.knockback_resistance",Name:"Knockback",Operation:0,UUID:[I;0,2,0,2]},{Amount:10.0d,AttributeName:"minecraft:generic.follow_range",Name:"Follow",Operation:0,UUID:[I;0,3,0,3]},{Amount:10.0d,AttributeName:"minecraft:generic.max_health",Name:"Health",Operation:0,UUID:[I;0,4,0,4]},{Amount:0.0d,AttributeName:"minecraft:generic.movement_speed",Name:"Speed",Operation:0,UUID:[I;0,5,0,5]}],Damage:0}}
-}
-
-雷电雪球execute解析 {
-	1.13+指令：/execute as @e[type=snowball] at @s run summon lightning_bolt ~ ~ ~
-	循环性命令方块，最好由拉杆控制开关
-	解析：
-	“as @e[type=snowball”：作为雪球来执行命令
-	“at @s”：执行命令的位置为雪球自己所在位置
-	“run”：执行
-	“summon lightning_bolt ~ ~ ~”
-	其中as、at和run就是子命令。@e[type=snowball]，@s和summon lightning_bolt ~ ~ ~是对象。
-	常见子命令：
-	as：作为
-	at：位于
-	facing：面向
-	in：位于哪个维度（world world_nether world_the_end）
-	run：运行
-	常见条件子命令：
-	if：如果
-	unless：除非
-}
-烈焰弓execute解析{
-	指令：/execute as @e[type=arrow] at @s run particle flame ~ ~ ~ 0.3 0.3 0.3 0 1 normal @a
-	循环性命令方块，最好由拉杆控制开关
-	particle指令解析：
-	1、“~ ~ ~”：粒子出现位置
-	2、“0.3 0.3 0.3”：粒子扩散范围
-	3、“0 1”：0是粒子飞行速度，1是粒子数量
-	4、“normal”：普通模式
-	5、“@a”：可以看到粒子的对象
-	6、“flame”：粒子类型，可以改为其他粒子，末影弓就是通过改变粒子类型为末影粒子实现的
-	注：如果没有看到粒子，可能是因为粒子效果被设置为了“最少”，在设置中更改为“全部”即可
-}
-搭桥雪球execute解析{
-	搭桥雪球
-	指令：/execute as @e[type=snowball] at @s run setblock ~ ~1 ~ stone
-	循环性命令方块，最好由拉杆控制开关
-	指令解析：
-	1、“~ ~1 ~”：方块放置位置（这里为雪球上方一格）
-	2、“stone”：方块种类，可以修改为其他方块（比如黑曜石obsidian）
-}
-熔岩行者execute解析{
-	『熔岩行者』踏上岩浆时会生成黑曜石！
-	熔岩行者I：/execute as @p at @s if block ~ ~-1 ~ lava run setblock ~ ~-1 ~ obsidian
-	熔岩行者II：/execute as @p at @s if block ~ ~-1 ~ lava run fill ~1 ~-1 ~1 ~-1 ~-1 ~-1 obsidian
-	循环性命令方块，最好由拉杆控制开关
-	指令解析：
-	1、“if block ~ ~-1 ~ lava”：如果下方的方块是岩浆
-	2、“fill”：在一个区域内填充方块
-}
-雷爆雪球execute解析{
-	『雷爆雪球』
-	原计划要做挖矿雪球，但制作过程中突然想做一个更炫酷的雪球，于是就有了雷爆雪球。
-	拖尾粒子指令：/execute as @e[type=snowball] at @s run particle item snow ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a
-	爆炸效果指令：/execute as @e[type=snowball] at @s unless block ~ ~-1 ~ air run summon tnt ~ ~ ~
-	雷电效果指令：/execute as @e[type=snowball] at @s unless block ~ ~-1 ~ air run summon lightning_bolt ~ ~ ~
-	循环性命令方块，最好由拉杆控制开关
-	“unless”：除非
 }
 
 巨型僵尸 发光 钻石甲 双剑 抗性+力量NBT组{
