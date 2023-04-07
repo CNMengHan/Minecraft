@@ -11,7 +11,7 @@ https://liquidbounce.net/    ---Liquidbounce 1.8.9/1.12.2
 https://www.wurstclient.net/   ---Wurst ~1.19.2
 https://aristois.net/   ---Aristois端 ~1.19.2
 
-PCLII
+PCLII - afdian
 https://afdian.net/p/0164034c016c11ebafcb52540025c377
 Download 1 https://ltcat.lanzoum.com/iJrst0fn1w0h
 Download 2 https://pan.baidu.com/s/1gVT83NYD8Xq5HeuZDIm6JQ?pwd=49gk
@@ -697,6 +697,7 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 }
 
 [Copy]
+可利用循环命令方块执行该操作
 /clone ~ ~1 ~ ~ ~1 ~ ~-1 ~1 ~ replace move    ---方块复制
 /clone 8 -62 -8 8 -62 -8 8 -60 -8            ---方块复制(复制 A点坐标 B点坐标 到此坐标) 箱子内物品也会随之复制
 
@@ -740,7 +741,7 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 /execute as @e[type=snowball] at @s unless block ~ ~-1 ~ air run summon tnt ~ ~ ~     ---该实体直接爆炸
 /execute as KennethLiu at @s run particle cloud ~ ~ ~ 1 1 1 0 999999999 normal @a     ---游戏崩溃
 
-[Datapack] HACK
+[Mod Datapack] 在网易我的世界中可以卸载房主的数据包
 /datapack disable "mod:forge"  ---禁用数据包
 /datapack enable "mod:forge"   ---启用数据包
 
@@ -802,6 +803,10 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
 /summon minecraft:sheep ~ ~1 ~ {HandItems:[{id:"minecraft:emerald",Count:64b},{}],HandDropChances:[0.25f,0.0f],Color:0}
 
 [data]
+查玩家背包
+/data get entity Yao_Tang Inventory
+获取指定坐标的方块数据
+/data get block ~ ~ ~
 生成一只有鞍的猪
 /summon minecraft:pig ~ ~1 ~ {Saddle:1b}
 让最近的猪弹射出去
@@ -815,6 +820,7 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
 箱子的第一格为container.0
 命令/replaceitem在1.17后更改为/item 语法被更改
 /item replace entity @s weapon.offhand with minecraft:shield{BlockEntityTag:{Base:15}} 1  ---在自己的左手替换物品为一个黑色的盾牌
+/item replace entity Awaawa weapon.offhand with minecraft:diamond_sword           ---在玩家的左手替换物品为钻石剑
 /item replace entity Bibibishop050 armor.head with minecraft:allium        ---在玩家头上放一朵绒球葱
 /item replace entity Life_candy armor.head with minecraft:axolotl_bucket   ---在玩家头上放一个美西螈桶
 /item replace entity Tu_tuzi armor.head with minecraft:lantern             ---在玩家头上放一盏灯笼
@@ -986,7 +992,7 @@ particle指令解析：
     /tellraw @a [{"selector":"@r","color":"gold","bold":true,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false},{"text":" 你今天真好看！","color":"aqua","bold":true,"italic":true,"underlined":false,"strikethrough":false,"obfuscated":false,"hoverEvent":{"action":"show_text","value":"来自喵酱"}}]
 }
 
-一个锁住的箱子 需要拿特定命名的物品才能打开{
+获得一个锁住的箱子，用特定记分牌物品可打开该箱子{
     /give @p minecraft:chest{BlockEntityTag:{CustomName:"{\"text\":\"awa的箱子\"}",Lock:"1234"}} 1
 }
 
@@ -1015,7 +1021,7 @@ particle指令解析：
 普通装备箱{
     /give @r minecraft:chest{display:{Name:"[{\"text\":\"初始装备-近战\",\"color\":\"gold\",\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]"},BlockEntityTag:{CustomName:"{\"text\":\"初始装备\"}",Items:[{id:"minecraft:diamond_helmet",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:4s}]},Slot:0b},{id:"minecraft:diamond_chestplate",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:4s}]},Slot:1b},{id:"minecraft:diamond_leggings",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:4s}]},Slot:2b},{id:"minecraft:diamond_boots",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:4s}]},Slot:3b},{id:"minecraft:diamond_sword",Count:1b,tag:{Unbreakable:1b},Slot:4b},{id:"minecraft:diamond_pickaxe",Count:1b,tag:{Unbreakable:1b},Slot:5b},{id:"minecraft:diamond_axe",Count:1b,tag:{Unbreakable:1b},Slot:6b},{id:"minecraft:golden_apple",Count:64b,Slot:7b},{id:"minecraft:golden_apple",Count:64b,Slot:8b},{id:"minecraft:end_crystal",Count:64b,Slot:9b},{id:"minecraft:end_crystal",Count:64b,Slot:10b},{id:"minecraft:end_crystal",Count:64b,Slot:11b},{id:"minecraft:end_crystal",Count:64b,Slot:12b},{id:"minecraft:end_crystal",Count:64b,Slot:13b},{id:"minecraft:end_crystal",Count:64b,Slot:14b},{id:"minecraft:end_crystal",Count:64b,Slot:15b},{id:"minecraft:end_crystal",Count:64b,Slot:16b},{id:"minecraft:end_crystal",Count:64b,Slot:17b},{id:"minecraft:obsidian",Count:64b,Slot:18b},{id:"minecraft:obsidian",Count:64b,Slot:19b},{id:"minecraft:obsidian",Count:64b,Slot:20b},{id:"minecraft:obsidian",Count:64b,Slot:21b},{id:"minecraft:obsidian",Count:64b,Slot:22b},{id:"minecraft:obsidian",Count:64b,Slot:23b},{id:"minecraft:obsidian",Count:64b,Slot:24b},{id:"minecraft:obsidian",Count:64b,Slot:25b},{id:"minecraft:obsidian",Count:64b,Slot:26b}]}} 1
 }
-32k{
+32k武器{
     /give @p minecraft:diamond_axe{Unbreakable:1b,display:{Name:"[\"32k\"]",Lore:["[\"MOJANG17\"]"]},Enchantments:[{id:"minecraft:sharpness",lvl:32767s},{id:"minecraft:smite",lvl:32767s},{id:"minecraft:bane_of_arthropods",lvl:32767s},{id:"minecraft:knockback",lvl:32767s},{id:"minecraft:fire_aspect",lvl:32767s},{id:"minecraft:looting",lvl:10s},{id:"minecraft:sweeping",lvl:32767s},{id:"minecraft:efficiency",lvl:32767s},{id:"minecraft:silk_touch",lvl:32767s},{id:"minecraft:fortune",lvl:32767s},{id:"minecraft:power",lvl:32767s},{id:"minecraft:punch",lvl:32767s},{id:"minecraft:loyalty",lvl:32767s},{id:"minecraft:impaling",lvl:32767s},{id:"minecraft:piercing",lvl:32767s}],AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"TK",Amount:99999d,Operation:0,UUID:[I;7722,5216,6728,8541],Slot:mainhand},{AttributeName:"generic.attack_speed",Name:"TKSEP",Amount:2d,Operation:0,UUID:[I;3258,3541,8943,7555],Slot:mainhand},{AttributeName:"generic.max_health",Name:"HP",Amount:0.5d,Operation:0,UUID:[I;2131,3198,7386,8893],Slot:mainhand},{AttributeName:"generic.knockback_resistance",Name:"NK",Amount:9999d,Operation:0,UUID:[I;7698,7573,7534,6759],Slot:mainhand},{AttributeName:"generic.follow_range",Name:"DIF",Amount:5d,Operation:0,UUID:[I;4361,8257,7938,7848],Slot:mainhand},{AttributeName:"generic.armor",Name:"AC",Amount:9999d,Operation:0,UUID:[I;6257,1394,5366,4896],Slot:mainhand},{AttributeName:"generic.armor_toughness",Name:"ACE",Amount:9999d,Operation:0,UUID:[I;3445,8698,3823,2963],Slot:mainhand}],CanDestroy:["obsidian","bedrock","end_crystal","dragon_head","player_head","water_bucket","grass_block"]} 1
 }
 
