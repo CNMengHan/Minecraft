@@ -331,9 +331,12 @@ F3+I 获得当前指向方块的信息（设置方块在此位置）
 /co inspect  ---开启/关闭查询
 /co near    ---查看半径五格内的方块记录
 /co rollback t:回档的时间 r:回档的半径   ----区域回档
-/co rollback u:Notch t:1h r:#global      ---撤销玩家操作（co插件） 
+/co rollback u:Notch t:1h r:#global      ---撤销玩家全局操作（co插件） 
 /co lookup u:unusuallman a:command t:99d   ---玩家指令记录 登录记录
 /co lookup u:Litch_77 a:chat t:99d       ---玩家聊天记录
+/co lookup u:jun a:kill t:99d           ---玩家击杀记录
+/co lookup u:jun a:-container t:99d     ---玩家拿走箱子里物品的记录
+/co lookup u:jun a:+container t:99d     ---玩家放入箱子里物品的记录
 
 [Ledger回档插件]
 /ledger inspect  ---开启/关闭查询
@@ -885,6 +888,58 @@ tntExplodes                 TNT是否会爆炸.
 tntExplosionDropDecay       由TNT爆炸炸毁的方块是否会有概率不掉落.
 universalAnger              被激怒的条件敌对生物是否攻击附近任何玩家（而非只攻击激怒它们的玩家）.当forgiveDeadPlayers关闭时会有更好的效果.
 waterSourceConversion       流动的水是否可产生水源.
+
+---------- 实体数据深度解析 ----------
+summon minecraft:cow 231.10 73.00 -130.26 {AgeLocked: 0b, Brain: {memories: {}}, HurtByTimestamp: 0, Attributes: [{Modifiers: [{Amount: 0.03405822356703815d, Operation: 1, UUID: [I; -295667725, -9353512, -1840473668, -622032888], Name: "Random spawn bonus"}], Base: 16.0d, Name: "minecraft:generic.follow_range"}, {Base: 0.20000000298023224d, Name: "minecraft:generic.movement_speed"}, {Base: 10.0d, Name: "minecraft:generic.max_health"}], Invulnerable: 0b, ForcedAge: 0, FallFlying: 0b, AbsorptionAmount: 0.0f, PortalCooldown: 0, FallDistance: 0.0f, InLove: 0, DeathTime: 0s, WorldUUIDMost: -5138040494081160214L, Bukkit.Aware: 1b, HandDropChances: [0.085f, 0.085f], PersistenceRequired: 0b, Spigot.ticksLived: 9755, Paper.OriginWorld: [I; -1196293276, -1531425814, -1600578270, 341861370], Age: 0, Motion: [-0.02671685148031613d, -0.0784000015258789d, 0.03499092435937137d], Health: 10.0f, Bukkit.updateLevel: 2, Paper.SpawnReason: "NATURAL", LeftHanded: 0b, OnGround: 1b, Air: 300s, Rotation: [39.860367f, 0.0f], HandItems: [{}, {}], ArmorDropChances: [0.085f, 0.085f, 0.085f, 0.085f], ArmorItems: [{}, {}, {}, {}], Fire: -1s, CanPickUpLoot: 0b, HurtTime: 0s, WorldUUIDLeast: -6874431323996396550L, Paper.Origin: [228.72411755566844d, 73.0d, -129.04722870653362d]}
+
+minecraft:cow：生成的实体类型为牛
+231.10 73.00 -130.26：生成实体的坐标位置为 X = 231.10、Y = 73.00、Z = -130.26
+AgeLocked: 0b：实体的年龄锁定为 false
+Brain: {memories: {}}：实体的智能系统记忆为空
+HurtByTimestamp: 0：实体上次受伤的时间戳为 0
+Attributes: [...]：实体的属性列表，包括：
+  * Modifiers: [...]：一个 modifier 数组，其中包括一些修正该属性的属性值
+    Amount: 0.03405822356703815d：该 modifier 的加成值为 0.03405822356703815d
+    Operation: 1：1 代表加法操作，即将该 modifier 的加成值和最终值相加
+    UUID: [I; -295667725, -9353512, -1840473668, -622032888]：该 modifier 独有的 UUID
+    Name: "Random spawn bonus"：该 modifier 的名称为“Random spawn bonus”
+  * Base: 16.0d：实体的跟随距离为 16.0d
+  * Name: "minecraft:generic.follow_range"：该属性的名称为“跟随范围”
+  * Base: 0.20000000298023224d：实体的移动速度为 0.2
+  * Name: "minecraft:generic.movement_speed"：该属性的名称为“移动速度”
+  * Base: 10.0d：实体的最大血量为 10
+  * Name: "minecraft:generic.max_health"：该属性的名称为“最大血量”
+Invulnerable: 0b：实体不具备无敌状态
+ForcedAge: 0：实体的强制年龄为 0
+FallFlying: 0b：实体不处于滑翔状态
+AbsorptionAmount: 0.0f：实体没有吸收伤害的效果
+PortalCooldown: 0：传送门冷却时间为 0
+FallDistance: 0.0f：实体的摔落距离为 0
+InLove: 0：实体没有处在繁殖状态
+DeathTime: 0s：实体死亡时间为 0
+WorldUUIDMost: -5138040494081160214L：坐标所在世界的 UUID（高位）
+Bukkit.Aware: 1b：是否为 Bukkit 识别到的实体
+HandDropChances: [0.085f, 0.085f]：主手和副手掉落物品的几率分别为 0.085
+PersistenceRequired: 0b：实体不需要持久化存储
+Spigot.ticksLived: 9755：实体已经存在了 9755 tick
+Paper.OriginWorld: [I; -1196293276, -1531425814, -1600578270, 341861370]：实体最初生成的世界的 UUID（整数数组）
+Age: 0：实体的年龄为 0
+Motion: [-0.02671685148031613d, -0.0784000015258789d, 0.03499092435937137d]：实体的运动向量分别为 X = -0.02671685148031613、Y = -0.0784000015258789、Z = 0.03499092435937137
+Health: 10.0f：实体的当前血量为 10
+Bukkit.updateLevel: 2：实体的 Bukkit 更新等级为 2
+Paper.SpawnReason: "NATURAL"：实体的生成原因为“自然生成”
+LeftHanded: 0b：实体不是左撇子
+OnGround: 1b：实体站在地上
+Air: 300s：实体的剩余呼吸时间为 300 tick
+Rotation: [39.860367f, 0.0f]：实体的头部旋转角度为 X 轴方向为 39.860367 度，Y 轴方向为 0 度
+HandItems: [{}, {}]：实体没有任何物品装备在主手和副手上
+ArmorDropChances: [0.085f, 0.085f, 0.085f, 0.085f]：四个装备槽的掉落几率均为 0.085
+ArmorItems: [{}, {}, {}, {}]：四个装备槽均为空
+Fire: -1s：实体不处于燃烧状态
+CanPickUpLoot: 0b：实体不能捡起掉落物品
+HurtTime: 0s：实体受伤时间为 0
+WorldUUIDLeast: -6874431323996396550L：坐标所在世界的 UUID（低位）
+Paper.Origin: [228.72411755566844d, 73.0d, -129.04722870653362d]：实体最初生成的坐标位置
 
 闪电雪球Execute解析
 /execute as @e[type=snowball] at @s run summon lightning_bolt ~ ~ ~
