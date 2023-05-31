@@ -22,41 +22,40 @@ https://www.uu-proxy.com/
 NBT Color
 https://minecraft.fandom.com/zh/wiki/%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BB%A3%E7%A0%81
 
-[MeteorClient彗星.Command]
-.server  ---获取服务器信息
-.nbt get  ---获取手上的物品NBT值
-.nbt copy ---复制手上的物品NBT值
-.nbt set  ---设置NBT值
-.enchant all max  ---将手上的物品获得全附魔
-.enchant all level 32767  ---将手上的物品获得全附魔满级
-.save-map  ---保存手上的地图到本地
-.fov 110   ---调整fov视野
-.binds  ---查看已设置的快捷键
-.spectate Akuw  ---监视对方视角
-.hclip 3   ---往前瞬移
-.vclip 10  ---传送到10格高的位置
-.damage 7  ---扣血
-.drop all  ---丢弃一切物品
-.peek      ---偷看容器里的物品
-.rotation set 0 90  ---面向90度正前方
-.inventory Life_candy ---打开某个玩家的背包
-.loc buried_treasure ---拿着藏宝图输入后获取坐标
-.gamemode creative ---改成创造模式(可使用追溯指针)
-.gamemode spectator ---改成观察者模式
-.swarm 工人系统
-.swarm join        ---加入Meteor主机
-.swarm connections ---连接Meteor主机
-.swarm disconnect  ---断开Meteor主机
-.swarm exec /tpa Life_candy ---远程命令执行和聊天
-.swarm follow Life_candy ---跟随玩家
-.swarm goto x z  ---命令去某个地方
-.swarm infinity-miner minecraft:acacia_log  ---不断挖矿
-.swarm mine minecraft:acacia_button  ---自动挖矿
-.swarm scatter  ---分散距离
-.swarm stop     ---停下！
-.swarm toggle aim-assist off  ---控制模块
-扩展命令
-.velocity 3   ---把自己弹上天
+[MeteorClient彗星.Command]:
+	.server  ---获取服务器信息
+	.nbt get  ---获取手上的物品NBT值
+	.nbt copy ---复制手上的物品NBT值
+	.nbt set  ---设置NBT值
+	.enchant all max  ---将手上的物品获得全附魔
+	.enchant all level 32767  ---将手上的物品获得全附魔满级
+	.save-map  ---保存手上的地图到本地
+	.fov 110   ---调整fov视野
+	.binds  ---查看已设置的快捷键
+	.spectate Akuw  ---监视对方视角
+	.hclip 3   ---往前瞬移
+	.vclip 10  ---传送到10格高的位置
+	.damage 7  ---扣血
+	.drop all  ---丢弃一切物品
+	.peek      ---偷看容器里的物品
+	.rotation set 0 90  ---面向90度正前方
+	.inventory Life_candy ---打开某个玩家的背包
+	.loc buried_treasure ---拿着藏宝图输入后获取坐标
+	.gamemode creative ---改成创造模式(可使用追溯指针)
+	.gamemode spectator ---改成观察者模式
+	.swarm 工人系统
+	.swarm join        ---加入Meteor主机
+	.swarm connections ---连接Meteor主机
+	.swarm disconnect  ---断开Meteor主机
+	.swarm exec /tpa Life_candy ---远程命令执行和聊天
+	.swarm follow Life_candy ---跟随玩家
+	.swarm goto x z  ---命令去某个地方
+	.swarm infinity-miner minecraft:acacia_log  ---不断挖矿
+	.swarm mine minecraft:acacia_button  ---自动挖矿
+	.swarm scatter  ---分散距离
+	.swarm stop     ---停下！
+	.swarm toggle aim-assist off  ---控制模块
+	.velocity 3   ---把自己弹上天
 MeteorClient彗星CN翻译文档{
 	Misc 杂项
     Announcer	报幕员	让你在聊天栏输出操作的文字(如 打开合成 捡起丢弃物品)
@@ -924,7 +923,8 @@ PersistenceRequired: 0b：实体不需要持久化存储
 Spigot.ticksLived: 9755：实体已经存在了 9755 tick
 Paper.OriginWorld: [I; -1196293276, -1531425814, -1600578270, 341861370]：实体最初生成的世界的 UUID（整数数组）
 Age: 0：实体的年龄为 0
-Motion: [-0.02671685148031613d, -0.0784000015258789d, 0.03499092435937137d]：实体的运动向量分别为 X = -0.02671685148031613、Y = -0.0784000015258789、Z = 0.03499092435937137
+Motion: [-0.02671685148031613d, -0.0784000015258789d, 0.03499092435937137d]
+实体的运动向量分别为 X = -0.02671685148031613 Y = -0.0784000015258789 Z = 0.03499092435937137
 Health: 10.0f：实体的当前血量为 10
 Bukkit.updateLevel: 2：实体的 Bukkit 更新等级为 2
 Paper.SpawnReason: "NATURAL"：实体的生成原因为“自然生成”
@@ -1076,6 +1076,7 @@ particle指令解析：
 普通装备箱{
     /give @r minecraft:chest{display:{Name:"[{\"text\":\"初始装备-近战\",\"color\":\"gold\",\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]"},BlockEntityTag:{CustomName:"{\"text\":\"初始装备\"}",Items:[{id:"minecraft:diamond_helmet",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:4s}]},Slot:0b},{id:"minecraft:diamond_chestplate",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:4s}]},Slot:1b},{id:"minecraft:diamond_leggings",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:4s}]},Slot:2b},{id:"minecraft:diamond_boots",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:4s}]},Slot:3b},{id:"minecraft:diamond_sword",Count:1b,tag:{Unbreakable:1b},Slot:4b},{id:"minecraft:diamond_pickaxe",Count:1b,tag:{Unbreakable:1b},Slot:5b},{id:"minecraft:diamond_axe",Count:1b,tag:{Unbreakable:1b},Slot:6b},{id:"minecraft:golden_apple",Count:64b,Slot:7b},{id:"minecraft:golden_apple",Count:64b,Slot:8b},{id:"minecraft:end_crystal",Count:64b,Slot:9b},{id:"minecraft:end_crystal",Count:64b,Slot:10b},{id:"minecraft:end_crystal",Count:64b,Slot:11b},{id:"minecraft:end_crystal",Count:64b,Slot:12b},{id:"minecraft:end_crystal",Count:64b,Slot:13b},{id:"minecraft:end_crystal",Count:64b,Slot:14b},{id:"minecraft:end_crystal",Count:64b,Slot:15b},{id:"minecraft:end_crystal",Count:64b,Slot:16b},{id:"minecraft:end_crystal",Count:64b,Slot:17b},{id:"minecraft:obsidian",Count:64b,Slot:18b},{id:"minecraft:obsidian",Count:64b,Slot:19b},{id:"minecraft:obsidian",Count:64b,Slot:20b},{id:"minecraft:obsidian",Count:64b,Slot:21b},{id:"minecraft:obsidian",Count:64b,Slot:22b},{id:"minecraft:obsidian",Count:64b,Slot:23b},{id:"minecraft:obsidian",Count:64b,Slot:24b},{id:"minecraft:obsidian",Count:64b,Slot:25b},{id:"minecraft:obsidian",Count:64b,Slot:26b}]}} 1
 }
+
 32k武器{
     /give @p minecraft:diamond_axe{Unbreakable:1b,display:{Name:"[\"32k\"]",Lore:["[\"MOJANG17\"]"]},Enchantments:[{id:"minecraft:sharpness",lvl:32767s},{id:"minecraft:smite",lvl:32767s},{id:"minecraft:bane_of_arthropods",lvl:32767s},{id:"minecraft:knockback",lvl:32767s},{id:"minecraft:fire_aspect",lvl:32767s},{id:"minecraft:looting",lvl:10s},{id:"minecraft:sweeping",lvl:32767s},{id:"minecraft:efficiency",lvl:32767s},{id:"minecraft:silk_touch",lvl:32767s},{id:"minecraft:fortune",lvl:32767s},{id:"minecraft:power",lvl:32767s},{id:"minecraft:punch",lvl:32767s},{id:"minecraft:loyalty",lvl:32767s},{id:"minecraft:impaling",lvl:32767s},{id:"minecraft:piercing",lvl:32767s}],AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"TK",Amount:99999d,Operation:0,UUID:[I;7722,5216,6728,8541],Slot:mainhand},{AttributeName:"generic.attack_speed",Name:"TKSEP",Amount:2d,Operation:0,UUID:[I;3258,3541,8943,7555],Slot:mainhand},{AttributeName:"generic.max_health",Name:"HP",Amount:0.5d,Operation:0,UUID:[I;2131,3198,7386,8893],Slot:mainhand},{AttributeName:"generic.knockback_resistance",Name:"NK",Amount:9999d,Operation:0,UUID:[I;7698,7573,7534,6759],Slot:mainhand},{AttributeName:"generic.follow_range",Name:"DIF",Amount:5d,Operation:0,UUID:[I;4361,8257,7938,7848],Slot:mainhand},{AttributeName:"generic.armor",Name:"AC",Amount:9999d,Operation:0,UUID:[I;6257,1394,5366,4896],Slot:mainhand},{AttributeName:"generic.armor_toughness",Name:"ACE",Amount:9999d,Operation:0,UUID:[I;3445,8698,3823,2963],Slot:mainhand}],CanDestroy:["obsidian","bedrock","end_crystal","dragon_head","player_head","water_bucket","grass_block"]} 1
 }
@@ -1083,21 +1084,327 @@ particle指令解析：
 拿32k武器的僵尸{
     /summon minecraft:zombie ~ ~1 ~ {HandItems:[{id:"minecraft:diamond_axe",Count:1b,tag:{Enchantments:[{id:"minecraft:sharpness",lvl:32767s},{id:"minecraft:smite",lvl:32767s},{id:"minecraft:bane_of_arthropods",lvl:32767s},{id:"minecraft:knockback",lvl:32767s},{id:"minecraft:fire_aspect",lvl:32767s},{id:"minecraft:looting",lvl:10s},{id:"minecraft:sweeping",lvl:32767s},{id:"minecraft:efficiency",lvl:32767s},{id:"minecraft:silk_touch",lvl:32767s},{id:"minecraft:fortune",lvl:32767s},{id:"minecraft:power",lvl:32767s},{id:"minecraft:punch",lvl:32767s},{id:"minecraft:loyalty",lvl:32767s},{id:"minecraft:impaling",lvl:32767s},{id:"minecraft:piercing",lvl:32767s}],AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"TK",Amount:99999d,Operation:0,UUID:[I;7722,5216,6728,8541],Slot:mainhand},{AttributeName:"generic.attack_speed",Name:"TKSEP",Amount:2d,Operation:0,UUID:[I;3258,3541,8943,7555],Slot:mainhand},{AttributeName:"generic.max_health",Name:"HP",Amount:9999999d,Operation:0,UUID:[I;2131,3198,7386,8893],Slot:mainhand},{AttributeName:"generic.knockback_resistance",Name:"NK",Amount:9999d,Operation:0,UUID:[I;7698,7573,7534,6759],Slot:mainhand},{AttributeName:"generic.follow_range",Name:"DIF",Amount:5d,Operation:0,UUID:[I;4361,8257,7938,7848],Slot:mainhand},{AttributeName:"generic.attack_speed",Name:"noName",Amount:99999d,Operation:0,UUID:[I;4743,4527,1374,2692],Slot:mainhand},{AttributeName:"generic.armor",Name:"AC",Amount:9999d,Operation:0,UUID:[I;6257,1394,5366,4896],Slot:mainhand},{AttributeName:"generic.armor_toughness",Name:"ACE",Amount:9999d,Operation:0,UUID:[I;3445,8698,3823,2963],Slot:mainhand}],CanDestroy:["obsidian","bedrock","end_crystal","dragon_head","player_head","water_bucket","grass_block"]}}]}
 }
-骑着僵尸的小白 附魔弓 四连发{
+
+#-1 骑着僵尸的小白 附魔弓 四连发{
     /summon minecraft:zombie ~ ~1 ~ {Passengers:[{ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:8,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:10,Amplifier:19,Duration:1999980},{Id:11,Amplifier:19,Duration:1999980},{Id:22,Amplifier:19,Duration:1999980}],HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}},{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}}],id:"minecraft:skeleton"},{ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:8,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:10,Amplifier:19,Duration:1999980},{Id:11,Amplifier:19,Duration:1999980},{Id:22,Amplifier:19,Duration:1999980}],HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}},{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}}],id:"minecraft:skeleton"},{ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:8,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:10,Amplifier:19,Duration:1999980},{Id:11,Amplifier:19,Duration:1999980},{Id:22,Amplifier:19,Duration:1999980}],HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}},{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}}],id:"minecraft:skeleton"},{ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:8,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:10,Amplifier:19,Duration:1999980},{Id:11,Amplifier:19,Duration:1999980},{Id:22,Amplifier:19,Duration:1999980}],HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}},{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}}],id:"minecraft:skeleton"},{ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:8,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:10,Amplifier:19,Duration:1999980},{Id:11,Amplifier:19,Duration:1999980},{Id:22,Amplifier:19,Duration:1999980}],HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}},{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:punch",lvl:20s},{id:"minecraft:power",lvl:20s},{id:"minecraft:flame",lvl:20s}]}}],id:"minecraft:skeleton"}],ActiveEffects:[{Id:11,Amplifier:254,Duration:1999980},{Id:10,Amplifier:254,Duration:1999980},{Id:21,Amplifier:254,Duration:1999980}]}
 }
+#-1 树状解析{
+	summon
+    minecraft:zombie
+        ~
+        ~1
+        Passengers
+            0
+                ActiveEffects
+                    0
+                        Id: 1
+                        Amplifier: 19
+                        Duration: 1999980
+                    1
+                        Id: 8
+                        Amplifier: 19
+                        Duration: 1999980
+                    2
+                        Id: 5
+                        Amplifier: 19
+                        Duration: 1999980
+                    3
+                        Id: 10
+                        Amplifier: 19
+                        Duration: 1999980
+                    4
+                        Id: 11
+                        Amplifier: 19
+                        Duration: 1999980
+                    5
+                        Id: 22
+                        Amplifier: 19
+                        Duration: 1999980
+                HandItems
+                    0
+                        id:minecraft:bow
+                        Count:1b
+                        tag
+                            Enchantments
+                                0
+                                    id:minecraft:punch
+                                    lvl:20s
+                                1
+                                    id:minecraft:power
+                                    lvl:20s
+                                2
+                                    id:minecraft:flame
+                                    lvl:20s
+                    1
+                        id:minecraft:bow
+                        Count:1b
+                        tag
+                            Enchantments
+                                0
+                                    id:minecraft:punch
+                                    lvl:20s
+                                1
+                                    id:minecraft:power
+                                    lvl:20s
+                                2
+                                    id:minecraft:flame
+                                    lvl:20s
+                id:minecraft:skeleton
+            1
+                ActiveEffects
+                    0
+                        Id: 1
+                        Amplifier: 19
+                        Duration: 1999980
+                    1
+                        Id: 8
+                        Amplifier: 19
+                        Duration: 1999980
+                    2
+                        Id: 5
+                        Amplifier: 19
+                        Duration: 1999980
+                    3
+                        Id: 10
+                        Amplifier: 19
+                        Duration: 1999980
+                    4
+                        Id: 11
+                        Amplifier: 19
+                        Duration: 1999980
+                    5
+                        Id: 22
+                        Amplifier: 19
+                        Duration: 1999980
+                HandItems
+                    0
+                        id:minecraft:bow
+                        Count:1b
+                        tag
+                            Enchantments
+                                0
+                                    id:minecraft:punch
+                                    lvl:20s
+                                1
+                                    id:minecraft:power
+                                    lvl:20s
+                                2
+                                    id:minecraft:flame
+                                    lvl:20s
+                    1
+                        id:minecraft:bow
+                        Count:1b
+                        tag
+                            Enchantments
+                                0
+                                    id:minecraft:punch
+                                    lvl:20s
+                                1
+                                    id:minecraft:power
+                                    lvl:20s
+                                2
+                                    id:minecraft:flame
+                                    lvl:20s
+                id:minecraft:skeleton
+            2
+                ActiveEffects
+                    0
+                        Id: 1
+                        Amplifier: 19
+                        Duration: 1999980
+                    1
+                        Id: 8
+                        Amplifier: 19
+                        Duration: 1999980
+                    2
+                        Id: 5
+                        Amplifier: 19
+                        Duration: 1999980
+                    3
+                        Id: 10
+                        Amplifier: 19
+                        Duration: 1999980
+                    4
+                        Id: 11
+                        Amplifier: 19
+                        Duration: 1999980
+                    5
+                        Id: 22
+                        Amplifier: 19
+                        Duration: 1999980
+                HandItems
+                    0
+                        id:minecraft:bow
+                        Count:1b
+                        tag
+                            Enchantments
+                                0
+                                    id:minecraft:punch
+                                    lvl:20s
+                                1
+                                    id:minecraft:power
+                                    lvl:20s
+                                2
+                                    id:minecraft:flame
+                                    lvl:20s
+                    1
+                        id:minecraft:bow
+                        Count:1b
+                        tag
+                            Enchantments
+                                0
+                                    id:minecraft:punch
+                                    lvl:20s
+                                1
+                                    id:minecraft:power
+                                    lvl:20s
+                                2
+                                    id:minecraft:flame
+                                    lvl:20s
+                id:minecraft:skeleton
+            3
+                ActiveEffects
+                    0
+                        Id: 1
+                        Amplifier: 19
+                        Duration: 1999980
+                    1
+                        Id: 8
+                        Amplifier: 19
+                        Duration: 1999980
+                    2
+                        Id: 5
+                        Amplifier: 19
+                        Duration: 1999980
+                    3
+                        Id: 10
+                        Amplifier: 19
+                        Duration: 1999980
+                    4
+                        Id: 11
+                        Amplifier: 19
+                        Duration: 1999980
+                    5
+                        Id: 22
+                        Amplifier: 19
+                        Duration: 1999980
+                HandItems
+                    0
+                        id:minecraft:bow
+                        Count:1b
+                        tag
+                            Enchantments
+                                0
+                                    id:minecraft:punch
+                                    lvl:20s
+                                1
+                                    id:minecraft:power
+                                    lvl:20s
+                                2
+                                    id:minecraft:flame
+                                    lvl:20s
+                    1
+                        id:minecraft:bow
+                        Count:1b
+                        tag
+                            Enchantments
+                                0
+                                    id:minecraft:punch
+                                    lvl:20s
+                                1
+                                    id:minecraft:power
+                                    lvl:20s
+                                2
+                                    id:minecraft:flame
+                                    lvl:20s
+                id:minecraft:skeleton
+            4
+                ActiveEffects
+                    0
+                        Id: 1
+                        Amplifier: 19
+                        Duration: 1999980
+                    1
+                        Id: 8
+                        Amplifier: 19
+                        Duration: 1999980
+                    2
+                        Id: 5
+                        Amplifier: 19
+                        Duration: 1999980
+                    3
+                        Id: 10
+                        Amplifier: 19
+                        Duration: 1999980
+                    4
+                        Id: 11
+                        Amplifier: 19
+                        Duration: 1999980
+                    5
+                        Id: 22
+                        Amplifier: 19
+                        Duration: 1999980
+                HandItems
+                    0
+                        id:minecraft:bow
+                        Count:1b
+                        tag
+                            Enchantments
+                                0
+                                    id:minecraft:punch
+                                    lvl:20s
+                                1
+                                    id:minecraft:power
+                                    lvl:20s
+                                2
+                                    id:minecraft:flame
+                                    lvl:20s
+                    1
+                        id:minecraft:bow
+                        Count:1b
+                        tag
+                            Enchantments
+                                0
+                                    id:minecraft:punch
+                                    lvl:20s
+                                1
+                                    id:minecraft:power
+                                    lvl:20s
+                                2
+                                    id:minecraft:flame
+                                    lvl:20s
+                id:minecraft:skeleton
+        ActiveEffects
+            0
+                Id: 11
+                Amplifier: 254
+                Duration: 1999980
+            1
+                Id: 10
+                Amplifier: 254
+                Duration: 1999980
+            2
+                Id: 21
+                Amplifier: 254
+                Duration: 1999980
+}
+
 骑着小僵尸的小白 附魔弓 四连发 守卫者{
     /summon minecraft:zombie ~ ~1 ~ {Passengers:[{Passengers:[{id:"minecraft:elder_guardian"}],ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:8,Amplifier:2,Duration:1999980},{Id:10,Amplifier:254,Duration:1999980},{Id:11,Amplifier:254,Duration:1999980},{Id:12,Amplifier:254,Duration:1999980},{Id:22,Amplifier:254,Duration:1999980}],HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:flame",lvl:255s},{id:"minecraft:knockback",lvl:50s},{id:"minecraft:power",lvl:50s},{id:"minecraft:punch",lvl:100s}]}},{}],id:"minecraft:skeleton"},{Passengers:[{id:"minecraft:elder_guardian"}],ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:8,Amplifier:2,Duration:1999980},{Id:10,Amplifier:254,Duration:1999980},{Id:11,Amplifier:254,Duration:1999980},{Id:12,Amplifier:254,Duration:1999980},{Id:22,Amplifier:254,Duration:1999980}],HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:flame",lvl:255s},{id:"minecraft:knockback",lvl:50s},{id:"minecraft:power",lvl:50s},{id:"minecraft:punch",lvl:100s}]}},{}],id:"minecraft:skeleton"},{ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:8,Amplifier:2,Duration:1999980},{Id:10,Amplifier:254,Duration:1999980},{Id:11,Amplifier:254,Duration:1999980},{Id:12,Amplifier:254,Duration:1999980},{Id:22,Amplifier:254,Duration:1999980}],HandItems:[{id:"minecraft:bow",Count:1b,tag:{Enchantments:[{id:"minecraft:flame",lvl:255s},{id:"minecraft:knockback",lvl:50s},{id:"minecraft:power",lvl:50s},{id:"minecraft:punch",lvl:100s}]}},{}],id:"minecraft:skeleton"}],ActiveEffects:[{Id:1,Amplifier:19,Duration:1999980},{Id:5,Amplifier:19,Duration:1999980},{Id:8,Amplifier:2,Duration:1999980},{Id:10,Amplifier:254,Duration:1999980},{Id:11,Amplifier:254,Duration:1999980},{Id:12,Amplifier:254,Duration:1999980},{Id:22,Amplifier:254,Duration:1999980}],HandItems:[{id:"minecraft:diamond_sword",Count:1b,tag:{Enchantments:[{id:"minecraft:knockback",lvl:10s}]}},{id:"minecraft:diamond_sword",Count:1b,tag:{Enchantments:[{id:"minecraft:knockback",lvl:10s}]}}],ArmorItems:[{id:"minecraft:diamond_boots",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:10s}]}},{id:"minecraft:diamond_leggings",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:10s}]}},{id:"minecraft:diamond_chestplate",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:10s}]}},{id:"minecraft:diamond_helmet",Count:1b,tag:{Enchantments:[{id:"minecraft:protection",lvl:10s}]}}],IsBaby:1b}
 }
+
 召唤一只蝙蝠 骑着小白拿着木棍{
     summon minecraft:bat ~ ~ ~ {Passengers:[{id:"minecraft:skeleton",ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",Count:1b}],HandItems:[{id:"minecraft:stick",Count:1b}]}]}
 }
+
 拿着基岩的末影人{
     /summon minecraft:enderman ~ ~1 ~ {carriedBlockState:{Name:"minecraft:bedrock"}}
 }
+
 水晶蝙蝠 蝙蝠背着水晶{
     /summon minecraft:bat ~ ~1 ~ {Passengers:[{id:"minecraft:end_crystal"}]}
 }
+
 超大 史莱姆{
 	/summon minecraft:slime ~ ~1 ~ {Size:20}
 }
@@ -1105,6 +1412,7 @@ particle指令解析：
 生成无法捡起的 掉落物{
     summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:diamond",Count:1b},PickupDelay:32767s}
 }
+
 生成无法爆炸的 TNT{
 	/summon minecraft:tnt ~ ~1 ~ {Fuse:32767}
 }
@@ -2850,9 +3158,7 @@ particle指令解析：
     默认拥有组: 管理员
 
     %server_time_<format>% 当前时间
-
     JavaScript变量
-
     %javascript_<your placeholder identifier>%  javascript_占位符
 
     服务器变量
