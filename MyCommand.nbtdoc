@@ -13,7 +13,7 @@ https://aristois.net/   ---Aristois端 ~1.19.2
 
 PCLII - afdian
 https://afdian.net/p/0164034c016c11ebafcb52540025c377
-Download 1 https://ltcat.lanzoum.com/iJrst0fn1w0h
+Download 1 https://ltcat.lanzoum.com/iCqgH11349ih
 Download 2 https://pan.baidu.com/s/1gVT83NYD8Xq5HeuZDIm6JQ?pwd=49gk
 
 Socks Proxy
@@ -887,6 +887,54 @@ tntExplodes                 TNT是否会爆炸.
 tntExplosionDropDecay       由TNT爆炸炸毁的方块是否会有概率不掉落.
 universalAnger              被激怒的条件敌对生物是否攻击附近任何玩家（而非只攻击激怒它们的玩家）.当forgiveDeadPlayers关闭时会有更好的效果.
 waterSourceConversion       流动的水是否可产生水源.
+
+附魔 - Enchant
+保护 protection
+火焰保护 fire_protection
+摔落保护 feather_falling
+爆炸保护 blast_protection
+弹射物保护 projectile_protection
+荆棘 thorns
+水下呼吸 respiration
+深海探索者 depth_strider
+水下速掘 aqua_affinity
+冰霜行者 frost_walker
+灵魂疾行 soul_speed
+迅捷潜行 swift_sneak
+
+锋利 sharpness
+亡灵杀手 smite
+节肢杀手 bane_of_arthropods
+击退 knockback
+火焰附加 fire_aspect
+抢夺 looting
+横扫之刃 sweeping
+
+力量 power
+冲击 Punch
+火矢 flame
+无限 infinity
+
+穿刺 impaling
+激流 riptide
+忠诚 loyalty
+引雷 channeling
+
+多重射击 multishot
+穿透 piercing
+快速装填 quick_charge
+
+海之眷顾 luck_of_the_sea
+饵钓 lure
+
+耐久 unbreaking
+效率 efficiency
+时运 fortune
+精准采集 silk_touch
+经验修补 mending
+
+绑定诅咒 binding_curse
+消失诅咒 vanishing_curse
 
 ---------- 实体数据深度解析 ----------
 summon minecraft:cow 231.10 73.00 -130.26 {AgeLocked: 0b, Brain: {memories: {}}, HurtByTimestamp: 0, Attributes: [{Modifiers: [{Amount: 0.03405822356703815d, Operation: 1, UUID: [I; -295667725, -9353512, -1840473668, -622032888], Name: "Random spawn bonus"}], Base: 16.0d, Name: "minecraft:generic.follow_range"}, {Base: 0.20000000298023224d, Name: "minecraft:generic.movement_speed"}, {Base: 10.0d, Name: "minecraft:generic.max_health"}], Invulnerable: 0b, ForcedAge: 0, FallFlying: 0b, AbsorptionAmount: 0.0f, PortalCooldown: 0, FallDistance: 0.0f, InLove: 0, DeathTime: 0s, WorldUUIDMost: -5138040494081160214L, Bukkit.Aware: 1b, HandDropChances: [0.085f, 0.085f], PersistenceRequired: 0b, Spigot.ticksLived: 9755, Paper.OriginWorld: [I; -1196293276, -1531425814, -1600578270, 341861370], Age: 0, Motion: [-0.02671685148031613d, -0.0784000015258789d, 0.03499092435937137d], Health: 10.0f, Bukkit.updateLevel: 2, Paper.SpawnReason: "NATURAL", LeftHanded: 0b, OnGround: 1b, Air: 300s, Rotation: [39.860367f, 0.0f], HandItems: [{}, {}], ArmorDropChances: [0.085f, 0.085f, 0.085f, 0.085f], ArmorItems: [{}, {}, {}, {}], Fire: -1s, CanPickUpLoot: 0b, HurtTime: 0s, WorldUUIDLeast: -6874431323996396550L, Paper.Origin: [228.72411755566844d, 73.0d, -129.04722870653362d]}
