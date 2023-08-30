@@ -308,8 +308,11 @@ F3+I 获得当前指向方块的信息（设置方块在此位置）
 /tellraw @a {"text":"<Bibibishop050> 我是呆瓜","color":"yellow"} ---有颜色的说话
 /tellraw @a {"text":"zhx201933加入了游戏","color":"yellow"}      ---加入了游戏
 /tellraw @a [{"text":"Bibibishop050取得了进度"},{"text":"[呆呆瓜瓜]","color":"dark_purple"}]     ---假成就
-/tellraw @a [{"text":"Yao_Tang取得了进度"},{"text":"[谁在切胡萝卜？]","color":"yellow"}]  ---假成就
+/tellraw @a [{"text":"Yao_Tang取得了进度"},{"text":"[谁在切胡萝卜？]","color":"yellow"}]    ---假成就
 /tellraw @a [{"text":"Yao_Tang取得了进度"},{"text":"[我从哪儿来？]","color":"yellow","hoverEvent":{"action":"show_text","value":"穿越了时空隧道"}}] ---假成就(停留显示)
+/tellraw @a [{"text":"123456789","color":"light_purple","obfuscated":true}]    ---紫色乱码文字
+/tellraw @a [{"text":"123456789","color":"light_purple","underlined":true}]    ---紫色下划线文字
+/tellraw @a [{"text":"你是","color":"gold"},{"text":"我的","color":"light_purple"},{"text":"我是","color":"red"},{"text":"你的","color":"aqua"},{"text":"谁","color":"dark_purple"}]    ---多颜色文字
 
 [小木斧创世神插件]
 //copy      ---复制选区
@@ -423,6 +426,37 @@ F3+I 获得当前指向方块的信息（设置方块在此位置）
 .baritone goal ---将当前位置设定为goal目标地点
 .baritone goal clear ---清除goal目标地点
 .baritone path ---回到goal目标地点
+
+thisway 1000       --- 让机器人朝当前面向的方向行进 1000 个方块的距离
+goal x y z         --- 将目标设置为特定的坐标，并规划路径到达目标点
+goto x y z         --- 直接前往特定的坐标点（立即开始行动）
+goal               --- 将目标设置为你所在位置的脚下
+goal clear         --- 清除当前的目标
+cancel             --- 停止所有行动
+goto portal        --- 传送到一个方块（在 Impact 中，这是一个别名）
+mine diamond_ore iron_ore   --- 挖掘钻石矿或铁矿（可以设置只挖掘可见的矿物）
+click              --- 点击屏幕上的目标位置
+follow player playerName    --- 跟随特定玩家
+wp                 --- 管理路径点（可以设置路径点并规划到达路径点的路径）
+build              --- 建造指定的建筑方案
+schematica         --- 按照当前在 Schematica 中打开的建筑方案进行建造
+tunnel             --- 挖掘并开辟一条 1x2 的隧道
+farm               --- 自动收割、种植农作物
+axis               --- 沿着特定轴或对角线轴行动
+explore x z        --- 从指定的原点开始探索世界
+invert             --- 反转当前的目标和路径规划
+come               --- 向摄像机指向的方向前进（在 freecam 模式下很有用）
+blacklist          --- 阻止 Baritone 去最近的方块
+eta                --- 获取到达目标的预计时间信息
+proc               --- 查看 Baritone 当前的状态信息
+repack             --- 重新缓存周围的区块
+gc                 --- 调用 Java 的垃圾回收机制，释放一些内存
+render             --- 修复不正确渲染的区块
+reloadall          --- 重新加载 Baritone 的世界缓存
+find               --- 搜索 Baritone 的缓存，并尝试找到指定方块的位置
+surface            --- 让 Baritone 朝最近的地表方向移动
+version            --- 获取 Baritone 的版本信息
+
 baritone文档{
 	[thisway 1000]设置一个往你面对的方向走一千格距离的目标。
 
@@ -673,18 +707,21 @@ baritone设置文档{
 /give @p minecraft:diamond_pickaxe{Unbreakable:1b} 1     ---无法破坏的钻石镐
 /give @p minecraft:netherite_shovel{Unbreakable:1b} 1    ---无法破坏的合金铲
 /give @p minecraft:splash_potion{CustomPotionEffects:[{Id:1,Amplifier:100,Duration:1000000}]} 1         ---给予速度2020%无限时间喷溅药水
-/setblock ~ ~ ~ minecraft:end_gateway{Age:200,ExitPortal:{X:462,Y:71,Z:2165},ExactTeleport:1b} replace  ---生成指定坐标的折跃门
+/setblock ~ ~ ~ minecraft:end_gateway{Age:200,ExitPortal:{X:-39,Y:109,Z:-11},ExactTeleport:1b} replace  ---生成指定坐标的折跃门
 /give @s firework_rocket{Fireworks:{Explosions:[{Type:0,Trail:1,Colors:[I;15790320],FadeColors:[I;15790320]}],Flight:120}}   ---飞行时间120s的烟花
 
+[Effect]
+/effect give @s minecraft:hunger 99999 255 true               ---饿死自己
 /effect give @s minecraft:hero_of_the_village 99999 255 true  ---给予村庄英雄255效果 村民交易为1绿宝石
 /effect give Yao_Tang minecraft:strength 99999 255 true       ---无气泡永久力量效果255
+
 /summon minecraft:wolf ~ ~1 ~ {Owner:"Tu_tuzi",CatType:0}     ---生成一只有主人的狼
 
 /give @s minecraft:player_head{SkullOwner:"玩家ID"}     ---获得玩家头
-https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 
 /summon minecraft:lightning_bolt        ---生成闪电
 
+[Achieve Advancement]
 /advancement grant @a everything    ---获得全进度
 /advancement revoke @a everything   ---删除全进度
 
@@ -693,18 +730,20 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 /summon minecraft:experience_bottle 1077 -22 185                   ---生成经验瓶修装备
 /summon item ~ ~ ~ {Item:{id:"minecraft:diamond",Count:64b}}       ---生成掉落物64颗钻石
 
+/tp @e[type=item] @s    ---将所有掉落物传送到自己位置
+
 /spreadplayers 172 90 4000 8000 false @p    ---命令方块 随机传送
 点击告示牌 随机传送{
 	/give @p minecraft:oak_sign{BlockEntityTag:{Text1:"[{\"text\":\"[冒险]\",\"color\":\"aqua\",\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]",Text2:"[{\"text\":\"点我随机传送\",\"color\":\"aqua\",\"bold\":true,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/spreadplayers 115 -842 10000 10000 false @s\"}}]",Text3:"[{\"text\":\"\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]",Text4:"[{\"text\":\"\",\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false}]"}} 1
 }
 
-[Copy]
+[Copy Clone]
 可利用循环命令方块执行该操作
 /clone ~ ~1 ~ ~ ~1 ~ ~-1 ~1 ~ replace move    ---方块复制
 /clone 8 -62 -8 8 -62 -8 8 -60 -8            ---方块复制(复制 A点坐标 B点坐标 到此坐标) 箱子内物品也会随之复制
 
-[粒子效果]
-粒子ID:https://minecraft.fandom.com/zh/wiki/%E7%B2%92%E5%AD%90
+[Particle Effect]
+Effect ID:https://minecraft.fandom.com/zh/wiki/%E7%B2%92%E5%AD%90
 /execute as Yao_Tang at @s run particle glow ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a            ---灰绿星星
 /execute as Yao_Tang at @s run particle electric_spark ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a    ---白色星星
 /execute as Yao_Tang at @s run particle cloud ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a               ---爆炸烟
@@ -726,7 +765,7 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 /title Yao_Tang title ["",{"text":"123","color":"red","bold":"true"},{"text":"456","color":"yellow","italic":"true","bold":"true"}]
 ---红黄字幕
 
-[音乐音效]
+[Playsound]
 /execute at @a run playsound minecraft:ambient.basalt_deltas.loop voice @a ~ ~ ~ 100               ---频噪
 /execute at @a run playsound minecraft:ambient.cave voice @a ~ ~ ~ 100                             ---车站 墓地
 /execute at @a run playsound minecraft:ambient.underwater.loop.additions.rare voice @a ~ ~ ~ 1000  ---下水道
@@ -734,6 +773,7 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 /execute at @a run playsound minecraft:music_disc.5 voice @a ~ ~ ~ 100                             ---音乐disc.5
 
 [Execute]
+/execute at YaoTangTang run fill ~20 ~8 ~20 ~-20 ~-8 ~-20 diamond_ore replace gravel   ---让YaoTangTang执行fill周围的沙砾为钻石矿
 /execute as @e[type=snowball] at @s run summon lightning_bolt ~ ~ ~           ---雷电雪球（雪球抛物线持续生成闪电）
 /execute as @e[type=cow] at @s run summon lightning_bolt ~ ~ ~                ---雷击全图牛
 /execute as @e[type=minecraft:zombie] at @s run summon lightning_bolt ~ ~ ~   ---雷击全图僵尸
@@ -741,9 +781,13 @@ https://www.mcbbs.net/thread-455761-1-1.html  ---各种头的地址
 /execute at Life_candy run summon minecraft:lightning_bolt                    ---电人
 /execute as Player at @s run summon experience_bottle ~ ~ ~                   ---在该玩家处生成经验瓶
 /execute as @e[type=snowball] at @s unless block ~ ~-1 ~ air run summon tnt ~ ~ ~     ---该实体直接爆炸
-/execute as KennethLiu at @s run particle cloud ~ ~ ~ 1 1 1 0 999999999 normal @a     ---游戏崩溃
 
-[Mod Datapack] 在网易我的世界中可以卸载房主的数据包
+[Crash Vulnerabilities]
+/setblock ~ ~ ~ minecraft:chest[facing=north,type=single,waterlogged=false]{Items:[{Slot:0b,id:"minecraft:name_tag",Count:1b,tag:{RepairCost:0,display:{Name:'{"text":"♥ 世界を見下ろす ♥","color":"red"}'}}}]}                                      ---命名牌崩服 (测试版本 1.16.5)
+/execute as KennethLiu at @s run particle cloud ~ ~ ~ 1 1 1 0 999999999 normal @a     ---指定玩家游戏未响应崩溃
+/summon minecraft:ghast ~ ~4 ~ {ExplosionPower:99999}        ---恶魂崩服
+
+[Drop Datapack]
 /datapack disable "mod:forge"  ---禁用数据包
 /datapack enable "mod:forge"   ---启用数据包
 
@@ -836,7 +880,7 @@ Alt+F3：打开含有帧生成时间图表的调试屏幕。（可通过shift+Al
 /item replace block -539 69 242 container.0 with minecraft:bread 64        ---在指定坐标的发射器第一格替换并放入64个面包
 
 游戏规则设置 - Game Rule
-announceAdvancements        是否在聊天框中公告玩家进度的达成.
+announceAdvancements        是否在聊天框中公告玩家的成就进度.
 logAdminCommands            是否在服务器日志中记录管理员使用过的命令.
 commandBlockOutput          命令方块执行命令时是否在聊天框中向管理员显示.
 sendCommandFeedback         玩家执行命令的返回信息是否在聊天框中显示.同时影响命令方块是否保存命令输出文本.
@@ -936,7 +980,7 @@ waterSourceConversion       流动的水是否可产生水源.
 绑定诅咒 binding_curse
 消失诅咒 vanishing_curse
 
----------- 实体数据深度解析 ----------
+---------- Entity NBT data ----------
 summon minecraft:cow 231.10 73.00 -130.26 {AgeLocked: 0b, Brain: {memories: {}}, HurtByTimestamp: 0, Attributes: [{Modifiers: [{Amount: 0.03405822356703815d, Operation: 1, UUID: [I; -295667725, -9353512, -1840473668, -622032888], Name: "Random spawn bonus"}], Base: 16.0d, Name: "minecraft:generic.follow_range"}, {Base: 0.20000000298023224d, Name: "minecraft:generic.movement_speed"}, {Base: 10.0d, Name: "minecraft:generic.max_health"}], Invulnerable: 0b, ForcedAge: 0, FallFlying: 0b, AbsorptionAmount: 0.0f, PortalCooldown: 0, FallDistance: 0.0f, InLove: 0, DeathTime: 0s, WorldUUIDMost: -5138040494081160214L, Bukkit.Aware: 1b, HandDropChances: [0.085f, 0.085f], PersistenceRequired: 0b, Spigot.ticksLived: 9755, Paper.OriginWorld: [I; -1196293276, -1531425814, -1600578270, 341861370], Age: 0, Motion: [-0.02671685148031613d, -0.0784000015258789d, 0.03499092435937137d], Health: 10.0f, Bukkit.updateLevel: 2, Paper.SpawnReason: "NATURAL", LeftHanded: 0b, OnGround: 1b, Air: 300s, Rotation: [39.860367f, 0.0f], HandItems: [{}, {}], ArmorDropChances: [0.085f, 0.085f, 0.085f, 0.085f], ArmorItems: [{}, {}, {}, {}], Fire: -1s, CanPickUpLoot: 0b, HurtTime: 0s, WorldUUIDLeast: -6874431323996396550L, Paper.Origin: [228.72411755566844d, 73.0d, -129.04722870653362d]}
 
 minecraft:cow：生成的实体类型为牛
@@ -989,7 +1033,7 @@ HurtTime: 0s：实体受伤时间为 0
 WorldUUIDLeast: -6874431323996396550L：坐标所在世界的 UUID（低位）
 Paper.Origin: [228.72411755566844d, 73.0d, -129.04722870653362d]：实体最初生成的坐标位置
 
-闪电雪球Execute解析
+闪电雪球
 /execute as @e[type=snowball] at @s run summon lightning_bolt ~ ~ ~
 循环命令方块
 解析：
@@ -1008,7 +1052,7 @@ run：运行
 if：如果
 unless：除非
 
-火焰弓Execute解析
+火焰弓
 /execute as @e[type=arrow] at @s run particle flame ~ ~ ~ 0.3 0.3 0.3 0 1 normal @a
 循环命令方块
 particle指令解析：
@@ -1019,14 +1063,14 @@ particle指令解析：
 5、“@a”：可以看到粒子的对象
 6、“flame”：粒子类型
 
-搭桥雪球Execute解析
+搭桥雪球
 /execute as @e[type=snowball] at @s run setblock ~ ~1 ~ stone
 循环命令方块
 指令解析：
 1、“~ ~1 ~”：方块放置位置（这里为雪球上方一格）
 2、“stone”：方块种类，可以修改为其他方块（比如黑曜石obsidian）
 
-熔岩行者Execute解析
+熔岩行者
 踏上岩浆时会生成黑曜石
 熔岩行者I：/execute as @p at @s if block ~ ~-1 ~ lava run setblock ~ ~-1 ~ obsidian
 熔岩行者II：/execute as @p at @s if block ~ ~-1 ~ lava run fill ~1 ~-1 ~1 ~-1 ~-1 ~-1 obsidian
@@ -1035,7 +1079,7 @@ particle指令解析：
 1、“if block ~ ~-1 ~ lava”：如果下方的方块是岩浆
 2、“fill”：在一个区域内填充方块
 
-闪电爆炸雪球Execute解析
+闪电爆炸雪球
 拖尾粒子指令：/execute as @e[type=snowball] at @s run particle item snow ~ ~ ~ 0.3 0.3 0.3 0 5 normal @a
 爆炸效果指令：/execute as @e[type=snowball] at @s unless block ~ ~-1 ~ air run summon tnt ~ ~ ~
 雷电效果指令：/execute as @e[type=snowball] at @s unless block ~ ~-1 ~ air run summon lightning_bolt ~ ~ ~
