@@ -433,7 +433,6 @@ goto x y z         --- 直接前往特定的坐标点（立即开始行动）
 goal               --- 将目标设置为你所在位置的脚下
 goal clear         --- 清除当前的目标
 cancel             --- 停止所有行动
-goto portal        --- 传送到一个方块（在 Impact 中，这是一个别名）
 mine diamond_ore iron_ore   --- 挖掘钻石矿或铁矿（可以设置只挖掘可见的矿物）
 click              --- 点击屏幕上的目标位置
 follow player playerName    --- 跟随特定玩家
